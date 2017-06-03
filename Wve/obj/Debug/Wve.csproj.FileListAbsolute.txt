@@ -1,0 +1,34 @@
+C:\MountainMeadow3\Wve\bin\Debug\Wve.XML
+C:\MountainMeadow3\Wve\bin\Debug\Wve.dll
+C:\MountainMeadow3\Wve\bin\Debug\Wve.pdb
+C:\MountainMeadow3\Wve\obj\Debug\Wve.csprojResolveAssemblyReference.cache
+C:\MountainMeadow3\Wve\obj\Debug\Wve.ExpandableFormBase.resources
+C:\MountainMeadow3\Wve\obj\Debug\Wve.InputStringForm.resources
+C:\MountainMeadow3\Wve\obj\Debug\Wve.InputTextForm.resources
+C:\MountainMeadow3\Wve\obj\Debug\Wve.DisplayErrorForm.resources
+C:\MountainMeadow3\Wve\obj\Debug\Wve.Properties.Resources.resources
+C:\MountainMeadow3\Wve\obj\Debug\Wve.TextViewer.resources
+C:\MountainMeadow3\Wve\obj\Debug\Wve.WveDatePicker.resources
+C:\MountainMeadow3\Wve\obj\Debug\Wve.WveDocViewer.DocumentViewer.resources
+C:\MountainMeadow3\Wve\obj\Debug\Wve.WveDocViewer.DocumentViewerForm.resources
+C:\MountainMeadow3\Wve\obj\Debug\Wve.WveServUtil.EditTaskScheduleForm.resources
+C:\MountainMeadow3\Wve\obj\Debug\Wve.csproj.GenerateResource.Cache
+C:\MountainMeadow3\Wve\obj\Debug\Wve.dll
+C:\MountainMeadow3\Wve\obj\Debug\Wve.pdb
+C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\Wve\obj\Debug\Wve.dll
+C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\Wve\obj\Debug\Wve.pdb
+C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\Wve\bin\Debug\Wve.XML
+C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\Wve\bin\Debug\Wve.dll
+C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\Wve\bin\Debug\Wve.pdb
+C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\Wve\obj\Debug\Wve.csprojResolveAssemblyReference.cache
+C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\Wve\obj\Debug\Wve.ExpandableFormBase.resources
+C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\Wve\obj\Debug\Wve.InputStringForm.resources
+C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\Wve\obj\Debug\Wve.InputTextForm.resources
+C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\Wve\obj\Debug\Wve.DisplayErrorForm.resources
+C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\Wve\obj\Debug\Wve.Properties.Resources.resources
+C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\Wve\obj\Debug\Wve.TextViewer.resources
+C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\Wve\obj\Debug\Wve.WveDatePicker.resources
+C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\Wve\obj\Debug\Wve.WveDocViewer.DocumentViewer.resources
+C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\Wve\obj\Debug\Wve.WveDocViewer.DocumentViewerForm.resources
+C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\Wve\obj\Debug\Wve.WveServUtil.EditTaskScheduleForm.resources
+C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\Wve\obj\Debug\Wve.csproj.GenerateResource.Cache

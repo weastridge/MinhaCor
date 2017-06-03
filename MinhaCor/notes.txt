@@ -1,0 +1,20 @@
+﻿2017 May 27 ; made a proof of concept using mouse to create colors on a wheel of hues and saturation, with a scrollbar of brightness.
+Also made the brightness, called lightness, vary as saturation or hues change to stay approximately at the same overall intesnsity.  otherwise the intensity increases toward white as you move toward the center and saturation falls, and that tricks people into using that rather than the brightness bar to adjust brightness.
+
+Notes on Culture and Globalization
+System.Globalization.CultureInfo object determine format for dates, times, numbers, sorting text, string comparisons
+CultureInfo.CurrentCulture returns same CultureInfo object as Thread.CurrentThread.CurrentCulture.
+Since .Net 4.6 you can set System.Globalization.CultureInfo and it will change the thread's CurrentCulture;  Older versions only let you set Thread.CurrentCulure.
+System.Globailzation.CultureInfo.CurrentUICulture determines the localized resource file from which page resources are loaded.
+Globaliziation means making the program work no matter which culture (e.g. string formats, data formats)
+Locallization means adapting the program (user interface in particular) to suit a culture.
+Custom Resource Files:  for string resources in name=value pairs, which are non-user interface data.  But you have to use System.Resources.ResourceManager classs to load the resources for the hread.CurrentThread.CurrentUICulture setting, and the files have to be compiled using ResGen.exe.
+see https://msdn.microsoft.com/en-us/library/ff647353.aspx
+
+to reduce flicker, just make background and foreground same colors, and make foreground formMain transparent around rectangle rather than ellipse - quicker and lets the 3 dots stay on the background where they don't flicker.
+
+
+Name Your Color
+Name Your Skin Tone
+Name Your Skin Color
+Celebrate Your Color

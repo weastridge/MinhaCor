@@ -1,0 +1,12 @@
+c:\users\weast\onedrive\documents\visual studio 2015\Projects\MeuCor\MeuCor\bin\Debug\MeuCor.exe.config
+c:\users\weast\onedrive\documents\visual studio 2015\Projects\MeuCor\MeuCor\bin\Debug\MeuCor.exe
+c:\users\weast\onedrive\documents\visual studio 2015\Projects\MeuCor\MeuCor\bin\Debug\MeuCor.pdb
+c:\users\weast\onedrive\documents\visual studio 2015\Projects\MeuCor\MeuCor\bin\Debug\Wve.dll
+c:\users\weast\onedrive\documents\visual studio 2015\Projects\MeuCor\MeuCor\bin\Debug\Wve.pdb
+c:\users\weast\onedrive\documents\visual studio 2015\Projects\MeuCor\MeuCor\bin\Debug\Wve.xml
+c:\users\weast\onedrive\documents\visual studio 2015\Projects\MeuCor\MeuCor\obj\Debug\MeuCor.csprojResolveAssemblyReference.cache
+c:\users\weast\onedrive\documents\visual studio 2015\Projects\MeuCor\MeuCor\obj\Debug\MeuCor.FormMain.resources
+c:\users\weast\onedrive\documents\visual studio 2015\Projects\MeuCor\MeuCor\obj\Debug\MeuCor.Properties.Resources.resources
+c:\users\weast\onedrive\documents\visual studio 2015\Projects\MeuCor\MeuCor\obj\Debug\MeuCor.csproj.GenerateResource.Cache
+c:\users\weast\onedrive\documents\visual studio 2015\Projects\MeuCor\MeuCor\obj\Debug\MeuCor.exe
+c:\users\weast\onedrive\documents\visual studio 2015\Projects\MeuCor\MeuCor\obj\Debug\MeuCor.pdb

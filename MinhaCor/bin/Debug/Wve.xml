@@ -1,0 +1,3000 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wve</name>
+    </assembly>
+    <members>
+        <member name="T:Wve.ExpandableFormBase">
+            <summary>
+            expandable dialog form;  intended as a class
+            to inherit, but don't - better to copy and edit
+            </summary>
+        </member>
+        <member name="F:Wve.ExpandableFormBase.isExpanded">
+            <summary>
+            keep track of expansion state
+            </summary>
+        </member>
+        <member name="F:Wve.ExpandableFormBase.sizeExpansionPanel">
+            <summary>
+            keep track of expansion panel size
+            before it is shunk to nothing
+            </summary>
+        </member>
+        <member name="M:Wve.ExpandableFormBase.#ctor">
+            <summary>
+            expandable dialog form
+            </summary>
+        </member>
+        <member name="M:Wve.ExpandableFormBase.ExpandableFormBase_Load(System.Object,System.EventArgs)">
+            <summary>
+            on loading of form
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Wve.ExpandableFormBase.buttonMore_Click(System.Object,System.EventArgs)">
+            <summary>
+            user pressed the More (or less) button
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Wve.ExpandableFormBase.toggleExpansion">
+            <summary>
+            toggle from expanded to not, changing
+            caption of buttonMore
+            </summary>
+        </member>
+        <member name="M:Wve.ExpandableFormBase.buttonOK_Click(System.Object,System.EventArgs)">
+            <summary>
+            ok
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Wve.ExpandableFormBase.onButtonOkClick">
+            <summary>
+            when ok clicked
+            </summary>
+        </member>
+        <member name="M:Wve.ExpandableFormBase.buttonCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            cancel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Wve.ExpandableFormBase.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Wve.ExpandableFormBase.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Wve.ExpandableFormBase.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Wve.InputStringForm">
+            <summary>
+            Dialog for inputting short string
+            exposes LabelPrompt and TextBoxInput
+            </summary>
+        </member>
+        <member name="M:Wve.InputStringForm.#ctor">
+            <summary>
+            exposes LabelPrompt and TextBoxInput
+            </summary>
+        </member>
+        <member name="F:Wve.InputStringForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Wve.InputStringForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Wve.InputStringForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Wve.InputTextForm">
+            <summary>
+            form to input text
+            </summary>
+        </member>
+        <member name="M:Wve.InputTextForm.#ctor">
+            <summary>
+            create input text form
+            </summary>
+        </member>
+        <member name="F:Wve.InputTextForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Wve.InputTextForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Wve.InputTextForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Wve.MyConfigSettings">
+            <summary>
+            Configuration Settings utility
+            </summary>
+        </member>
+        <member name="F:Wve.MyConfigSettings.configFileNameBase">
+            <summary>
+            the name of the config file; typically the assembly name, 
+            without the .myconfig extension that will be added
+            </summary>
+        </member>
+        <member name="F:Wve.MyConfigSettings.pathBase">
+            <summary>
+            the beginning location, to which subfolderNames are appended to 
+            make the location of the config file; normally is local application data
+            </summary>
+        </member>
+        <member name="F:Wve.MyConfigSettings.subfolderNames">
+            <summary>
+            names for subfolders tree inside of common data area to store settings,
+            e.g. CompanyName, ProgramName for CompanyName\ProgramName\ structure
+            </summary>
+        </member>
+        <member name="M:Wve.MyConfigSettings.#ctor">
+            <summary>
+            constructs new config settings utility
+            </summary>
+        </member>
+        <member name="M:Wve.MyConfigSettings.#ctor(System.Boolean)">
+            <summary>
+            puts config settings in same folder as executing assembly
+            </summary>
+            <param name="useAssemblyWorkingFolder"></param>
+        </member>
+        <member name="M:Wve.MyConfigSettings.#ctor(System.String[])">
+            <summary>
+            Configuration settings utility
+            </summary>
+            <param name="subfolderNames">array of names of successive childfolders 
+            to put under the common data folder to locate the settings</param>
+        </member>
+        <member name="M:Wve.MyConfigSettings.#ctor(System.String[],System.String)">
+            <summary>
+            Configuration setting utility
+            </summary>
+            <param name="subfolderNames">array of names of successive childfolders 
+            to put under the common data folder to locate the settings</param>
+            <param name="configFileNameBase">base name to which the .myconfig extension
+            will be added;  commonly is the assembly name</param>
+        </member>
+        <member name="M:Wve.MyConfigSettings.#ctor(System.String[],System.String,System.String)">
+            <summary>
+            Configuration setting utility
+            </summary>
+            <param name="subfolderNames">array of names of successive childfolders 
+            to put under the common data folder to locate the settings</param>
+            <param name="configFileNameBase">base name to which the .myconfig extension
+            will be added;  commonly is the assembly name</param>
+            <param name="pathBase">base location to which subfolderNames are  appended
+            to make location for config file, e.g. 'c:'
+            WARNING!! normally you should use another constructor without specifying 
+            the pathBase so it can default to Local Application Data folder.  Also
+            the folder needs to already exist.</param>
+        </member>
+        <member name="M:Wve.MyConfigSettings.GetMyConfigFileNameWithPath(System.Boolean)">
+            <summary>
+            gets name if assigned, or defaults to (assemblyname).myconfig, 
+            and optionally makes a config file if none exists
+            </summary>
+            <param name="MakeFileIfNone">create a config file if none exists</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.MyConfigSettings.createSubFolders(System.String,System.String[])">
+            <summary>
+            create set of subfolders in parent folder and return true if 
+            the parentFolderPath contains the succession of requested
+            child folderNames at the end of the operation.  (false thus
+            represents an error state).
+            </summary>
+            <param name="parentFolderPath">the path of parent folder, without
+            a trailing directory separator character</param>
+            <param name="folderNames"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.MyConfigSettings.SetValueAsXml(System.String,System.Xml.XmlElement)">
+            <summary>
+            write value as XmlElement for given config setting
+            </summary>
+            <param name="keyName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Wve.MyConfigSettings.SetValue(System.String,System.String)">
+            <summary>
+            write value for that config setting (making file if needed)
+            </summary>
+            <param name="keyName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Wve.MyConfigSettings.GetMyConfigList">
+            <summary>
+            returns nodes in Config file under configuration/appSettings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.MyConfigSettings.DeleteKey(System.String)">
+            <summary>
+            delete key with given name, returns true if found and removed
+            </summary>
+            <param name="keyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.MyConfigSettings.GetValueAsXml(System.String)">
+            <summary>
+            retrieves value of named config setting as an XmlElement node,
+            or null if not found or error
+            </summary>
+            <param name="keyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.MyConfigSettings.GetValue(System.String)">
+            <summary>
+            return value for key or null if none
+            </summary>
+            <param name="keyName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wve.MyEr">
+            <summary>
+            outputs errors
+            </summary>
+        </member>
+        <member name="F:Wve.MyEr.ErrLogFileSize">
+            <summary>
+            size error log can reach before being truncated
+            </summary>
+        </member>
+        <member name="F:Wve.MyEr.SubfolderNames">
+            <summary>
+            names for subfolders tree inside of common data area to store settings,
+            e.g. CompanyName, ProgramName for CompanyName\ProgramName\ structure
+            </summary>
+        </member>
+        <member name="P:Wve.MyEr.BasePath">
+            <summary>
+            base path to append Subfolder names and file name to, 
+            (defaults to local application data folder if not changed)
+            </summary>
+        </member>
+        <member name="P:Wve.MyEr.FilenameWithPath">
+            <summary>
+            Name of error log file
+            </summary>
+        </member>
+        <member name="M:Wve.MyEr.Show(System.Object,System.Exception,System.Boolean)">
+            <summary>
+            Show error
+            </summary>
+            <param name="sender">object generating call or null</param>
+            <param name="er"></param>
+            <param name="logError">logs to file ErrorLog.txt if true</param>
+        </member>
+        <member name="M:Wve.MyEr.Show(System.Object,System.String,System.Exception,System.Boolean)">
+            <summary>
+            this overloaded version includes message string
+            </summary>
+            <param name="sender">object generating call or null</param>
+            <param name="message"></param>
+            <param name="er"></param>
+            <param name="logError">logs to file ErrorLog.txt if true</param>
+        </member>
+        <member name="M:Wve.MyEr.LogErrorQuietly(System.Object,System.String,System.Exception)">
+            <summary>
+            log error to file then return without notifying user
+            </summary>
+            <param name="sender">object generating the call or null </param>
+            <param name="message">description</param>
+            <param name="er"></param>
+        </member>
+        <member name="M:Wve.MyEr.logErrToFile(System.Object,System.String,System.Exception)">
+            <summary>
+            log error to file named
+            But do not raise error if fails.
+            Returns true if thinks it succeeded
+            </summary>
+            <param name="sender"></param>
+            <param name="message"></param>
+            <param name="er"></param>
+        </member>
+        <member name="M:Wve.MyEr.createSubFolders(System.String,System.String[])">
+            <summary>
+            create set of subfolders in parent folder and return true if 
+            the parentFolderPath contains the succession of requested
+            child folderNames at the end of the operation.  (false thus
+            represents an error state).
+            </summary>
+            <param name="parentFolderPath">the path of parent folder, without
+            a trailing directory separator character</param>
+            <param name="folderNames"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.MyEr.ReadLogFile">
+            <summary>
+            read the whole log file or return empty string
+            if log file empty or not existing
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Wve.DisplayErrorForm">
+            <summary>
+            expandable dialog form;  intended as a class
+            to inherit, but don't - better to copy and edit
+            </summary>
+        </member>
+        <member name="F:Wve.DisplayErrorForm.isExpanded">
+            <summary>
+            keep track of expansion state
+            </summary>
+        </member>
+        <member name="F:Wve.DisplayErrorForm.sizeExpansionPanel">
+            <summary>
+            keep track of expansion panel size
+            before it is shunk to nothing
+            </summary>
+        </member>
+        <member name="M:Wve.DisplayErrorForm.#ctor">
+            <summary>
+            expandable dialog form
+            </summary>
+        </member>
+        <member name="M:Wve.DisplayErrorForm.ExpandableFormBase_Load(System.Object,System.EventArgs)">
+            <summary>
+            on loading of form
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Wve.DisplayErrorForm.buttonMore_Click(System.Object,System.EventArgs)">
+            <summary>
+            user pressed the More (or less) button
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Wve.DisplayErrorForm.toggleExpansion">
+            <summary>
+            toggle from expanded to not, changing
+            caption of buttonMore
+            </summary>
+        </member>
+        <member name="M:Wve.DisplayErrorForm.buttonOK_Click(System.Object,System.EventArgs)">
+            <summary>
+            ok
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Wve.DisplayErrorForm.onButtonOkClick">
+            <summary>
+            when ok clicked
+            </summary>
+        </member>
+        <member name="F:Wve.DisplayErrorForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Wve.DisplayErrorForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Wve.DisplayErrorForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Wve.MyEventLog">
+            <summary>
+            outputs errors
+            </summary>
+        </member>
+        <member name="F:Wve.MyEventLog.EventLogFileSize">
+            <summary>
+            size  log can reach before being truncated
+            </summary>
+        </member>
+        <member name="P:Wve.MyEventLog.EventLogFilenameBase">
+            <summary>
+            get or set name to which .myeventlog.txt will be added
+            </summary>
+        </member>
+        <member name="P:Wve.MyEventLog.BasePath">
+            <summary>
+            base path to append Subfolder names and file name to, 
+            (defaults to local application data folder if not changed)
+            </summary>
+        </member>
+        <member name="F:Wve.MyEventLog.SubfolderNames">
+            <summary>
+            names for subfolders tree inside of common data area to store settings,
+            e.g. CompanyName, ProgramName for CompanyName\ProgramName\ structure
+            </summary>
+        </member>
+        <member name="P:Wve.MyEventLog.FilenameWithPath">
+            <summary>
+            Name of event log file
+            </summary>
+        </member>
+        <member name="M:Wve.MyEventLog.LogEventQuietly(System.Object,System.String)">
+            <summary>
+            log event to file then return without notifying user,
+            returns true if success; RAISES NO ERRORS!
+            </summary>
+            <param name="sender">object generating the call or null </param>
+            <param name="message">description</param>
+        </member>
+        <member name="M:Wve.MyEventLog.LogEventQuietly(System.Object,System.String,System.Exception)">
+            <summary>
+            log event to file then return without notifying user
+            (include Esception, or null if none)
+            returns true if successful, and RAISES NO ERRORS itself
+            </summary>
+            <param name="sender"></param>
+            <param name="message"></param>
+            <param name="er"></param>
+        </member>
+        <member name="M:Wve.MyEventLog.logEventToFile(System.Object,System.String,System.Exception)">
+            <summary>
+            log error to file named
+            But do not raise error if fails.
+            Returns true if thinks it succeeded
+            </summary>
+            <param name="sender"></param>
+            <param name="message"></param>
+            <param name="er">exception or null if none</param>
+        </member>
+        <member name="M:Wve.MyEventLog.createSubFolders(System.String,System.String[])">
+            <summary>
+            create set of subfolders in parent folder and return true if 
+            the parentFolderPath contains the succession of requested
+            child folderNames at the end of the operation.  (false thus
+            represents an error state).
+            </summary>
+            <param name="parentFolderPath">the path of parent folder, without
+            a trailing directory separator character</param>
+            <param name="folderNames"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.MyEventLog.ReadLogFile">
+            <summary>
+            read the whole log file
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Wve.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Wve.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Wve.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Wve.Properties.Resources.CDA">
+             <summary>
+               Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+            &lt;!--
+              Title: CDA XSL StyleSheet
+              Original Filename: cda.xsl 
+              Version: 3.0
+              Revision History: 08/12/08 Jingdong Li updated
+              Revision History: 12/11/09 KH updated 
+              Revision History:  03/30/10 Jingdong Li updated.
+              Revision History:  08/25/10 Jingdong Li updated
+              Revision History:  09/17/10 Jingdong Li updated
+              Revision History:  01/05/11 Jingdong Li updated
+              Specification: ANSI/HL7 CDAR2  
+              The current version and documentation are available at http://www.la [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+        <member name="T:Wve.TextViewer">
+            <summary>
+            form to display text in rich text box
+            </summary>
+        </member>
+        <member name="F:Wve.TextViewer.isRTF">
+            <summary>
+            if true, the text is to be shown as rtf
+            </summary>
+        </member>
+        <member name="F:Wve.TextViewer.ScrollToBottomOnShow">
+            <summary>
+            if true, scroll to bottom of textbox when showing
+            </summary>
+        </member>
+        <member name="F:Wve.TextViewer.CustomButtonHandler">
+            <summary>
+            handler to be called when ButtonCustomButton is clicked,
+            which is called with this text viewer as sender
+            </summary>
+        </member>
+        <member name="M:Wve.TextViewer.#ctor(System.String,System.Boolean)">
+            <summary>
+            Don't create instance directly unless using as dialog box
+            Best to call instance method ShowText or ShowRTF to show only.
+            Exposes RichTextBox1, ButtonCustomButton, ScrollToBottomOnShow,
+            and delegate CustomButtonHandler
+            </summary>
+        </member>
+        <member name="M:Wve.TextViewer.#ctor(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            instance of TextViewer to use as a dialog box; if isDialog
+            is true then an OK button shows and you can query TextBoxContents
+            to see changes.  
+            Exposes RichTextBox1, ButtonCustomButton, ScrollToBottomOnShow,
+            and delegate CustomButtonHandler
+            </summary>
+            <param name="contents"></param>
+            <param name="isRTF"></param>
+            <param name="isDialog">set to true to enable an OK button</param>
+        </member>
+        <member name="M:Wve.TextViewer.TextViewer_Load(System.Object,System.EventArgs)">
+            <summary>
+            scroll to bottom of text when shown, if desired
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Wve.TextViewer.ShowText(System.String,System.String)">
+            <summary>
+            show text in viewer with just Close
+            button and no ok,cancel buttons
+            </summary>
+            <param name="caption"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:Wve.TextViewer.ShowText(System.String,System.String,System.Boolean)">
+            <summary>
+            show text
+            </summary>
+            <param name="caption"></param>
+            <param name="text"></param>
+            <param name="useOkCancelButtons"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.TextViewer.ShowRtf(System.String,System.String)">
+            <summary>
+            show rich text format markup in a rich text box
+            (displays error message if rtf is bad)
+            </summary>
+            <param name="caption"></param>
+            <param name="rtf"></param>
+        </member>
+        <member name="M:Wve.TextViewer.buttonFind_Click(System.Object,System.EventArgs)">
+            <summary>
+            search for text
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Wve.TextViewer.textBoxFind_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            key down handler for textboxFind
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Wve.TextViewer.pasteFromClipboard(System.Object,System.EventArgs)">
+            <summary>
+            optionally, can paste clipboard contents into text box
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Wve.TextViewer.ButtonOK_Click(System.Object,System.EventArgs)">
+            <summary>
+            OK is only visible option if this form is in dialog mode
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Wve.TextViewer.ButtonCustomButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            call any methods that have been attached to the
+            EventHandler delegate for ButtonCustomButton
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Wve.TextViewer.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Wve.TextViewer.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Wve.TextViewer.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Wve.WveCalc">
+            <summary>
+            some calculation methods
+            </summary>
+        </member>
+        <member name="M:Wve.WveCalc.CalculateBMI(System.Double,System.Double)">
+            <summary>
+            calculate body mass index
+            </summary>
+            <param name="wtKg">wt in kg</param>
+            <param name="htM">ht in meters</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCalc.CalculateBMI(System.Double,System.Double,System.Double,System.Boolean,System.String@,System.String@)">
+            <summary>
+            calculate bmi and report details in text
+            (age and gender required for details text)
+            </summary>
+            <param name="wtKg"></param>
+            <param name="htM"></param>
+            <param name="age">in years</param>
+            <param name="isFemale"></param>
+            <param name="flag">L,H,HH or empty string</param>
+            <param name="text">narrative description of result</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCalc.CalculateIBW(System.Double,System.Boolean)">
+            <summary>
+            one calculation of ideal body wt in KG, using 50 kg + 2.3 per inch males, 
+            45.5 kg + 2.3 per inch over 5 ft
+            </summary>
+            <param name="htM"></param>
+            <param name="isFemale"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCalc.CalculateBSA(System.Double,System.Double)">
+            <summary>
+            calculate body surface area
+            </summary>
+            <param name="wtKg">wt in kg</param>
+            <param name="htM">ht in meters</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCalc.CalculateGFR(System.Double,System.Double,System.Double,System.Double,System.Boolean,System.Boolean,System.Boolean,System.String@,System.String@,System.String@)">
+            <summary>
+            returns calculated Glomerular Filtration Rate or
+            double.MinValue if can't calculate; uses MDRD for adults > 18, 
+            and Schwartz for peds
+            </summary>
+            <param name="creatinine">serum creatinine in mg/DL</param>
+            <param name="age">age in years</param>
+            <param name="lengthCm">optional for adults >= 18; use double.MinValue for null</param>
+            <param name="weightKg">optional; use double.MinValue for null</param>
+            <param name="isFemale">set true if female</param>
+            <param name="isBlack">set true if African or African-American</param>
+            <param name="isIDMS">set true if creatinine is referenced to 
+            Isotope Dilution Mass Spectrometry which all modern values should be - default to true</param>
+            <param name="result">outputs result with message qualifying the result if any</param>
+            <param name="formula">outputs the formula used in the calculation</param>
+            <returns></returns>
+        </member>
+        <member name="T:Wve.WveConvert">
+            <summary>
+            conversion methods from CRC Handbook of Chemistry and Physics 1976
+            </summary>
+        </member>
+        <member name="M:Wve.WveConvert.InchesToCm(System.Double)">
+            <summary>
+            inches to centimeters 2.54 exactly
+            </summary>
+            <param name="inches"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveConvert.CmToInches(System.Double)">
+            <summary>
+            centimeters to inches .39370079
+            </summary>
+            <param name="cm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveConvert.MetersToFeet(System.Double)">
+            <summary>
+            meters to feet 3.2808399
+            </summary>
+            <param name="meters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveConvert.KilogramsToPounds(System.Double)">
+            <summary>
+            /kilograms to pounds 2.2046226
+            </summary>
+            <param name="grams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveConvert.InchesToMeters(System.Double)">
+            <summary>
+            inches to meters .0254
+            </summary>
+            <param name="inches"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveConvert.PoundsToKg(System.Double)">
+            <summary>
+            pounds to kilograms, .45359237
+            </summary>
+            <param name="pounds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveConvert.FahrenheitToCelsius(System.Double)">
+            <summary>
+            temperature (f-32)*5/9
+            </summary>
+            <param name="fahrenheit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveConvert.CelsiusToFahrenheit(System.Double)">
+            <summary>
+            temperature c*9/5 + 32
+            </summary>
+            <param name="celsius"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wve.WveCrypto">
+            <summary>
+            object with encryption tools
+            </summary>
+        </member>
+        <member name="M:Wve.WveCrypto.HashSHA1(System.Byte[])">
+            <summary>
+            a static implementation of the standard SHA-1 hash algorythm
+            Returns 160 bit hash (20 bytes) 
+            </summary>
+            <param name="plaintext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.HashSHA1(System.String)">
+            <summary>
+            static implementation of standard SHA-1 that returns a 
+            40 character Hex representation of the 20 byte hash of
+            the UnicodeEncoding(=UTF-16) encoding of given string
+            </summary>
+            <param name="plaintext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.#ctor">
+            <summary>
+            no parameters, leaves default key and i.v.
+            </summary>
+        </member>
+        <member name="M:Wve.WveCrypto.#ctor(System.Byte[],System.Byte[])">
+            <summary>
+            with initialization vector and key
+            </summary>
+            <param name="initializationVector">16 bytes</param>
+            <param name="newKey">32 bytes</param>
+        </member>
+        <member name="M:Wve.WveCrypto.GetHexStringFromByteArray(System.Byte[])">
+            <summary>
+            converts byte array to hexadecimal string
+            </summary>
+        </member>
+        <member name="M:Wve.WveCrypto.GetByteArrayFromHexString(System.String)">
+            <summary>
+            returns the byte array from two character hex numbers
+            </summary>
+        </member>
+        <member name="M:Wve.WveCrypto.Encrypt(System.Byte[])">
+            <summary>
+            encrypt bytes, using current key and iv
+            </summary>
+            <param name="toEncrypt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.Encrypt(System.String,System.String,System.Int32)">
+            <summary>
+            encrypt a file to another file
+            </summary>
+            <param name="outFilePath">plaintext file to encrypt</param>
+            <param name="plainFilePath">encrypted file location to write to</param>
+            <param name="bufferSize">size of buffer for chunks read and written</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.Encrypt(System.String)">
+            <summary>
+            encrypt string to encrypted byte array, 
+            using current key and iv
+            </summary>
+            <param name="toEncrypt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.Decrypt(System.String,System.String,System.Int32)">
+            <summary>
+            decrypt a file to another file
+            </summary>
+            <param name="cryptoFilePath">encrypted file to decrypt</param>
+            <param name="outFilePath">plaintext file to write to</param>
+            <param name="bufferSize">size of buffer for chunks read and written</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.Decrypt(System.Byte[],System.Int32)">
+            <summary>
+            decrypt, using current key and iv
+            Does not handle error if password is wrong, but passes 
+            unhandled error to calling routine!
+            Truncates zeroed bytes at the end of block if length = 0
+            </summary>
+            <param name="toDecrypt"></param>
+            <param name="length">Length of byte[] array to return. 
+            May set length to 0 for strings for automatic resizing,
+            but not for binary data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.EncryptToBase64(System.Byte[])">
+            <summary>
+            returns encrypted bytes in Base64 format
+            </summary>
+            <param name="toEncrypt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.EncryptToBase64(System.String)">
+            <summary>
+            returns encrypted in Base64 format
+            </summary>
+            <param name="toEncrypt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.DecryptFromBase64(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="encodedCiphertext"></param>
+            <param name="length">length of bytes to return, or may
+            use 0 for autotrim if is string data</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.DecryptFromBase64ToString(System.String)">
+            <summary>
+            decrypt from Base64 encoded ciphertext to string
+            </summary>
+            <param name="encodedCiphertext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.EncryptToHex(System.Byte[])">
+            <summary>
+            returns encrypted bytes in a hexadecimal string format
+            </summary>
+            <param name="toEncrypt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.EncryptToHex(System.String)">
+            <summary>
+            returns encrypted bytes in a hexadecimal string format
+            (accepts string  plaintext parameter)
+            </summary>
+            <param name="toEncrypt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.DecryptFromHex(System.String,System.Int32)">
+            <summary>
+            decrypt hexadecmial string of bytes to original plaintext in bytes
+            Set length to 0 if string to truncate zeroed bytes at end of block
+            </summary>
+            <param name="encryptedHex"></param>
+            <param name="length">lenght of data to return, may use 0 if string</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.DecryptFromHexToString(System.String)">
+            <summary>
+            decrypt hexadecimal string of bytes to original plaintext as string
+            </summary>
+            <param name="encryptedHex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.EncodeAuthorizationHeader(System.String,System.String)">
+            <summary>
+            Concatenate username:password and encode it with Base64 encoding
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.DecodeAuthorizationHeader(System.String,System.String@,System.String@)">
+            <summary>
+            decodes a Base64 string into username and password and returns true
+            only if it is in the format username:password.
+            If not, the decoded Base64 string is returned in username, null in password,
+            and the method returns false
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <param name="headerEncoded"></param>
+        </member>
+        <member name="M:Wve.WveCrypto.CompareFiles(System.String,System.String)">
+            <summary>
+            compare files and return true if same size and bytewise compareson matches.
+            </summary>
+            <param name="file1Path"></param>
+            <param name="file2Path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.CreateRandomSalt(System.Int32)">
+            <summary>
+            CreateRandomSalt: Generates a random salt value of the
+                              specified length.
+                              (from Microsoft Help)
+            </summary>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.CreateRandomDigits(System.Int32)">
+            <summary>
+            make a random string of digits
+            </summary>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveCrypto.ClearBytes(System.Byte[])">
+            <summary>
+            ClearBytes: Clear the bytes in a buffer so they can't
+                      later be read from memory.
+                      (from Microsoft help)
+            </summary>
+            <param name="buffer"></param>
+        </member>
+        <member name="T:Wve.WveDatePicker">
+            <summary>
+            Custom DateTime picker that allows quick entry and editing of dates
+            </summary>
+        </member>
+        <member name="F:Wve.WveDatePicker.toolTipTextForTextbox">
+            <summary>
+            text to show when user rests pointer over control's textbox part
+            </summary>
+        </member>
+        <member name="M:Wve.WveDatePicker.#ctor">
+            <summary>
+            constructor for custom date time picker
+            </summary>
+        </member>
+        <member name="P:Wve.WveDatePicker.Value">
+            <summary>
+            WveDatePicker's value, or DateTime.MinValue to represent 'null'
+            </summary>
+        </member>
+        <member name="M:Wve.WveDatePicker.textBoxDate_Validating(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            occurs when user changes focus from the text box, which will usually
+             be to go to the datetime picker
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Wve.WveDatePicker.dateTimePicker1_ValueChanged(System.Object,System.EventArgs)">
+            <summary>
+            occurs when value set by program or user
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="E:Wve.WveDatePicker.ValueChanged">
+            <summary>
+            value of MM3DatePicker has changed
+            </summary>
+        </member>
+        <member name="M:Wve.WveDatePicker.dateTimePicker1_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            process alpha chars that have special meaning
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Wve.WveDatePicker.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Wve.WveDatePicker.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Wve.WveDatePicker.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Wve.WveDocViewer.DocumentViewer">
+            <summary>
+            user control to view documents
+            </summary>
+        </member>
+        <member name="F:Wve.WveDocViewer.DocumentViewer._documentData">
+            <summary>
+            the data to view
+            </summary>
+        </member>
+        <member name="F:Wve.WveDocViewer.DocumentViewer._documentType">
+            <summary>
+            how to show the document
+            </summary>
+        </member>
+        <member name="F:Wve.WveDocViewer.DocumentViewer._caption">
+            <summary>
+            caption to show in title bar
+            </summary>
+        </member>
+        <member name="P:Wve.WveDocViewer.DocumentViewer.FileName">
+            <summary>
+            name given or to be given to document to show
+            </summary>
+        </member>
+        <member name="M:Wve.WveDocViewer.DocumentViewer.#ctor">
+            <summary>
+            user control to view documents
+            </summary>
+        </member>
+        <member name="M:Wve.WveDocViewer.DocumentViewer.ShowDocument(System.Boolean)">
+            <summary>
+            show currently loaded document if any
+            </summary>
+            <param name="showAsPlaintext">override document type and show as text</param>
+        </member>
+        <member name="M:Wve.WveDocViewer.DocumentViewer.ShowDocument(System.String,System.String,Wve.WveDocViewer.WveDocTypes,System.Boolean)">
+            <summary>
+            show string 
+            </summary>
+            <param name="document"></param>
+            <param name="caption"></param>
+            <param name="doctype">type</param>
+            <param name="showAsPlaintext">if true show as plaintext regardless of doctype</param>
+        </member>
+        <member name="M:Wve.WveDocViewer.DocumentViewer.ShowDocument(System.Byte[],System.String,Wve.WveDocViewer.WveDocTypes,System.Boolean)">
+            <summary>
+            show byte array 
+            </summary>
+            <param name="document"></param>
+            <param name="caption"></param>
+            <param name="doctype">type</param>
+            <param name="showAsPlaintext">if true show as plaintext regardless of doctype</param>
+        </member>
+        <member name="M:Wve.WveDocViewer.DocumentViewer.ShowDocument(System.String,System.String,Wve.WveDocViewer.WveDocTypes)">
+            <summary>
+            show file
+            </summary>
+            <param name="filename"></param>
+            <param name="caption"></param>
+            <param name="doctype"></param>
+        </member>
+        <member name="M:Wve.WveDocViewer.DocumentViewer.ShowDocument(System.IO.Stream,System.String,Wve.WveDocViewer.WveDocTypes)">
+            <summary>
+            show stream
+            </summary>
+            <param name="document"></param>
+            <param name="caption"></param>
+            <param name="doctype"></param>
+        </member>
+        <member name="M:Wve.WveDocViewer.DocumentViewer.resetViewer">
+            <summary>
+            reset controls to invisible and
+            disposes current documentStream
+            </summary>
+        </member>
+        <member name="M:Wve.WveDocViewer.DocumentViewer.Save">
+            <summary>
+            save current document
+            </summary>
+        </member>
+        <member name="M:Wve.WveDocViewer.DocumentViewer.manualDispose(System.Boolean)">
+            <summary>
+            called from dispose() in Designer, this
+            disposes anything disposable we create
+            outside of the designer
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="F:Wve.WveDocViewer.DocumentViewer.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Wve.WveDocViewer.DocumentViewer.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Wve.WveDocViewer.DocumentViewer.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Wve.WveDocViewer.DocumentViewerForm">
+            <summary>
+            form for viewing documents, exposes DocumentViewer1 object
+            </summary>
+        </member>
+        <member name="M:Wve.WveDocViewer.DocumentViewerForm.#ctor">
+            <summary>
+            form for viewing documents, please call DocumentViewer1 methods to use
+            </summary>
+        </member>
+        <member name="F:Wve.WveDocViewer.DocumentViewerForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Wve.WveDocViewer.DocumentViewerForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Wve.WveDocViewer.DocumentViewerForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Wve.WveDocViewer.WveDocViewerClass">
+            <summary>
+            main class
+            </summary>
+        </member>
+        <member name="T:Wve.WveDocViewer.WveDocTypes">
+            <summary>
+            types of documents to view
+            </summary>
+        </member>
+        <member name="F:Wve.WveDocViewer.WveDocTypes.unspecified">
+            <summary>
+            not specified
+            </summary>
+        </member>
+        <member name="F:Wve.WveDocViewer.WveDocTypes.plaintext">
+            <summary>
+            plain text
+            </summary>
+        </member>
+        <member name="F:Wve.WveDocViewer.WveDocTypes.rtf">
+            <summary>
+            rich text format
+            </summary>
+        </member>
+        <member name="F:Wve.WveDocViewer.WveDocTypes.pdf">
+            <summary>
+            pdf
+            </summary>
+        </member>
+        <member name="F:Wve.WveDocViewer.WveDocTypes.html">
+            <summary>
+            hypertext markup lanuage
+            </summary>
+        </member>
+        <member name="F:Wve.WveDocViewer.WveDocTypes.jpeg">
+            <summary>
+            jpeg
+            </summary>
+        </member>
+        <member name="F:Wve.WveDocViewer.WveDocTypes.xml">
+            <summary>
+            xml to show plain
+            </summary>
+        </member>
+        <member name="F:Wve.WveDocViewer.WveDocTypes.ccda">
+            <summary>
+            xml to show as ccda transform to html
+            </summary>
+        </member>
+        <member name="F:Wve.WveDocViewer.WveDocTypes.zip">
+            <summary>
+            zip file
+            </summary>
+        </member>
+        <member name="T:Wve.WveHL7.HL7Reader">
+            <summary>
+            object to read Health Level 7 "vertical bar" formatted messages
+            </summary>
+        </member>
+        <member name="P:Wve.WveHL7.HL7Reader.HeaderSegmentTypes">
+            <summary>
+            array of three character strings representing segment types that should 
+            trigger a HeaderSegmentRead event rather than being assigned to any message,
+            e.g. 'FHS' and 'BHS' for file and batch header segments or 'MSH' for new
+            messages...
+            </summary>
+        </member>
+        <member name="P:Wve.WveHL7.HL7Reader.InputStream">
+            <summary>
+            the stream to read from
+            </summary>
+        </member>
+        <member name="P:Wve.WveHL7.HL7Reader.LinesRead">
+            <summary>
+            number of lines read from the stream and assigned to
+            HL7 messages.  This does not include the first line of the
+            next message to be processed even though it may have been 
+            read from the stream to find out it begins a new msg
+            </summary>
+        </member>
+        <member name="P:Wve.WveHL7.HL7Reader.MessagesRead">
+            <summary>
+            number of messages being read and sent to the MessageRead handlers.
+            This is set upon reading the first line (segment) of a message
+            </summary>
+        </member>
+        <member name="F:Wve.WveHL7.HL7Reader.Cancel">
+            <summary>
+            set to true to interrupt reading before next line is processed
+            </summary>
+        </member>
+        <member name="E:Wve.WveHL7.HL7Reader.MessageRead">
+            <summary>
+            Event raised after each message is completely read
+            </summary>
+        </member>
+        <member name="E:Wve.WveHL7.HL7Reader.HeaderSegmentRead">
+            <summary>
+            evnet raised after reading a segment that's not involved in a message,
+            which is presumably a file header or batch header segment
+            </summary>
+        </member>
+        <member name="M:Wve.WveHL7.HL7Reader.#ctor(System.IO.TextReader)">
+            <summary>
+            object to read HL7
+            </summary>
+            <param name="inputStream">a streamreader or stringreader</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveHL7.HL7Reader.#ctor(System.String)">
+            <summary>
+            object to read HL7
+            </summary>
+            <param name="hl7File"></param>
+        </member>
+        <member name="M:Wve.WveHL7.HL7Reader.ReadFile(System.String@)">
+            <summary>
+            read from the HL7Reader's data stream and call the HeaderRead event after
+            any header or non-message segements are read, and MessageRead event  after
+            each message is completely read; returning true if read to 
+            end of stream without major errors
+            </summary>
+            <param name="errors">messages generated from reading, including exceptions</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveHL7.HL7Reader.Close">
+            <summary>
+            explicitly close (dispose)
+            </summary>
+        </member>
+        <member name="M:Wve.WveHL7.HL7Reader.Dispose">
+            <summary>
+            explicitly dispose
+            </summary>
+        </member>
+        <member name="M:Wve.WveHL7.HL7Reader.Finalize">
+            <summary>
+            destructor
+            </summary>
+        </member>
+        <member name="M:Wve.WveHL7.HL7Reader.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing">true if code is calling Dispose() or 
+            Close() but false if CLR is finalizing</param>
+        </member>
+        <member name="T:Wve.WveHL7.HL7HeaderSegmentReadEventArgs">
+            <summary>
+            args for the HL7Reader HeaderSegmentRead event
+            </summary>
+        </member>
+        <member name="P:Wve.WveHL7.HL7HeaderSegmentReadEventArgs.seg">
+            <summary>
+            the segment that was read
+            </summary>
+        </member>
+        <member name="F:Wve.WveHL7.HL7HeaderSegmentReadEventArgs.Cancel">
+            <summary>
+            set this to true to cancel further reading
+            </summary>
+        </member>
+        <member name="F:Wve.WveHL7.HL7HeaderSegmentReadEventArgs.Success">
+            <summary>
+            handler should sset to true if succeeded without 
+            serious error
+            </summary>
+        </member>
+        <member name="M:Wve.WveHL7.HL7HeaderSegmentReadEventArgs.#ctor(Wve.WveHL7.Segment)">
+            <summary>
+            args for the HL7Reader HeaderSegmentRead event
+            </summary>
+            <param name="seg"></param>
+        </member>
+        <member name="T:Wve.WveHL7.HL7MessageReadEventArgs">
+            <summary>
+            args for HL7Reader MessageRead event
+            </summary>
+        </member>
+        <member name="P:Wve.WveHL7.HL7MessageReadEventArgs.Msg">
+            <summary>
+            The HL7 Message involved
+            </summary>
+        </member>
+        <member name="F:Wve.WveHL7.HL7MessageReadEventArgs.Cancel">
+            <summary>
+            set to true to cancel further reading 
+            </summary>
+        </member>
+        <member name="F:Wve.WveHL7.HL7MessageReadEventArgs.Success">
+            <summary>
+            handler should sset to true if succeeded without 
+            serious error
+            </summary>
+        </member>
+        <member name="F:Wve.WveHL7.HL7MessageReadEventArgs.Comments">
+            <summary>
+            comments may be sent from sender or receiver back to sender
+            </summary>
+        </member>
+        <member name="M:Wve.WveHL7.HL7MessageReadEventArgs.#ctor(Wve.WveHL7.Message)">
+            <summary>
+            args for HL7Reader MessgeRead event
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="T:Wve.WveHL7.HL7SeparatorChars">
+            <summary>
+            characters used to separate parts of an HL7 Message
+            </summary>
+        </member>
+        <member name="F:Wve.WveHL7.HL7SeparatorChars.FieldSeparator">
+            <summary>
+            character to separate fields within a segment
+            </summary>
+        </member>
+        <member name="F:Wve.WveHL7.HL7SeparatorChars.ComponentSeparator">
+            <summary>
+            character to separate components within a field
+            </summary>
+        </member>
+        <member name="F:Wve.WveHL7.HL7SeparatorChars.RepetitionCharacter">
+            <summary>
+            character to separate repetition in fields
+            </summary>
+        </member>
+        <member name="F:Wve.WveHL7.HL7SeparatorChars.EscapeCharacter">
+            <summary>
+            preceeds special characters to make them interpreted literally
+            </summary>
+        </member>
+        <member name="F:Wve.WveHL7.HL7SeparatorChars.SubComponentSeparator">
+            <summary>
+            character to separate sub-components
+            </summary>
+        </member>
+        <member name="T:Wve.WveHL7.Message">
+            <summary>
+            the basic transmission unit in HL7, made up of Segments
+            </summary>
+        </member>
+        <member name="P:Wve.WveHL7.Message.Value">
+            <summary>
+            the whole message string, or empty if not set
+            </summary>
+        </member>
+        <member name="F:Wve.WveHL7.Message.Segments">
+            <summary>
+            the segments or lines of text in a message
+            </summary>
+        </member>
+        <member name="M:Wve.WveHL7.Message.StripEscapes(System.String,System.Char)">
+            <summary>
+            strip unpaired escape characters from string
+            </summary>
+            <param name="rawValue"></param>
+            <param name="escapeCharacter"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wve.WveHL7.Segment">
+            <summary>
+            the HL7 Segement is a line of text in a message
+            </summary>
+        </member>
+        <member name="P:Wve.WveHL7.Segment.SegmentType">
+            <summary>
+            3 letter type of segment or null if not set
+            (essentially always the first 3 chars of the line of text)
+            </summary>
+        </member>
+        <member name="F:Wve.WveHL7.Segment.SepChars">
+            <summary>
+            chars that separate parts of hl7 data
+            </summary>
+        </member>
+        <member name="M:Wve.WveHL7.Segment.Value(System.Boolean)">
+            <summary>
+            the whole text  which may  include escape characters
+            unless stripped
+            </summary>
+            <param name="stripEscChars">normally set to true unless you
+            plan to manually subdivide by special characters</param>
+        </member>
+        <member name="P:Wve.WveHL7.Segment.FieldGroups">
+            <summary>
+            ZERO-BASED Array of arrays of Fields which may be repeating.  Note 
+            the Segment's Field x is FieldGroups[x-1] in the MSH segment!.
+            </summary>
+        </member>
+        <member name="M:Wve.WveHL7.Segment.#ctor(System.String,Wve.WveHL7.HL7SeparatorChars)">
+            <summary>
+            segment (line) of data from hl7 data
+            </summary>
+            <param name="value"></param>
+            <param name="sepChars"></param>
+        </member>
+        <member name="T:Wve.WveHL7.FieldGroup">
+            <summary>
+            group of fields occupying a single sequence number in a segment;
+            i.e. a single field or group of repeating fields
+            </summary>
+        </member>
+        <member name="M:Wve.WveHL7.FieldGroup.Value(System.Boolean)">
+            <summary>
+            the whole text  which may  include escape characters
+            unless stripped
+            </summary>
+            <param name="stripEscChars">normally set to true unless you
+            plan to manually subdivide by special characters</param>
+        </member>
+        <member name="F:Wve.WveHL7.FieldGroup.SepChars">
+            <summary>
+            separation chars
+            </summary>
+        </member>
+        <member name="P:Wve.WveHL7.FieldGroup.Fields">
+            <summary>
+            zero based array of fields in the group
+            </summary>
+        </member>
+        <member name="M:Wve.WveHL7.FieldGroup.#ctor(System.String,Wve.WveHL7.HL7SeparatorChars)">
+            <summary>
+            group of fields in one sequence position in a segment (line);
+            may be one field or repeating fields.
+            </summary>
+            <param name="value"></param>
+            <param name="sepChars"></param>
+        </member>
+        <member name="T:Wve.WveHL7.Field">
+            <summary>
+            a subdivision of a Message Segment
+            </summary>
+        </member>
+        <member name="M:Wve.WveHL7.Field.Value(System.Boolean)">
+            <summary>
+            the whole text  which may  include escape characters
+            unless stripped
+            </summary>
+            <param name="stripEscChars">normally set to true unless you
+            plan to manually subdivide by special characters</param>
+        </member>
+        <member name="F:Wve.WveHL7.Field.SepChars">
+            <summary>
+            separation chars
+            </summary>
+        </member>
+        <member name="F:Wve.WveHL7.Field._components">
+            <summary>
+            zero-based array of components, empty if not set
+            </summary>
+        </member>
+        <member name="P:Wve.WveHL7.Field.Components">
+            <summary>
+            zero based array of components in the field
+            </summary>
+        </member>
+        <member name="M:Wve.WveHL7.Field.#ctor(System.String,Wve.WveHL7.HL7SeparatorChars)">
+             <summary>
+             create field with given value;  
+             </summary>
+             <param name="rawValue">the string value of whole field, including
+             any components and escape chars</param>
+            <param name="sepChars"></param>
+        </member>
+        <member name="T:Wve.WveHL7.Component">
+            <summary>
+            a subdivision of a Message Segment Field
+            </summary>
+        </member>
+        <member name="M:Wve.WveHL7.Component.Value(System.Boolean)">
+            <summary>
+            the whole text  which may  include escape characters
+            unless stripped
+            </summary>
+            <param name="stripEscChars">normally set to true unless you
+            plan to manually subdivide by special characters</param>
+        </member>
+        <member name="F:Wve.WveHL7.Component.SepChars">
+            <summary>
+            separation chars
+            </summary>
+        </member>
+        <member name="F:Wve.WveHL7.Component._subComponents">
+            <summary>
+            zero-based array of sub components,  empty if not set
+            </summary>
+        </member>
+        <member name="P:Wve.WveHL7.Component.SubComponents">
+            <summary>
+            zero based array of sub components in the component
+            </summary>
+        </member>
+        <member name="M:Wve.WveHL7.Component.#ctor(System.String,Wve.WveHL7.HL7SeparatorChars)">
+            <summary>
+            component of a field
+            </summary>
+            <param name="value"></param>
+            <param name="sepChars"></param>
+        </member>
+        <member name="T:Wve.WveHL7.SubComponent">
+            <summary>
+            a subdivision of a Message Segment Field Component
+            </summary>
+        </member>
+        <member name="M:Wve.WveHL7.SubComponent.Value(System.Boolean)">
+            <summary>
+            the whole text  which may  include escape characters
+            unless stripped
+            </summary>
+            <param name="stripEscChars">normally set to true unless you
+            plan to manually subdivide by special characters</param>
+        </member>
+        <member name="F:Wve.WveHL7.SubComponent.SepChars">
+            <summary>
+            separation chars
+            </summary>
+        </member>
+        <member name="M:Wve.WveHL7.SubComponent.#ctor(System.String,Wve.WveHL7.HL7SeparatorChars)">
+            <summary>
+            sub component of component
+            </summary>
+            <param name="value"></param>
+            <param name="sepChars"></param>
+        </member>
+        <member name="T:Wve.WveItem">
+            <summary>
+            Generic item containing text, 3 tags (strings) and one object
+            </summary>
+        </member>
+        <member name="M:Wve.WveItem.#ctor(System.String,System.String)">
+            <summary>
+            first of four constructor overloads:  one text, one tag
+            </summary>
+            <param name="Text"></param>
+            <param name="Tag"></param>
+        </member>
+        <member name="M:Wve.WveItem.#ctor(System.String,System.String,System.String)">
+            <summary>
+            second of four contstructor overloads: one text, two tags
+            </summary>
+            <param name="Text"></param>
+            <param name="Tag"></param>
+            <param name="Tag2"></param>
+        </member>
+        <member name="M:Wve.WveItem.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            third of four constructor overloads: one text, three tags
+            </summary>
+            <param name="Text"></param>
+            <param name="Tag"></param>
+            <param name="Tag2"></param>
+            <param name="Tag3"></param>
+        </member>
+        <member name="M:Wve.WveItem.#ctor(System.String,System.Object)">
+            <summary>
+            fourth of four constructor overloads: one text, one object
+            </summary>
+            <param name="Text"></param>
+            <param name="WObject"></param>
+        </member>
+        <member name="P:Wve.WveItem.Text">
+            <summary>
+            text
+            </summary>
+        </member>
+        <member name="P:Wve.WveItem.Tag">
+            <summary>
+            first string tag
+            </summary>
+        </member>
+        <member name="P:Wve.WveItem.Tag2">
+            <summary>
+            second string tag
+            </summary>
+        </member>
+        <member name="P:Wve.WveItem.Tag3">
+            <summary>
+            third string tag
+            </summary>
+        </member>
+        <member name="P:Wve.WveItem.WObject">
+            <summary>
+            an object tag
+            </summary>
+        </member>
+        <member name="M:Wve.WveItem.ToString">
+            <summary>
+            returns text property
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Wve.RichTextBoxEx">
+            <summary>
+            An extension for RichTextBox suitable for printing.
+            This is adapted from MSDN example called 
+            Getting WYSIWYG Print Results from a .NET RichTextBox
+            http://msdn2.microsoft.com/en-us/library/ms996492.aspx
+            author Martin Muller at 4voice_AG www.4voice.de
+            martin.h.mueller@t-online.de
+            Print using PrintRTF.cs
+            </summary>
+        </member>
+        <member name="M:Wve.RichTextBoxEx.FormatRange(System.Boolean,System.Drawing.Printing.PrintPageEventArgs,System.Int32,System.Int32)">
+            <summary>
+            Calculate or render the contents of our RichTextBox for printing
+            </summary>
+            <param name="measureOnly">If true, only the calculation is performed,
+            otherwise the text is rendered as well</param>
+            <param name="e">The PrintPageEventArgs object from the
+            PrintPage event</param>
+            <param name="charFrom">Index of first character to be printed</param>
+            <param name="charTo">Index of last character to be printed</param>
+            <returns>(Index of last character that fitted on the
+            page) + 1</returns>
+        </member>
+        <member name="M:Wve.RichTextBoxEx.HundredthInchToTwips(System.Int32)">
+            <summary>
+            Convert between 1/100 inch (unit used by the .NET framework)
+            and twips (1/1440 inch, used by Win32 API calls)
+            </summary>
+            <param name="n">Value in 1/100 inch</param>
+            <returns>Value in twips</returns>
+        </member>
+        <member name="M:Wve.RichTextBoxEx.FormatRangeDone">
+            <summary>
+            Free cached data from rich edit control after printing
+            </summary>
+        </member>
+        <member name="M:Wve.RichTextBoxEx.SetSelectionFont(System.String)">
+            <summary>
+            Sets the font only for the selected part of the rich text box
+            without modifying the other properties like size or style
+            </summary>
+            <param name="face">Name of the font to use</param>
+            <returns>true on success, false on failure</returns>
+        </member>
+        <member name="M:Wve.RichTextBoxEx.SetSelectionSize(System.Int32)">
+            <summary>
+            Sets the font size only for the selected part of the rich text box
+            without modifying the other properties like font or style
+            </summary>
+            <param name="size">new point size to use</param>
+            <returns>true on success, false on failure</returns>
+        </member>
+        <member name="M:Wve.RichTextBoxEx.SetSelectionBold(System.Boolean)">
+            <summary>
+            Sets the bold style only for the selected part of the rich text box
+            without modifying the other properties like font or size
+            </summary>
+            <param name="bold">make selection bold (true) or regular (false)</param>
+            <returns>true on success, false on failure</returns>
+        </member>
+        <member name="M:Wve.RichTextBoxEx.SetSelectionItalic(System.Boolean)">
+            <summary>
+            Sets the italic style only for the selected part of the rich text box
+            without modifying the other properties like font or size
+            </summary>
+            <param name="italic">make selection italic (true) or regular (false)</param>
+            <returns>true on success, false on failure</returns>
+        </member>
+        <member name="M:Wve.RichTextBoxEx.SetSelectionUnderlined(System.Boolean)">
+            <summary>
+            Sets the underlined style only for the selected part of the rich text box
+            without modifying the other properties like font or size
+            </summary>
+            <param name="underlined">make selection underlined (true) or regular (false)</param>
+            <returns>true on success, false on failure</returns>
+        </member>
+        <member name="M:Wve.RichTextBoxEx.SetSelectionStyle(System.UInt32,System.UInt32)">
+            <summary>
+            Set the style only for the selected part of the rich text box
+            with the possibility to mask out some styles that are not to be modified
+            </summary>
+            <param name="mask">modify which styles?</param>
+            <param name="effect">new values for the styles</param>
+            <returns>true on success, false on failure</returns>
+        </member>
+        <member name="T:Wve.PrintRTF">
+            <summary>
+            Object for printing rich text
+            Some of this code is adapted from MSDN example called 
+            Getting WYSIWYG Print Results from a .NET RichTextBox
+            http://msdn2.microsoft.com/en-us/library/ms996492.aspx
+            author Martin Muller at 4voice_AG www.4voice.de
+            martin.h.mueller@t-online.de
+            </summary>
+        </member>
+        <member name="F:Wve.PrintRTF.richTextBoxEx">
+            <summary>
+            extended rich text box control from msdn example
+            </summary>
+        </member>
+        <member name="F:Wve.PrintRTF.printDocument">
+            <summary>
+            PrintDocument to print
+            </summary>
+        </member>
+        <member name="F:Wve.PrintRTF.m_nFirstCharOnPage">
+            <summary>
+            offset of first character to start printing from
+            </summary>
+        </member>
+        <member name="M:Wve.PrintRTF.#ctor(System.String,System.Drawing.Printing.PrintDocument)">
+            <summary>
+            Print the rich text via the given PrintDocument, 
+            which should not have print event handlers pre-defined!
+            </summary>
+            <param name="rtf">text to print.  Prints plaintext if doesn't start like rtf, but
+            throws exception if looks like rtf but has errors in it.</param>
+            <param name="printDocument"></param>
+        </member>
+        <member name="M:Wve.PrintRTF.#ctor(Wve.RichTextBoxEx,System.Drawing.Printing.PrintDocument)">
+            <summary>
+            print the contents of given extended rich text box 
+             to the given
+            PrintDocument
+            </summary>
+            <param name="richTextBoxEx">(created my Martin Muller for MSDN, 
+            defined locally 
+            in Wve.dll as Wve.RichTextBoxEx)</param>
+            <param name="printDocument"></param>
+        </member>
+        <member name="M:Wve.PrintRTF.commonConstructor">
+            <summary>
+            called by any constructors once they have established a printDocument
+            </summary>
+        </member>
+        <member name="M:Wve.PrintRTF.Print">
+            <summary>
+            print the existing document
+            </summary>
+        </member>
+        <member name="M:Wve.PrintRTF.Print(System.Windows.Forms.PrintDialog)">
+            <summary>
+            print the existing document with preview dialog
+            </summary>
+            <param name="dlg"></param>
+        </member>
+        <member name="T:Wve.WveRtfStuff">
+            <summary>
+            some tools for working with rtf
+            </summary>
+        </member>
+        <member name="M:Wve.WveRtfStuff.SetLeadingAndTrailingPars(System.Windows.Forms.RichTextBox,System.Int32,System.Int32)">
+            <summary>
+            sets number of leading and trailing paragraphs
+            (i.e. carriage returns) in the RichTextBox's text
+            </summary>
+            <param name="rtb"></param>
+            <param name="leadingPars"></param>
+            <param name="trailingPars"></param>
+        </member>
+        <member name="M:Wve.WveRtfStuff.IsRtf(System.String)">
+            <summary>
+            true if material looks like rich text
+            formatted text
+            </summary>
+            <param name="material"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveRtfStuff.InsertRtf(System.Windows.Forms.RichTextBox,System.String)">
+            <summary>
+            insert material into current cursor position
+            of rich text box, as RTF if looks like rtf, or 
+            as text if not.  Returns true if was inserted as rtf
+            </summary>
+            <param name="rtbox"></param>
+            <param name="material"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveRtfStuff.AppendRtf(System.Windows.Forms.RichTextBox,System.String)">
+            <summary>
+            appends specified text material into rich text box; as
+            rtf if it is valid rtf material, or as text if not, returning
+            bool to indicate if the material was loaded as rtf
+            </summary>
+            <param name="rtbox"></param>
+            <param name="material"></param>
+            <returns>true if material loaded as rtf</returns>
+        </member>
+        <member name="M:Wve.WveRtfStuff.AppendImageToRtb(System.Drawing.Image,System.Windows.Forms.RichTextBox)">
+            <summary>
+            insert given image into rich text box at SelectedRTF insertion point
+            </summary>
+            <param name="img"></param>
+            <param name="rtb"></param>
+        </member>
+        <member name="T:Wve.WveNetwork">
+            <summary>
+            tools for working with networks
+            </summary>
+        </member>
+        <member name="M:Wve.WveNetwork.IsNetworkAvailable">
+            <summary>
+            This is adapted from a Code Project article called
+            Detect Internet Network Availability By stevenmcohn.
+            Evaluate the online network adapters to determine if at least one of them
+            is capable of connecting to the Internet.
+            (Note it still reports true if we're connected to a network that isn't 
+            itself connected to the Internet)
+            His project includes event handlers to keep updated a bool value to indicate
+            connectivity for rapid response to caller.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Wve.WveServUtil.EditTaskScheduleForm">
+            <summary>
+            edit a task's schedule members
+            </summary>
+        </member>
+        <member name="F:Wve.WveServUtil.EditTaskScheduleForm.ignoreChangeEvents">
+            <summary>
+            can temporarily set to true to select a property of a control without 
+            firing its _Change() event delegate
+            </summary>
+        </member>
+        <member name="P:Wve.WveServUtil.EditTaskScheduleForm.TaskEdited">
+            <summary>
+            new instance of the task to which changes
+            made on this form are applied
+            </summary>
+        </member>
+        <member name="M:Wve.WveServUtil.EditTaskScheduleForm.#ctor(Wve.WveServUtil.Task)">
+            <summary>
+            edit a task's schedule members
+            </summary>
+            <param name="taskToEdit"></param>
+        </member>
+        <member name="M:Wve.WveServUtil.EditTaskScheduleForm.EditTaskSchedule_Load(System.Object,System.EventArgs)">
+            <summary>
+            when first loading form
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Wve.WveServUtil.EditTaskScheduleForm.loadControls">
+            <summary>
+            load controls w values from task to edit
+            </summary>
+        </member>
+        <member name="M:Wve.WveServUtil.EditTaskScheduleForm.selectDay(System.String)">
+            <summary>
+            select day of week on combobox
+            </summary>
+            <param name="dayToMatch"></param>
+        </member>
+        <member name="M:Wve.WveServUtil.EditTaskScheduleForm.buttonCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            cancel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Wve.WveServUtil.EditTaskScheduleForm.buttonOK_Click(System.Object,System.EventArgs)">
+            <summary>
+            apply changes to taskEdited and close
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Wve.WveServUtil.EditTaskScheduleForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Wve.WveServUtil.EditTaskScheduleForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Wve.WveServUtil.EditTaskScheduleForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Wve.WveServUtil.Task">
+            <summary>
+            database server utilities task to be 
+            done by one (and only one) of three schedules: 
+            by time interval,
+            time of day,
+            or by day of week
+            </summary>
+        </member>
+        <member name="F:Wve.WveServUtil.Task.Name">
+            <summary>
+            short name to identify the task
+            </summary>
+        </member>
+        <member name="F:Wve.WveServUtil.Task.Comment">
+            <summary>
+            optional description of task;  
+            Plain tasks can use 
+            run="programName" to run a program
+            </summary>
+        </member>
+        <member name="F:Wve.WveServUtil.Task.TimeToEnable">
+            <summary>
+            Time before which task will not run, or 
+            DateTime.FromDays(0) to ignore timeToEnable
+            </summary>
+        </member>
+        <member name="F:Wve.WveServUtil.Task.TimeToDisable">
+            <summary>
+            Time of day after which task won't run, or
+            DateTime.FromDays(1) to ignore TimeToDisable
+            </summary>
+        </member>
+        <member name="F:Wve.WveServUtil.Task.DoByInterval">
+            <summary>
+            If true task is to be done when interval from 
+            WhenLastDone to now is greater than 
+            IntervalToDo 
+            (and time to enable/disable allows)
+            </summary>
+        </member>
+        <member name="F:Wve.WveServUtil.Task.WhenLastDone">
+            <summary>
+            When Task was last done, or DateTime.MinValue if not
+            </summary>
+        </member>
+        <member name="F:Wve.WveServUtil.Task.IntervalToDo">
+            <summary>
+            interval from WhenLastDone when task should be done
+            again (if DoByInterval is true and 
+            time to enable/disable allows)
+            </summary>
+        </member>
+        <member name="F:Wve.WveServUtil.Task.DoDaily">
+            <summary>
+            if true task is to be done daily at TimeToDo 
+            (if time to enable/disable allows)
+            </summary>
+        </member>
+        <member name="F:Wve.WveServUtil.Task.TimeToDo">
+            <summary>
+            Time of day task is to be done 
+            (if DoDaily or DoWeekly is true 
+            and time to enable/disable allows)
+            </summary>
+        </member>
+        <member name="F:Wve.WveServUtil.Task.DoWeekly">
+            <summary>
+            if true task is to be done weekly on the day
+            DayToDo and time TimeToDo
+            </summary>
+        </member>
+        <member name="F:Wve.WveServUtil.Task.DayToDo">
+            <summary>
+            Day of week to do task if DoWeekly is true
+            </summary>
+        </member>
+        <member name="M:Wve.WveServUtil.Task.ToString">
+            <summary>
+            returns the name of the task
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Wve.WveServUtil.Task.ScheduleDescription">
+            <summary>
+            text description of when should be done
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveServUtil.Task.ToXml">
+            <summary>
+            serialize members of this base class to xml format
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveServUtil.Task.appendNode(System.Xml.XmlElement,System.String,System.String)">
+            <summary>
+            creates an XmlElement with name and innertext given
+            and appends it to the parent
+            WARNING: nodeName must be a legal XML element name
+            with no spaces or punctuation
+            </summary>
+            <param name="parentNode"></param>
+            <param name="nodeName"></param>
+            <param name="nodeValue"></param>
+        </member>
+        <member name="M:Wve.WveServUtil.Task.FromXml(System.Xml.XmlElement)">
+            <summary>
+            read task from the XmlDocument 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveServUtil.Task.IsDueNow(System.DateTime,System.Boolean)">
+            <summary>
+            looks at only one of three schedule types and 
+            returns true if task is due at the datetime 'now', 
+            according to that schedule.
+            Looks for DoByInterval first, then DoDaily and DoWeekly.
+            Will always return false if now is before TimeToEnable 
+            or after TimeToDisable.
+            </summary>
+            <param name="now">The time we are asking if task is due for,
+            which typically should be DateTime.Now</param>
+            <param name="resetWhenLastDone">if true calling this method
+            will reset WhenLastDone to now, 
+            which affects future calls to this 
+            method.  
+            If false, just peeks without changing it</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveServUtil.Task.Clone">
+            <summary>
+            provides a deep (same as shallow) clone of this object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Wve.WveServUtil.SQLCmdTask">
+            <summary>
+            a databse task consisting of a T-SQL Command to issue
+            </summary>
+        </member>
+        <member name="F:Wve.WveServUtil.SQLCmdTask.CommandText">
+            <summary>
+            the T-SQL command text to execute
+            </summary>
+        </member>
+        <member name="F:Wve.WveServUtil.SQLCmdTask.TypeOfCommand">
+            <summary>
+            What CommandText is, e.g. t-SQL Text or Stored Procedure name
+            </summary>
+        </member>
+        <member name="M:Wve.WveServUtil.SQLCmdTask.ToXml">
+            <summary>
+            serialize the task to xml format
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveServUtil.SQLCmdTask.Clone">
+            <summary>
+            provides deep (same as shallow) clone of this object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Wve.WveServUtil.FileXferTask">
+            <summary>
+            a task consisting of a source and destination to copy a
+            file from and to.
+            </summary>
+        </member>
+        <member name="F:Wve.WveServUtil.FileXferTask.SourcePathAndName">
+            <summary>
+            filename including path of source to copy from
+            </summary>
+        </member>
+        <member name="F:Wve.WveServUtil.FileXferTask.DestinationPathAndName">
+            <summary>
+            filename including path of destination to copy to
+            </summary>
+        </member>
+        <member name="M:Wve.WveServUtil.FileXferTask.ToXml">
+            <summary>
+            serialize the task to xml format
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveServUtil.FileXferTask.Clone">
+            <summary>
+            provides deep (same as shallow) clone of this object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Wve.WveTools">
+            <summary>
+            some utilities
+            </summary>
+        </member>
+        <member name="M:Wve.WveTools.GetRandomNumber">
+            <summary>
+            returns a random double number between 0 and 1
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.GetRandomNumber(System.Int32)">
+            <summary>
+            forces regeneration of the Random class
+            with given seed, then returns the first
+            double between 0 and 1
+            </summary>
+            <param name="seed"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.IsInteger(System.String)">
+            <summary>
+            true if string is one or more digits
+            allows minus sign and trimming
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.FormatPhoneNumber(System.String)">
+            <summary>
+            formats a 7 and 10 digit number into phone number
+            format, or else returns unchanged string
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.ByteArraysMatch(System.Byte[],System.Byte[])">
+            <summary>
+            returns true if byte arrays are of same length
+            and each byte is equal
+            </summary>
+            <param name="first"></param>
+            <param name="second"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.AgeYears(System.DateTime,System.DateTime)">
+            <summary>
+            returns the age in years of someone with 
+            given date of birth.  Use TargetDate = DateTime.Today
+            to find age today.
+            </summary>
+            <param name="DOB"></param>
+            <param name="TargetDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.AgeYearsFloat(System.DateTime,System.DateTime)">
+            <summary>
+            years, including fraction of years, from DOB til TargetDate,
+            or float.MinValue if TargetDate is before date of birth
+            </summary>
+            <param name="DOB"></param>
+            <param name="TargetDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.AgeString(System.DateTime,System.DateTime,System.Boolean)">
+            <summary>
+            get age from dob to targetDate, shown either as 
+            'err' if target before dob or  'decsd' if dead
+            or else an integer followed
+            by y,m or d
+            </summary>
+            <param name="dob"></param>
+            <param name="targetDate"></param>
+            <param name="isDeceased"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.AgeString(System.DateTime,System.DateTime)">
+            <summary>
+            get age from dob to targetDate, shown either as 
+            'err' if target before dob or else an integer followed
+            by y,m or d 
+            </summary>
+            <param name="dob"></param>
+            <param name="targetDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.DateToHL7(System.DateTime,System.Char,System.Int32)">
+            <summary>
+            date in HL7 TS (timestamp) format which conforms to
+            ISO 8824-1987(E) sort of... 
+            YYYY[MM[DD[HHMM[SS]]]][+ZZZZ]
+            </summary>
+            <param name="date"></param>
+            <param name="precision">YMDhms</param>
+            <param name="timezone">int.MinValue for not specified, or
+            -6 for Eastern Standard, 0 for GMT.  Ignores integers
+            outside of range from -23 to 23</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.DateToSureScripts(System.DateTime,System.Int32,System.Boolean)">
+            <summary>
+            SureScripts XML DateTime format YYYY-MM-DDT12:00:00-05:00 for example, 
+            for surescripts UtcDate specify convertToUTC
+            </summary>
+            <param name="date"></param>
+            <param name="precision"></param>
+            <param name="timezone">significant ONLY if convertToUTC is false!</param>
+            <param name="convertToUTC">if true, converts to zulu time - OVERRIDES and IGNORES 
+            timezone value.  If you send a date that is already in UTC, just give it a 
+            timezone value of zero and leave convertToUTC false.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.DateToXMLSchema(System.DateTimeOffset,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            W3C XML Schema DateTime format YYYY-MM-DDT12:00:00.000-05:00 for example, 
+            for SureScripts UtcDate as well as SAML DateTime specify convertToUTC
+            </summary>
+            <param name="date"></param>
+            <param name="precision"></param>
+            <param name="timezone">significant ONLY if convertToUTC is false!</param>
+            <param name="convertToUTC">if true, converts value to zulu time - OVERRIDES and IGNORES 
+            timezone value.  If you send a date that is already in UTC, you can give it a 
+            timezone value of zero and leave convertToUTC false.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.DateTimeToCompactString(System.DateTime)">
+            <summary>
+            e.g. 20091109_115959
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.DateTimeFromCompactString(System.String)">
+            <summary>
+            from string generated by DateTimeToCompactString(),
+            e.g. 20091109_115959
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.SSN(System.Int32)">
+            <summary>
+            creates string representation of social security number
+            or empty string if int.MinValue or negative
+            </summary>
+            <param name="ssnInt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.SSNLast4(System.Int32)">
+            <summary>
+            returns the last four digits of integer, padded with
+            zeros if needed, to be used as last 4 digits of SSN.
+            Returns 'unkn' if ssnInt is negative
+            </summary>
+            <param name="ssnInt">integer representing last 4 digits.  If 
+            longer than 4 digits only the last 4 are included</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.DeepCloneObject``1(``0)">
+            <summary>
+            deeply clone an object that is serializable and cloneable
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.SerializeToBytes``1(``0)">
+            <summary>
+            serialize a serializable object to a byte array
+            or null if error
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.DeserializeFromBytes``1(System.Byte[])">
+            <summary>
+            return the object that was serialized in given byte array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="serialBytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.RemoveArrayItem``1(``0[],System.Int32)">
+            <summary>
+            remove item at given index and return array that is one
+            item shorter if index was found, or throws exception
+            if index out of range.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="original"></param>
+            <param name="removeAt">zero based index of item to remove</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.InsertArrayItem``1(``0[],``0,System.Int32)">
+            <summary>
+            insert new item at requested index position or raise
+            error if out of range
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="original">original array</param>
+            <param name="newItem">new item to insert</param>
+            <param name="insertAt">zero based index of position to insert item</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.GetColorFromName(System.String)">
+            <summary>
+            returns a color with the given name,
+            or black if can't tell
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.IntToTextUnder20(System.Int32)">
+            <summary>
+            text representation of integer under 20, 
+            or null if > 20 or negative
+            </summary>
+            <param name="integer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.IntToTextUnder100(System.Int32)">
+            <summary>
+            text representation of positive integers between 
+            0 and 99, inclusive, or null if outside range
+            </summary>
+            <param name="integer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.IntToTextUnder1000(System.Int32)">
+            <summary>
+            text representation of positive integer under 1000,
+            or null if negative or > 999.
+            </summary>
+            <param name="integer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.SizeStringWithBuffer(System.Int32,System.String)">
+            <summary>
+            trim or extend string to given size including a 
+            one-character buffer at the end (which is either a space
+            if string fits or '>' if truncated)
+            </summary>
+            <param name="size">full size including the single buffer char
+            at the end</param>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.AlphaNumToInt(System.Char)">
+            <summary>
+            maps available single character tokens (0-9,A-Z, a-z)
+            to integers (0-61), 
+            but returns int.MinValue (representing not-defined) if token
+            is char '@' or other non-alphanumeric character.
+            (char overload)
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.AlphaNumToInt(System.String)">
+            <summary>
+            maps available single character tokens (0-9,A-Z, a-z)
+            to integers (0-61), 
+            but returns int.MinValue (representing not-defined) if token
+            is char '@' or other non-alphanumeric character.
+            (string overload interprets only first char of string)
+            </summary>
+            <param name="tokenString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.IntToAlphaNum(System.Int32)">
+            <summary>
+            maps available single character tokens (A-Z, a-z)
+            to integers(0-51), 
+            but returns '@' representing not-defined or null if ordinal outside the 
+            allowed range.  
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.GetBuildDateTime(System.Version)">
+            <summary>
+            returns the date and time an assembly was built, if
+            the build and revision parts of the version values
+            look like they were generated by the default method
+            that calculates them from days and duple seconds 
+            or DateTime.MinValue if not
+            </summary>
+            <param name="ver">The assembly's version</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.ColumnExists(System.Data.SqlClient.SqlDataReader,System.String)">
+            <summary>
+            useful utility to check to see if a column exists to avoid error
+            when trying to read from it with reader["MyColumnName"]
+            </summary>
+            <param name="reader"></param>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.GroomStringForFileName(System.String)">
+            <summary>
+            return substring of only teh characters and numbers of a string 
+            or periods or hyphens or underlines
+            </summary>
+            <param name="rawName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.AsciiToHex(System.String,System.String)">
+            <summary>
+            converts string to hexadecimal representation of its ascii chars
+            </summary>
+            <param name="ascii"></param>
+            <param name="delimiter">delimiter between hex two char bytes, 
+            or string.Empty to run them all together</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.AsciiBytesToString(System.Byte[])">
+            <summary>
+            return string from bytes, assuming bytes are in ASCII
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.BytesToHex(System.Byte[],System.String)">
+            <summary>
+            return hexadecimal representation of byte array, optionally with
+            delimiter between each two character byte 
+            </summary>
+            <param name="byteArray">array of bytes to conver to hex string</param>
+            <param name="delimiter">delimiter to insert between bytes, or
+            string.Empty for none</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.HexStringToByteArray(System.String)">
+            <summary>
+            adapted from stackoverflow, by Aswath Krishnan
+            requires 2 chars per byte input
+            </summary>
+            <param name="hexString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.ParseFraction(System.String)">
+            <summary>
+            parse string for numbers or fractions and
+            return the float value or float.MinValue if can't
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.WriteCsv(System.String[],System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            writes fields to a string separated by commas and, if
+            any of the fields contains quotes (") or commas or if 
+            forceQuotes is selected it surrounds
+            that field with quotes and doubles the quotes inside ""
+            appropriately.  Optionally appends one last comma at the end
+            (in case further fields are expected to be appended) but does
+            not append NewLine char at the end
+            </summary>
+            <param name="fields"></param>
+            <param name="appendLastComma">append a comma afer the last item, as when expecting more to be added</param>
+            <param name="forceQuotes"></param>
+            <param name="appendNewLine">append Environment.NewLine at end of last item, as at end of line</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.WriteCsv(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            writes fields to a string separated by commas and, if
+            any of the fields contains quotes (") or commas or if 
+            forceQuotes is selected it surrounds
+            that field with quotes and doubles the quotes inside ""
+            appropriately.  Optionally appends one last comma at the end
+            (in case further fields are expected to be appended) but does
+            not append NewLine char at the end
+            </summary>
+            <param name="fields"></param>
+            <param name="appendLastComma"></param>
+            <param name="forceQuotes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.WriteCsv(System.String[],System.Boolean)">
+            <summary>
+            writes fields to a string separated by commas and, if
+            any of the fields contains quotes (") or commas it surrounds
+            that field with quotes and doubles the quotes inside ""
+            appropriately.  Optionally appends one last comma at the end
+            (in case further fields are expected to be appended) but does
+            not append NewLine char at the end
+            </summary>
+            <param name="fields"></param>
+            <param name="appendLastComma">if true will append a comma at the end</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.ReadCsvLine(System.String)">
+            <summary>
+            using convention:  delimiter is comma,
+            optional quotes are "
+            imbedded quotes inside quotes are ""
+            expects whole field to be in quotes if it contains
+            any commas or quotes
+            </summary>
+            <param name="line"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.WUrlEncodeBase64(System.String)">
+            <summary>
+            replaces special chars in base64 string with chars allowed in url's
+            </summary>
+            <param name="base64String"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.WUrlDecodeBase64(System.String)">
+            <summary>
+            reverses operation of WUrlEncodeBase64 back to the
+            original base64 string
+            </summary>
+            <param name="wUrlEncodedBase64"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveTools.WUrlDecodeBase64(System.String,System.Boolean)">
+            <summary>
+            reverses operation of WUrlEncodeBase64 back to the
+            original base64 string, optionally adding == pad chars
+            if the length is not a multiple of 4
+            </summary>
+            <param name="wUrlEncodedBase64"></param>
+            <param name="addPadsIfNeeded"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wve.HourglassCursor">
+            <summary>
+            simple object to save current cursor, show WaitCursor,
+            and restore prior cursor when disposed. 
+            By Francesco Balena 
+            </summary>
+        </member>
+        <member name="M:Wve.HourglassCursor.#ctor">
+            <summary>
+            simple object to save current cursor, show WaitCursor,
+            and restore prior cursor when disposed. 
+            adapted from Francesco Balena 
+            </summary>
+        </member>
+        <member name="M:Wve.HourglassCursor.Dispose">
+            <summary>
+            resets cursor to prior value
+            </summary>
+        </member>
+        <member name="T:Wve.BoolBoxed">
+            <summary>
+            object to box a boolean value that
+            can be referenced by different pieces of code
+            for use with BoolCache
+            </summary>
+        </member>
+        <member name="F:Wve.BoolBoxed.Value">
+            <summary>
+            true or false
+            </summary>
+        </member>
+        <member name="M:Wve.BoolBoxed.#ctor(System.Boolean)">
+            <summary>
+            an object just holding a boolian value
+            so it can be passed as object
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="T:Wve.BoolCache">
+            <summary>
+            Sets boolean value 
+            (boxed in BoolBoxed object)
+            to new value, saving existing 
+            value temporarily.  Later
+            resets it to saved value when
+            BoolCache is disposed
+            </summary>
+        </member>
+        <member name="M:Wve.BoolCache.#ctor(Wve.BoolBoxed@,System.Boolean)">
+            <summary>
+            Saves old value of a BoolBoxed object while it
+            changes it to new value; Then restores it
+            when disposed.
+            </summary>
+            <param name="variable"></param>
+            <param name="newValue"></param>
+        </member>
+        <member name="M:Wve.BoolCache.Dispose">
+            <summary>
+            restores original value to BoolBoxed object
+            </summary>
+        </member>
+        <member name="T:Wve.IntRef">
+            <summary>
+            simple object reference to an integer
+            </summary>
+        </member>
+        <member name="F:Wve.IntRef.Value">
+            <summary>
+            integer value to reference
+            </summary>
+        </member>
+        <member name="T:Wve.SimpleObjectArray">
+            <summary>
+            simple array of objects, exposes 
+            Count, Add and Array members.
+            </summary>
+        </member>
+        <member name="F:Wve.SimpleObjectArray.startSize">
+            <summary>
+            size of array to start with, and by which to grow
+            array each time it reaches capacity
+            </summary>
+        </member>
+        <member name="P:Wve.SimpleObjectArray.Count">
+            <summary>
+            the number of objects actually assigned in the array 
+            (which may be less than the size of the array)
+            </summary>
+        </member>
+        <member name="F:Wve.SimpleObjectArray.ObjArray">
+            <summary>
+            the array of objects.  Do not try to
+            access members above index of Count-1
+            </summary>
+        </member>
+        <member name="M:Wve.SimpleObjectArray.#ctor(System.Int32)">
+            <summary>
+            simple array of objects, exposes 
+            Count, Add, Clear and objArray members.
+            </summary>
+            <param name="startSize"></param>
+        </member>
+        <member name="M:Wve.SimpleObjectArray.Add(System.Object)">
+            <summary>
+            add object to the array
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:Wve.SimpleObjectArray.Clear">
+            <summary>
+            resets count to zero and builds new array
+            </summary>
+        </member>
+        <member name="T:Wve.WveDebugLog">
+            <summary>
+            a debugging tool to write timed notes to console
+            </summary>
+        </member>
+        <member name="M:Wve.WveDebugLog.LogEvent(System.String,System.Boolean)">
+            <summary>
+            log message to console
+            </summary>
+            <param name="message"></param>
+            <param name="resetLastLogTime">if true, starts over with time 
+            interval of zero; otherwise reports time span since last time
+            LogEvent() was called.</param>
+        </member>
+        <member name="T:Wve.StringPair">
+            <summary>
+            key and value pair useful for List.
+            advantage of List of StringPairs over 
+            DictionaryList is List of StringPairs
+            preserves case and order of creation
+            </summary>
+        </member>
+        <member name="F:Wve.StringPair.Key">
+            <summary>
+            key to search by
+            </summary>
+        </member>
+        <member name="F:Wve.StringPair.Value">
+            <summary>
+            text to associate with key
+            </summary>
+        </member>
+        <member name="M:Wve.StringPair.#ctor(System.String,System.String)">
+            <summary>
+            key and value pair for lists
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Wve.StringPair.FindByKey(System.Collections.Generic.List{Wve.StringPair},System.String)">
+            <summary>
+            return the first StringPair found exactly matching the key, 
+            or null if none found.  
+            </summary>
+            <param name="list"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.StringPair.FindByValue(System.Collections.Generic.List{Wve.StringPair},System.String)">
+            <summary>
+            return the first StringPair found exactly matching thekey,
+            or null if none found.
+            </summary>
+            <param name="list"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wve.WveXml">
+            <summary>
+            XML related utilities
+            </summary>
+        </member>
+        <member name="M:Wve.WveXml.CreateElementWithText(System.Xml.XmlDocument,System.String,System.String)">
+            <summary>
+            create an xml element with the given text node
+            </summary>
+            <param name="xDoc"></param>
+            <param name="elementName"></param>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveXml.CloneTreeView(System.Windows.Forms.TreeView,System.Windows.Forms.TreeView)">
+            <summary>
+            Clones nodes from first treeview to the clone.
+            Note they share the same Tag objects
+            Returns number of nodes cloned
+            Thanks to George Shepherd at syncfusion.com
+            </summary>
+            <param name="tvDonor"></param>
+            <param name="tvClone"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveXml.XNodeHierarchy(System.Xml.XmlNode)">
+            <summary>
+            returns a string collection of names of nodes in the 
+             hierarchy (ancestors) of the given node in its XmlDocument.
+            Calls local method getNextNameInHierarchy()
+            Begins collection with name of node itself (reverse order)
+            </summary>
+            <param name="xNode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveXml.GroomQueryText(System.String)">
+            <summary>
+            replaces single quotes with two in a row.
+            Generates exception if contains the words INSERT, DELETE, UPDATE
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveXml.GroomTextNodeText(System.String,System.Boolean)">
+            <summary>
+            groom text for insertion into a text node in xml, 
+            replacing less than and ampersand in simple mode, 
+            and replacing greater than, apostrophe and quote
+            otherwise.
+            </summary>
+            <param name="input"></param>
+            <param name="simple"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveXml.GroomQueryText(System.String,System.Int32)">
+            <summary>
+            This overload also restricts length
+            replaces single quotes with two in a row.
+            Generates exception if contains the words INSERT, DELETE, UPDATE
+            </summary>
+            <param name="input"></param>
+            <param name="maxLength"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveXml.CopyNode(System.Xml.XmlElement,System.Xml.XmlDocument,System.Boolean)">
+            <summary>
+            returns a new node belonging to newHostDoc,
+             having name, attributes and text of original node
+            </summary>
+            <param name="node">node to splice, 
+             belonging to different XmlDocument</param>
+            <param name="newXDoc">XmlDocument to splice node into</param>
+            <param name="includeDescendants">include child nodes if true</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveXml.XmlElementFromFragment(System.Xml.XmlDocumentFragment,System.Xml.XmlDocument,System.String,System.Boolean)">
+            <summary>
+            returns a new XMlElement belonging to newXDoc,
+             having given name, but OuterXML of fragment's first child,
+             or null if XmlFragment isn't made of an XmlElement
+            </summary>
+            <param name="frag">fragment to splice, 
+             possibly belonging to different XmlDocument</param>
+            <param name="newXDoc">XmlDocument to splice node into</param>
+            <param name="newName">name for XmlElement</param>
+            <param name="includeDescendants">include child nodes if true</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveXml.ApplyAttrAndInner(System.Xml.XmlElement,System.Xml.XmlElement,System.Boolean)">
+            <summary>
+            apply a source node's attributes and (if desired) inner xml
+             to target node
+            </summary>
+            <param name="source"></param>
+            <param name="target"></param>
+            <param name="includeInnerXML"></param>
+        </member>
+        <member name="M:Wve.WveXml.ApplyAttrAndText(System.Xml.XmlElement,System.Xml.XmlElement)">
+            <summary>
+            apply source node's attributes to target and replaces
+            target's text nodes with the source node's text node(s).
+            Does not change target's inner xml otherwise.
+            </summary>
+            <param name="source"></param>
+            <param name="target"></param>
+        </member>
+        <member name="M:Wve.WveXml.ApplyText(System.Xml.XmlElement,System.String)">
+            <summary>
+            Apply the text string to the element's text
+            nodes, or create text node if none.  
+            This is obsolete.  The SetTextValue
+            method is preferred because this one could generate
+            duplicate text nodes if multiple ones exist.
+            </summary>
+            <param name="element"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:Wve.WveXml.CheckSyntax(System.Xml.XmlDocument)">
+            <summary>
+            check that the xml document meets basic standards for a chart
+             note template
+            </summary>
+            <param name="xDoc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveXml.HasAttribute(System.Xml.XmlElement,System.String,System.Boolean,System.String@)">
+            <summary>
+            returns true and assigns attributeValule if attribute attributeName
+            exists in the element; returns false and assigns empty string if not.
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="caseSensitive"></param>
+            <param name="attributeValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveXml.HasElement(System.Xml.XmlElement,System.String,System.Boolean,System.Xml.XmlElement@)">
+            <summary>
+            true if given element has a child element with given name and 
+            sends out the first matching child element; returns false and 
+            sends out null object if not
+            </summary>
+            <param name="elementToSearch"></param>
+            <param name="name"></param>
+            <param name="caseSensitive">specifies whether search should be case sensitive</param>
+            <param name="firstMatchingChild"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveXml.SetAttribute(System.Xml.XmlElement,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            sets value of requested attribute and returns true if that
+            attribute was found in the element, false if not; Optionally
+            creates attribute with that value if not found.
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="attributeValue"></param>
+            <param name="caseSensitive"></param>
+            <param name="createIfNotFound">create an attribute with that value if
+            that attribute doesn't exist - still returns false to indicate wasn't 
+            present initially</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveXml.GetTextValue(System.Xml.XmlElement)">
+            <summary>
+            returns the concactenated values of the given xmlElement's text nodes
+            but not those of its child nodes.  It seems this would be the logical
+            result of XmlElement.Value but it isn't
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveXml.SetTextValue(System.Xml.XmlElement,System.String)">
+            <summary>
+            Create a text node for given element
+            replacing any existing text nodes.
+            Any existing child elements are left unchanged.
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Wve.WveXml.GroomNodeName(System.String)">
+            <summary>
+            groom string for use as an xml node name.
+            Name can't begin with a number, so prepends "A" if it does
+            Whitespace is removed.
+            (overloaded)
+            </summary>
+            <param name="rawName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveXml.GroomNodeName(System.String,System.String)">
+            <summary>
+            groom string for use as an xml node name.
+            Name can't begin with a number, so prepends 
+            the text given in textToPrependIF if raw name
+            begins with number (or is empty)
+            Whitespace is removed.
+            (overloaded)
+            </summary>
+            <param name="rawName"></param>
+            <param name="textToPrependIF"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.WveXml.TransformXMLtoHTML(System.String,System.String)">
+            <summary>
+            transform an XML CCDA (Consolidated Clinical Document Architecture)
+            document to an html page using XSL transform
+            </summary>
+            <param name="xmlFile">the xml file contents</param>
+            <param name="xslFile">The XSL transform file contents</param>
+            <returns></returns>
+        </member>
+        <member name="T:Wve.XmlPlaceHolder">
+            <summary>
+            object for reading XmlReader streams relative
+            to a specified place holder element
+            </summary>
+        </member>
+        <member name="M:Wve.XmlPlaceHolder.#ctor(System.Xml.XmlReader)">
+            <summary>
+            construct XmlPlaceHolder on the XmlElement the 
+            given reader is currently positioned on.  Throws 
+            error if not on an XmlElement node
+            </summary>
+            <param name="reader"></param>
+        </member>
+        <member name="M:Wve.XmlPlaceHolder.ReadToNextChild">
+            <summary>
+            move reader to the next child element of the original placeholder node
+            and return true if child element found or false if got to end 
+            of the original parent node
+            WARNING if use use reader.ReadElementString() in subsequent
+            code you will move to end of element and next ReadToNextChild() will
+            skip an element!! use reader.ReadString() instead.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wve.XmlPlaceHolder.SkipToEndOfElement">
+            <summary>
+            read to end of the PlaceHolder Element.  Note: unpredictible
+            behavior if this is called when reader had read beyond
+            end of the element by methods outside of XmlPlaceHolder.
+            </summary>
+        </member>
+        <member name="M:Wve.XmlPlaceHolder.SkipElement(System.Xml.XmlReader)">
+            <summary>
+            safely skip over the Element the reader is positioned on, moving
+            to the end of the element;  does nothing if 
+            current node isn't an element node;  
+            </summary>
+            <param name="reader"></param>
+        </member>
+    </members>
+</doc>
