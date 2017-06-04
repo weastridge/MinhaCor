@@ -22,7 +22,7 @@ namespace MinhaCor
         /// <summary>
         /// red, green and blue , 0 to 255
         /// </summary>
-        public int[] RgbValue = new int[] { 0, 0, 0 };
+        public byte[] RgbValue = new byte[] { 0, 0, 0 };
         /// <summary>
         /// optional details
         /// </summary>
@@ -39,7 +39,7 @@ namespace MinhaCor
         #region constructors
         public ColorCreation(string colorName, 
             string personName, 
-            int[] rgbValue, 
+            byte[] rgbValue, 
             string details, 
             DateTime whenCreated, 
             DateTime whenLastEdited)
@@ -52,5 +52,44 @@ namespace MinhaCor
             WhenLastEdited = whenLastEdited;
         }
         #endregion constructors
+
+        /// <summary>
+        /// this ColorCreation as a comma separated value
+        /// </summary>
+        /// <returns></returns>
+        public string ToCsv()
+        {
+            return Wve.WveTools.WriteCsv(new string[]
+            {
+                ColorName,
+                PersonName,
+                Wve.WveTools.BytesToHex(RgbValue,string.Empty),
+                Details,
+                WhenCreated.ToShortDateString(),
+                WhenLastEdited.ToShortDateString()
+            },
+            false); //false to append last comma
+        }
+        
+        /// <summary>
+        /// make ColorCreation from comma separated value serialization
+        /// </summary>
+        /// <param name="csv"></param>
+        /// <returns></returns>
+        public static ColorCreation FromCsv(string csv)
+        {
+            string[] parts = Wve.WveTools.ReadCsvLine(csv);
+            DateTime saved;
+            DateTime edited;
+            DateTime.TryParse(parts[4], out saved);
+            DateTime.TryParse(parts[5], out edited);
+            return new ColorCreation(
+                parts[0],
+                parts[1],
+                Wve.WveTools.HexStringToByteArray(parts[2]),
+                parts[3],
+                saved,
+                edited);
+        }
     }
 }

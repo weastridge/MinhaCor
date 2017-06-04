@@ -62,6 +62,7 @@ namespace MinhaCor
         internal void LoadDisplayGrid()
         {
             LoadDisplay(_displayGridInstance);
+            _displayGridInstance.DrawGrid();
         }
         /// <summary>
         /// load the color edit display

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.buttonPrior = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
+            this.buttonPrior = new System.Windows.Forms.Button();
             this.panelGridDisplay = new System.Windows.Forms.Panel();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
@@ -45,6 +45,16 @@
             this.panelHeader.Size = new System.Drawing.Size(1008, 33);
             this.panelHeader.TabIndex = 0;
             // 
+            // buttonNext
+            // 
+            this.buttonNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonNext.Location = new System.Drawing.Point(976, 4);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(29, 23);
+            this.buttonNext.TabIndex = 1;
+            this.buttonNext.Text = "->";
+            this.buttonNext.UseVisualStyleBackColor = true;
+            // 
             // buttonPrior
             // 
             this.buttonPrior.Location = new System.Drawing.Point(4, 4);
@@ -54,15 +64,6 @@
             this.buttonPrior.Text = "<-";
             this.buttonPrior.UseVisualStyleBackColor = true;
             // 
-            // buttonNext
-            // 
-            this.buttonNext.Location = new System.Drawing.Point(976, 4);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(29, 23);
-            this.buttonNext.TabIndex = 1;
-            this.buttonNext.Text = "->";
-            this.buttonNext.UseVisualStyleBackColor = true;
-            // 
             // panelGridDisplay
             // 
             this.panelGridDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -70,8 +71,8 @@
             this.panelGridDisplay.Name = "panelGridDisplay";
             this.panelGridDisplay.Size = new System.Drawing.Size(1008, 624);
             this.panelGridDisplay.TabIndex = 1;
-            this.panelGridDisplay.Click += new System.EventHandler(this.panelGridDisplay_Click);
             this.panelGridDisplay.Paint += new System.Windows.Forms.PaintEventHandler(this.panelGridDisplay_Paint);
+            this.panelGridDisplay.Resize += new System.EventHandler(this.panelGridDisplay_Resize);
             // 
             // DisplayGrid
             // 

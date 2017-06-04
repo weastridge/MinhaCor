@@ -81,6 +81,27 @@ namespace MinhaCor
             }
         }
 
+        public static void SaveColorCreations()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(System.IO.Directory.GetCurrentDirectory());
+            sb.Append(System.IO.Path.PathSeparator);
+            sb.Append(_colorCreationsLocalFileName);
+            LoadColorCreations(sb.ToString());
+        }
+
+        public static void SaveColorCreations(string fileName)
+        {
+            using (System.IO.StreamWriter sw = new System.IO.StreamWriter(fileName))
+            {
+                for (int i = 0; i < ColorCreations.Count; i++)
+                {
+                    sw.WriteLine(ColorCreations[i].ToCsv());
+                }
+                sw.Flush();
+            }//from using sw
+        }
+
         public static void LoadColorCreations()
         {
             StringBuilder sb = new StringBuilder();
@@ -97,17 +118,15 @@ namespace MinhaCor
         public static void LoadColorCreations(string filename)
         {
             ColorCreations = new List<ColorCreation>();
-            using (System.IO.StringReader sr = 
-                new System.IO.StringReader(filename))
+            using (System.IO.StreamReader sr = 
+                new System.IO.StreamReader(filename))
             {
                 string line;
-                string[] lineParts;
                 while(!string.IsNullOrWhiteSpace(line = sr.ReadLine()))
                 {
-                    lineParts = Wve.WveTools.ReadCsvLine(line);
-                    ColorCreations.Add(new ColorCreation());
+                    ColorCreations.Add(ColorCreation.FromCsv(line));
                 }
-            }
+            }//from using sw
         }
     }
 }

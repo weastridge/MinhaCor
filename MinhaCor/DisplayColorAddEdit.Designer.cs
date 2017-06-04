@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelControls = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
@@ -45,7 +46,7 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelBackground = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panelControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLightness)).BeginInit();
             this.panelBackground.SuspendLayout();
@@ -53,6 +54,7 @@
             // 
             // panelControls
             // 
+            this.panelControls.Controls.Add(this.label4);
             this.panelControls.Controls.Add(this.label3);
             this.panelControls.Controls.Add(this.buttonCancel);
             this.panelControls.Controls.Add(this.buttonOK);
@@ -72,6 +74,17 @@
             this.panelControls.Name = "panelControls";
             this.panelControls.Size = new System.Drawing.Size(166, 657);
             this.panelControls.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label3.Location = new System.Drawing.Point(77, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 16);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "lighter";
             // 
             // buttonCancel
             // 
@@ -187,7 +200,7 @@
             // 
             // buttonTemp
             // 
-            this.buttonTemp.Location = new System.Drawing.Point(19, 631);
+            this.buttonTemp.Location = new System.Drawing.Point(15, 605);
             this.buttonTemp.Name = "buttonTemp";
             this.buttonTemp.Size = new System.Drawing.Size(75, 23);
             this.buttonTemp.TabIndex = 0;
@@ -226,16 +239,17 @@
             this.panelMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseUp);
             this.panelMain.Resize += new System.EventHandler(this.panelMain_Resize_1);
             // 
-            // label3
+            // label4
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label3.Location = new System.Drawing.Point(77, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 16);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "lighter";
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label4.Location = new System.Drawing.Point(65, 631);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 16);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "darker";
             // 
             // DisplayColorAddEdit
             // 
@@ -276,5 +290,6 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

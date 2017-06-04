@@ -25,6 +25,24 @@ namespace MinhaCor
             InitializeComponent();
         }
 
+        internal void DrawGrid()
+        {
+            panelGridDisplay.Controls.Clear();
+            Panel panelColors = new Panel();
+            panelColors.Size = new Size(_swatchWidth, _swatchHeight);
+            panelColors.BackgroundImage = MinhaCor.Properties.Resources.rgb;
+            panelColors.BackgroundImageLayout = ImageLayout.Stretch;
+            Panel panelGo = new Panel();
+            panelGo.Size = new Size(_swatchWidth, _swatchHeight);
+            panelGo.BackColor = Color.Transparent;
+            panelGo.Dock = DockStyle.Fill;
+            panelGo.BackgroundImage = MinhaCor.Properties.Resources.start;
+            panelGo.BackgroundImageLayout = ImageLayout.Zoom;
+            panelColors.Controls.Add(panelGo);
+            panelGridDisplay.Controls.Add(panelColors);
+            panelGo.Click += new System.EventHandler(this.panelGridDisplay_Click);
+        }
+
         private void DisplayGrid_Load(object sender, EventArgs e)
         {
             setMeasurements();
@@ -40,9 +58,11 @@ namespace MinhaCor
 
         private void panelGridDisplay_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.FillRectangle(Brushes.Red,
-                new Rectangle(0, 0, _swatchWidth, _swatchHeight));
+            //e.Graphics.FillRectangle(Brushes.Red,
+            //    new Rectangle(0, 0, _swatchWidth, _swatchHeight));
+
         }
+
 
         private void panelGridDisplay_Click(object sender, EventArgs e)
         {
@@ -57,6 +77,12 @@ namespace MinhaCor
                     Wve.MyEr.Show(this, er, true);
                 }
             }
+        }
+
+        private void panelGridDisplay_Resize(object sender, EventArgs e)
+        {
+            setMeasurements();
+            DrawGrid();
         }
     }
 }

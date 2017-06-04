@@ -138,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="notes.txt" />
+    <None Include="Resources\start.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">
