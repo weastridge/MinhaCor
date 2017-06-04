@@ -17,6 +17,7 @@ namespace MinhaCor
     {
         private DisplayGrid _displayGridInstance;
         private DisplayColorAddEdit _displayColorAddEditInstance;
+        internal static FormMinhaCor Instance = null;
 
         /// <summary>
         /// main form
@@ -27,6 +28,7 @@ namespace MinhaCor
             MainClass.Initialize();
             _displayColorAddEditInstance = new DisplayColorAddEdit();
             _displayGridInstance = new DisplayGrid();
+            Instance = this;
         }
 
         
@@ -36,8 +38,7 @@ namespace MinhaCor
             {
                 try
                 {
-                    //start with DisplayGrid
-                    LoadDisplay(_displayColorAddEditInstance);
+                    LoadDisplayGrid();
                 }
                 catch (Exception er)
                 {
@@ -54,6 +55,20 @@ namespace MinhaCor
             panelDisplayArea.Controls.Clear();
             panelDisplayArea.Controls.Add(display);
             display.Dock = DockStyle.Fill;
+        }
+        /// <summary>
+        /// load the display grid
+        /// </summary>
+        internal void LoadDisplayGrid()
+        {
+            LoadDisplay(_displayGridInstance);
+        }
+        /// <summary>
+        /// load the color edit display
+        /// </summary>
+        internal void LoadDisplayColorAddEdit()
+        {
+            LoadDisplay(_displayColorAddEditInstance);
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)

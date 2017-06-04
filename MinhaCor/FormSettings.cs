@@ -10,10 +10,16 @@ using System.Windows.Forms;
 
 namespace MinhaCor
 {
+    /// <summary>
+    /// settings
+    /// </summary>
     public partial class FormSettings : Form
     {
         private int _rows;
         private int _columns;
+        /// <summary>
+        /// settings
+        /// </summary>
         public FormSettings()
         {
             InitializeComponent();
@@ -42,8 +48,10 @@ namespace MinhaCor
             {
                 try
                 {
-                    applySettings();
-                    this.DialogResult = DialogResult.OK;
+                    if (applySettings())
+                    {
+                        this.DialogResult = DialogResult.OK;
+                    }
                 }
                 catch (Exception er)
                 {
@@ -51,13 +59,32 @@ namespace MinhaCor
                 }
             }
         }
-
-        private void applySettings()
+        /// <summary>
+        /// apply settings if valid, returns true if validated
+        /// </summary>
+        /// <returns></returns>
+        private bool applySettings()
         {
+            bool validated = true;
+            if ((!int.TryParse(textBoxRows.Text, out _rows)) ||
+                (_rows < 1) ||
+                 (_rows > 20))
+            {
+                MessageBox.Show("please enter rows between 1 and 10");
+                return false;
+            }
+            if ((!int.TryParse(textBoxColumns.Text, out _columns)) ||
+                (_columns < 1) ||
+                 (_columns > 20))
+            {
+                MessageBox.Show("please enter columns between 1 and 10");
+                return false;
+            }
             MainClass.ConfigSettings.SetValue("Rows", _rows.ToString());
             MainClass.ConfigSettings.SetValue("Columns", _columns.ToString());
             MainClass.ConfigSettings.SetValue("Culture", comboBoxCulture.SelectedText);
             MainClass.ConfigSettings.SetValue("Password", textBoxPassword.Text);
+            return validated;
         }
 
 

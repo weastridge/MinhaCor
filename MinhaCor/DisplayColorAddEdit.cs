@@ -472,7 +472,17 @@ namespace MinhaCor
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-
+            using (Wve.HourglassCursor waitCursor = new Wve.HourglassCursor())
+            {
+                try
+                {
+                    FormMinhaCor.Instance.LoadDisplayGrid();
+                }
+                catch (Exception er)
+                {
+                    Wve.MyEr.Show(this, er, true);
+                }
+            }
         }
     }
 }
