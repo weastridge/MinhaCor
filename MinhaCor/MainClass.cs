@@ -11,6 +11,7 @@ namespace MinhaCor
     /// </summary>
     public static class MainClass
     {
+        private static string _colorCreationsLocalFileName = "ColorCreations.csv";
         /// <summary>
         /// configuration settings
         /// </summary>
@@ -62,6 +63,11 @@ namespace MinhaCor
                 ConfigSettings.SetValue("Columns", _columns.ToString());
             }
         }
+
+        /// <summary>
+        /// the working list of ColorCreations
+        /// </summary>
+        public static List<ColorCreation> ColorCreations;
         public static void Initialize()
         {
             MainClass.ConfigSettings = new Wve.MyConfigSettings(true); //to locate in this folder
@@ -72,6 +78,35 @@ namespace MinhaCor
                 MainClass.ConfigSettings.SetValue("Columns", "6");
                 MainClass.ConfigSettings.SetValue("Culture", "en-US");
                 MainClass.ConfigSettings.SetValue("Password", string.Empty);
+            }
+        }
+
+        public static void LoadColorCreations()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(System.IO.Directory.GetCurrentDirectory());
+            sb.Append(System.IO.Path.PathSeparator);
+            sb.Append(_colorCreationsLocalFileName);
+            LoadColorCreations(sb.ToString());
+        }
+
+        /// <summary>
+        /// load given file into list of color creations
+        /// </summary>
+        /// <param name="filename"></param>
+        public static void LoadColorCreations(string filename)
+        {
+            ColorCreations = new List<ColorCreation>();
+            using (System.IO.StringReader sr = 
+                new System.IO.StringReader(filename))
+            {
+                string line;
+                string[] lineParts;
+                while(!string.IsNullOrWhiteSpace(line = sr.ReadLine()))
+                {
+                    lineParts = Wve.WveTools.ReadCsvLine(line);
+                    ColorCreations.Add(new ColorCreation());
+                }
             }
         }
     }

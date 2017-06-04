@@ -27,5 +27,30 @@ namespace MinhaCor
         /// optional details
         /// </summary>
         public string Details = string.Empty;
+        /// <summary>
+        /// when color creation created
+        /// </summary>
+        public DateTime WhenCreated = DateTime.MinValue;
+        /// <summary>
+        /// when last edited
+        /// </summary>
+        public DateTime WhenLastEdited = DateTime.MinValue;
+
+        #region constructors
+        public ColorCreation(string colorName, 
+            string personName, 
+            int[] rgbValue, 
+            string details, 
+            DateTime whenCreated, 
+            DateTime whenLastEdited)
+        {
+            ColorName = colorName;
+            PersonName = personName;
+            RgbValue = rgbValue;
+            Details = details;
+            WhenCreated = whenCreated;
+            WhenLastEdited = whenLastEdited;
+        }
+        #endregion constructors
     }
 }
