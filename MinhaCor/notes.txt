@@ -20,3 +20,4 @@ Name Your Skin Color
 Celebrate Your Color
 
 2017June3 uploaded to GitHub weastridge
+2017June4 clarified in VS that local repository is in Documents\GitHub\MinhaCor
