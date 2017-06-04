@@ -29,29 +29,31 @@
         private void InitializeComponent()
         {
             this.panelControls = new System.Windows.Forms.Panel();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonOK = new System.Windows.Forms.Button();
+            this.buttonReset = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panelSwatch = new System.Windows.Forms.Panel();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.trackBarLightness = new System.Windows.Forms.TrackBar();
             this.buttonTemp = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelBackground = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.trackBarLightness = new System.Windows.Forms.TrackBar();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.panelSwatch = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.buttonReset = new System.Windows.Forms.Button();
-            this.buttonOK = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelControls.SuspendLayout();
-            this.panelBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLightness)).BeginInit();
+            this.panelBackground.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControls
             // 
+            this.panelControls.Controls.Add(this.label3);
             this.panelControls.Controls.Add(this.buttonCancel);
             this.panelControls.Controls.Add(this.buttonOK);
             this.panelControls.Controls.Add(this.buttonReset);
@@ -70,6 +72,118 @@
             this.panelControls.Name = "panelControls";
             this.panelControls.Size = new System.Drawing.Size(166, 657);
             this.panelControls.TabIndex = 0;
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Location = new System.Drawing.Point(14, 572);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(100, 23);
+            this.buttonCancel.TabIndex = 12;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            // 
+            // buttonOK
+            // 
+            this.buttonOK.Location = new System.Drawing.Point(15, 400);
+            this.buttonOK.Name = "buttonOK";
+            this.buttonOK.Size = new System.Drawing.Size(101, 55);
+            this.buttonOK.TabIndex = 11;
+            this.buttonOK.Text = "&OK";
+            this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
+            // 
+            // buttonReset
+            // 
+            this.buttonReset.Location = new System.Drawing.Point(14, 543);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(100, 23);
+            this.buttonReset.TabIndex = 10;
+            this.buttonReset.Text = "Reset";
+            this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 355);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 15);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Your name:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 298);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 15);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Name for your color:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(15, 373);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 21);
+            this.textBox2.TabIndex = 7;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(14, 316);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 6;
+            // 
+            // panelSwatch
+            // 
+            this.panelSwatch.Location = new System.Drawing.Point(14, 197);
+            this.panelSwatch.Name = "panelSwatch";
+            this.panelSwatch.Size = new System.Drawing.Size(101, 98);
+            this.panelSwatch.TabIndex = 5;
+            this.panelSwatch.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSwatch_Paint);
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox3.Enabled = false;
+            this.richTextBox3.Location = new System.Drawing.Point(14, 146);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(91, 45);
+            this.richTextBox3.TabIndex = 4;
+            this.richTextBox3.Text = "3. Invent a name for your color.";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox2.Enabled = false;
+            this.richTextBox2.Location = new System.Drawing.Point(14, 19);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(91, 41);
+            this.richTextBox2.TabIndex = 3;
+            this.richTextBox2.Text = "1. Drag bar to adjust lightness.";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Enabled = false;
+            this.richTextBox1.Location = new System.Drawing.Point(14, 81);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(91, 45);
+            this.richTextBox1.TabIndex = 2;
+            this.richTextBox1.Text = "2. Drag square to adjust color.";
+            // 
+            // trackBarLightness
+            // 
+            this.trackBarLightness.Dock = System.Windows.Forms.DockStyle.Right;
+            this.trackBarLightness.Location = new System.Drawing.Point(121, 0);
+            this.trackBarLightness.Name = "trackBarLightness";
+            this.trackBarLightness.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBarLightness.Size = new System.Drawing.Size(45, 657);
+            this.trackBarLightness.TabIndex = 1;
+            this.trackBarLightness.Scroll += new System.EventHandler(this.trackBarLightness_Scroll);
             // 
             // buttonTemp
             // 
@@ -112,117 +226,16 @@
             this.panelMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseUp);
             this.panelMain.Resize += new System.EventHandler(this.panelMain_Resize_1);
             // 
-            // trackBarLightness
+            // label3
             // 
-            this.trackBarLightness.Dock = System.Windows.Forms.DockStyle.Right;
-            this.trackBarLightness.Location = new System.Drawing.Point(121, 0);
-            this.trackBarLightness.Name = "trackBarLightness";
-            this.trackBarLightness.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBarLightness.Size = new System.Drawing.Size(45, 657);
-            this.trackBarLightness.TabIndex = 1;
-            this.trackBarLightness.Scroll += new System.EventHandler(this.trackBarLightness_Scroll);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(14, 4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(91, 45);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "1. Drag square to adjust color.";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Enabled = false;
-            this.richTextBox2.Location = new System.Drawing.Point(14, 109);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(91, 41);
-            this.richTextBox2.TabIndex = 3;
-            this.richTextBox2.Text = "2. Drag bar to adjust lightness.";
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox3.Enabled = false;
-            this.richTextBox3.Location = new System.Drawing.Point(14, 211);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(91, 45);
-            this.richTextBox3.TabIndex = 4;
-            this.richTextBox3.Text = "3. Invent a name for your color.";
-            // 
-            // panelSwatch
-            // 
-            this.panelSwatch.Location = new System.Drawing.Point(14, 263);
-            this.panelSwatch.Name = "panelSwatch";
-            this.panelSwatch.Size = new System.Drawing.Size(101, 98);
-            this.panelSwatch.TabIndex = 5;
-            this.panelSwatch.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSwatch_Paint);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(14, 402);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 6;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(14, 471);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 384);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 15);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Name for your color:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 452);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 15);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Your name:";
-            // 
-            // buttonReset
-            // 
-            this.buttonReset.Location = new System.Drawing.Point(14, 560);
-            this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(100, 23);
-            this.buttonReset.TabIndex = 10;
-            this.buttonReset.Text = "Reset";
-            this.buttonReset.UseVisualStyleBackColor = true;
-            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
-            // 
-            // buttonOK
-            // 
-            this.buttonOK.Location = new System.Drawing.Point(14, 499);
-            this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(101, 55);
-            this.buttonOK.TabIndex = 11;
-            this.buttonOK.Text = "&OK";
-            this.buttonOK.UseVisualStyleBackColor = true;
-            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Location = new System.Drawing.Point(14, 589);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(100, 23);
-            this.buttonCancel.TabIndex = 12;
-            this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label3.Location = new System.Drawing.Point(77, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 16);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "lighter";
             // 
             // DisplayColorAddEdit
             // 
@@ -237,8 +250,8 @@
             this.Load += new System.EventHandler(this.DisplayColorAddEdit_Load);
             this.panelControls.ResumeLayout(false);
             this.panelControls.PerformLayout();
-            this.panelBackground.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLightness)).EndInit();
+            this.panelBackground.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -262,5 +275,6 @@
         private System.Windows.Forms.Button buttonReset;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonOK;
+        private System.Windows.Forms.Label label3;
     }
 }

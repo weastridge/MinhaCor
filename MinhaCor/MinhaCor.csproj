@@ -140,12 +140,6 @@
     <Content Include="notes.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Wve\Wve.csproj">
-      <Project>{9d292ab7-da5d-43c1-a32b-00b084f018a3}</Project>
-      <Name>Wve</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.6 %28x86 and x64%29</ProductName>
@@ -156,6 +150,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wve\Wve.csproj">
+      <Project>{9d292ab7-da5d-43c1-a32b-00b084f018a3}</Project>
+      <Name>Wve</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

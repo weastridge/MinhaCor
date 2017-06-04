@@ -211,10 +211,10 @@ namespace MinhaCor
                         //        panelMain.Width - 1, panelMain.Height - 1)));
                     }
                     e.Graphics.FillRectangle(Brushes.Black,
-                        _currentLocation.X - 2,
-                        _currentLocation.Y - 2,
-                        4,
-                        4);
+                        _currentLocation.X - 4,
+                        _currentLocation.Y - 4,
+                        8,
+                        8);
 
 
                     ////debug:
