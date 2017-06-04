@@ -43,3 +43,6 @@ C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\MinhaCor\
 C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\MinhaCor\obj\Debug\MinhaCor.csproj.GenerateResource.Cache
 C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\MinhaCor\obj\Debug\MinhaCor.exe
 C:\Users\weast\OneDrive\Documents\Visual Studio 2015\Projects\MinhaCor\MinhaCor\obj\Debug\MinhaCor.pdb
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\bin\Debug\MinhaCor.exe.config
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.exe
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.pdb

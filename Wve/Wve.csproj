@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9D292AB7-DA5D-43C1-A32B-00B084F018A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wve</RootNamespace>
+    <AssemblyName>Wve</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Eastridges1.pfx</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Wve.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExpandableForm\ExpandableFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExpandableForm\ExpandableFormBase.designer.cs">
+      <DependentUpon>ExpandableFormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputStringForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputStringForm.Designer.cs">
+      <DependentUpon>InputStringForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputTextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputTextForm.Designer.cs">
+      <DependentUpon>InputTextForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyConfigSettings.cs" />
+    <Compile Include="MyEr\MyEr.cs" />
+    <Compile Include="MyEr\DisplayErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyEr\DisplayErrorForm.designer.cs">
+      <DependentUpon>DisplayErrorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyEventLog\MyEventLog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TextViewer\TextViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextViewer\TextViewer.designer.cs">
+      <DependentUpon>TextViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WveCalc.cs" />
+    <Compile Include="WveConvert.cs" />
+    <Compile Include="WveCrypto.cs" />
+    <Compile Include="WveDatePicker\WveDatePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WveDatePicker\WveDatePicker.Designer.cs">
+      <DependentUpon>WveDatePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WveDocViewer\DocumentViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WveDocViewer\DocumentViewer.Designer.cs">
+      <DependentUpon>DocumentViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WveDocViewer\DocumentViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WveDocViewer\DocumentViewerForm.Designer.cs">
+      <DependentUpon>DocumentViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WveDocViewer\WveDocViewerLib.cs" />
+    <Compile Include="WveHL7\HL7Reader.cs" />
+    <Compile Include="WveHL7\HL7Types.cs" />
+    <Compile Include="WveItem.cs" />
+    <Compile Include="RTF\RichTextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RTF\PrintRTF.cs" />
+    <Compile Include="RTF\WveRtfStuff.cs" />
+    <Compile Include="WveNetwork\WveNetwork.cs" />
+    <Compile Include="WveServUtil\EditTaskScheduleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WveServUtil\EditTaskScheduleForm.Designer.cs">
+      <DependentUpon>EditTaskScheduleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WveServUtil\Task.cs" />
+    <Compile Include="WveTools.cs" />
+    <Compile Include="WveTypes.cs" />
+    <Compile Include="WveXmlStuff.cs" />
+    <Compile Include="WveXML-Unused\WXMLLib.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExpandableForm\ExpandableFormBase.resx">
+      <DependentUpon>ExpandableFormBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputStringForm.resx">
+      <DependentUpon>InputStringForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputTextForm.resx">
+      <DependentUpon>InputTextForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyEr\DisplayErrorForm.resx">
+      <DependentUpon>DisplayErrorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextViewer\TextViewer.resx">
+      <DependentUpon>TextViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WveDatePicker\WveDatePicker.resx">
+      <DependentUpon>WveDatePicker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WveDocViewer\DocumentViewer.resx">
+      <DependentUpon>DocumentViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WveDocViewer\DocumentViewerForm.resx">
+      <DependentUpon>DocumentViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WveServUtil\EditTaskScheduleForm.resx">
+      <DependentUpon>EditTaskScheduleForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LICENSE.txt" />
+    <Content Include="Notes.txt" />
+    <None Include="Eastridges1.pfx" />
+    <None Include="Resources\CDA.xsl" />
+    <Content Include="RTF\Notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>mkdir "$(SolutionDir)MinhaCor\$(OutDir)
+copy "$(TargetPath)" "$(SolutionDir)MinhaCor\$(OutDir)$(TargetFileName)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

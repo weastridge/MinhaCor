@@ -1,0 +1,10 @@
+Notes on Wve library
+
+Acknowlegements of imported code:
+----------------------------------
+The RichTextBoxEx.cs class is from MSDN example as documented
+
+Declarations of any invoked non-managed code:
+----------------------------------------------
+RichTextBoxEx invokes user32.dll
+
