@@ -85,9 +85,10 @@ namespace MinhaCor
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(System.IO.Directory.GetCurrentDirectory());
-            sb.Append(System.IO.Path.PathSeparator);
+            sb.Append(@"\");
+            char wrong = (System.IO.Path.PathSeparator);
             sb.Append(_colorCreationsLocalFileName);
-            LoadColorCreations(sb.ToString());
+            SaveColorCreations(sb.ToString());
         }
 
         public static void SaveColorCreations(string fileName)
@@ -118,15 +119,18 @@ namespace MinhaCor
         public static void LoadColorCreations(string filename)
         {
             ColorCreations = new List<ColorCreation>();
-            using (System.IO.StreamReader sr = 
-                new System.IO.StreamReader(filename))
+            if (System.IO.File.Exists(filename))
             {
-                string line;
-                while(!string.IsNullOrWhiteSpace(line = sr.ReadLine()))
+                using (System.IO.StreamReader sr =
+                    new System.IO.StreamReader(filename))
                 {
-                    ColorCreations.Add(ColorCreation.FromCsv(line));
-                }
-            }//from using sw
+                    string line;
+                    while (!string.IsNullOrWhiteSpace(line = sr.ReadLine()))
+                    {
+                        ColorCreations.Add(ColorCreation.FromCsv(line));
+                    }
+                }//from using sw
+            }
         }
     }
 }

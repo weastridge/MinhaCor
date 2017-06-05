@@ -169,7 +169,7 @@
             <summary>
             puts config settings in same folder as executing assembly
             </summary>
-            <param name="useAssemblyWorkingFolder"></param>
+            <param name="useApplicationWorkingDirectory"></param>
         </member>
         <member name="M:Wve.MyConfigSettings.#ctor(System.String[])">
             <summary>

@@ -117,6 +117,13 @@ namespace MinhaCor
 
         }
 
+        internal void Reset()
+        {
+            setDefaults();
+            textBoxColorName.Clear();
+            textBoxPersonName.Clear();
+        }
+
         private void setDefaults()
         {
             trackBarLightness.Maximum = _trackbarMaxValue;
@@ -471,6 +478,43 @@ namespace MinhaCor
         }
 
         private void buttonOK_Click(object sender, EventArgs e)
+        {
+            using (Wve.HourglassCursor waitCursor = new Wve.HourglassCursor())
+            {
+                try
+                {
+                    //validate
+                    if(String.IsNullOrWhiteSpace(textBoxColorName.Text))
+                    {
+                        MessageBox.Show("Please name your color, or else click cancel.");
+                        return;
+                    }
+                    //save
+                    byte[] colorBytes = new byte[]
+                    {
+                        _currentColor.R,
+                        _currentColor.G,
+                        _currentColor.B
+                    };
+                    ColorCreation cc = new ColorCreation(
+                        textBoxColorName.Text,
+                        textBoxPersonName.Text,
+                        colorBytes,
+                        string.Empty, //details
+                        DateTime.Now,
+                        DateTime.MinValue);
+                    MainClass.ColorCreations.Add(cc);
+                    MainClass.SaveColorCreations();
+                    FormMinhaCor.Instance.LoadDisplayGrid();
+                }
+                catch (Exception er)
+                {
+                    Wve.MyEr.Show(this, er, true);
+                }
+            }
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
         {
             using (Wve.HourglassCursor waitCursor = new Wve.HourglassCursor())
             {

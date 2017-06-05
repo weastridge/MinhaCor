@@ -24,11 +24,21 @@ namespace MinhaCor
         /// </summary>
         public FormMinhaCor()
         {
-            InitializeComponent();
-            MainClass.Initialize();
-            _displayColorAddEditInstance = new DisplayColorAddEdit();
-            _displayGridInstance = new DisplayGrid();
-            Instance = this;
+            using (Wve.HourglassCursor waitCursor = new Wve.HourglassCursor())
+            {
+                try
+                {
+                    InitializeComponent();
+                    MainClass.Initialize();
+                    _displayColorAddEditInstance = new DisplayColorAddEdit();
+                    _displayGridInstance = new DisplayGrid();
+                    Instance = this;
+                }
+                catch (Exception er)
+                {
+                    Wve.MyEr.Show(this, er, true);
+                }
+            }
         }
 
         
@@ -38,6 +48,7 @@ namespace MinhaCor
             {
                 try
                 {
+                    MainClass.LoadColorCreations();
                     LoadDisplayGrid();
                 }
                 catch (Exception er)
@@ -70,6 +81,7 @@ namespace MinhaCor
         internal void LoadDisplayColorAddEdit()
         {
             LoadDisplay(_displayColorAddEditInstance);
+            _displayColorAddEditInstance.Reset();
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)

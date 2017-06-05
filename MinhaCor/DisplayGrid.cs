@@ -17,6 +17,7 @@ namespace MinhaCor
     {
         private int _swatchHeight;
         private int _swatchWidth;
+        private int _colorCreationsStartingIndex = 0;
         /// <summary>
         /// display group of ColorCreations
         /// </summary>
@@ -41,6 +42,9 @@ namespace MinhaCor
             panelColors.Controls.Add(panelGo);
             panelGridDisplay.Controls.Add(panelColors);
             panelGo.Click += new System.EventHandler(this.panelGridDisplay_Click);
+
+
+
         }
 
         private void DisplayGrid_Load(object sender, EventArgs e)
@@ -58,8 +62,39 @@ namespace MinhaCor
 
         private void panelGridDisplay_Paint(object sender, PaintEventArgs e)
         {
-            //e.Graphics.FillRectangle(Brushes.Red,
-            //    new Rectangle(0, 0, _swatchWidth, _swatchHeight));
+            Point location;
+            Brush brush;
+            ColorCreation cc;
+            int colorCreationIndex;
+            //load swatches
+            for (int r = 0; r < MainClass.Rows; r++)
+            {
+                for (int c = 0; c < MainClass.Columns; c++)
+                {
+                    //skip first one which is the start buttton 
+                    if ((r != 0) || (c != 0))
+                    {
+                        colorCreationIndex = _colorCreationsStartingIndex +
+                            (r * MainClass.Columns) + c - 1; //because first spot is for start button
+                        if (colorCreationIndex < MainClass.ColorCreations.Count)
+                        {
+                            cc = MainClass.ColorCreations[colorCreationIndex];
+                            location = new Point(
+                                (panelGridDisplay.Width/MainClass.Columns) * c,
+                                (panelGridDisplay.Height/MainClass.Rows) * r);
+                            byte[] argb = new byte[4];
+                            //reverse endian!
+                            argb[3] = 255;
+                            argb[2] = cc.RgbValue[0];
+                            argb[1] = cc.RgbValue[1];
+                            argb[0] = cc.RgbValue[2];
+                            brush = new SolidBrush(Color.FromArgb(BitConverter.ToInt32(argb, 0)));
+                            e.Graphics.FillRectangle(brush,
+                                new Rectangle(location, new Size(_swatchWidth, _swatchHeight)));
+                        }//from if that many color creations exist
+                    }//from skip first spot
+                }//from for each column
+            }//from for each row
 
         }
 

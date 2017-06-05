@@ -39,10 +39,18 @@ namespace Wve
         /// <summary>
         /// puts config settings in same folder as executing assembly
         /// </summary>
-        /// <param name="useAssemblyWorkingFolder"></param>
-        public MyConfigSettings(bool useAssemblyWorkingFolder)
+        /// <param name="useApplicationWorkingDirectory"></param>
+        public MyConfigSettings(bool useApplicationWorkingDirectory)
         {
-            this.pathBase = Directory.GetCurrentDirectory();
+            if (useApplicationWorkingDirectory)
+            {
+                this.pathBase = Directory.GetCurrentDirectory();
+            }
+            else
+            {
+                this.pathBase = System.Environment.GetFolderPath(
+                Environment.SpecialFolder.LocalApplicationData);
+            }
         }
 
         /// <summary>
