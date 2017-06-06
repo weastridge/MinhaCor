@@ -12,6 +12,7 @@ namespace MinhaCor
     public static class MainClass
     {
         private static string _colorCreationsLocalFileName = "ColorCreations.csv";
+        private static string _colorCreationsPathAndFilename;
         /// <summary>
         /// configuration settings
         /// </summary>
@@ -68,6 +69,11 @@ namespace MinhaCor
         /// the working list of ColorCreations
         /// </summary>
         public static List<ColorCreation> ColorCreations;
+
+
+        /// <summary>
+        /// initialize the MainClass
+        /// </summary>
         public static void Initialize()
         {
             MainClass.ConfigSettings = new Wve.MyConfigSettings(true); //to locate in this folder
@@ -79,21 +85,24 @@ namespace MinhaCor
                 MainClass.ConfigSettings.SetValue("Culture", "en-US");
                 MainClass.ConfigSettings.SetValue("Password", string.Empty);
             }
-        }
 
-        public static void SaveColorCreations()
-        {
             StringBuilder sb = new StringBuilder();
             sb.Append(System.IO.Directory.GetCurrentDirectory());
             sb.Append(@"\");
-            char wrong = (System.IO.Path.PathSeparator);
+            //doesnt work:  sb.Append(System.IO.Path.PathSeparator);
             sb.Append(_colorCreationsLocalFileName);
-            SaveColorCreations(sb.ToString());
+            _colorCreationsPathAndFilename = sb.ToString();
         }
 
-        public static void SaveColorCreations(string fileName)
+
+        public static void SaveColorCreations()
         {
-            using (System.IO.StreamWriter sw = new System.IO.StreamWriter(fileName))
+            SaveColorCreations(_colorCreationsPathAndFilename);
+        }
+
+        public static void SaveColorCreations(string path)
+        {
+            using (System.IO.StreamWriter sw = new System.IO.StreamWriter(path))
             {
                 for (int i = 0; i < ColorCreations.Count; i++)
                 {
@@ -105,29 +114,30 @@ namespace MinhaCor
 
         public static void LoadColorCreations()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(System.IO.Directory.GetCurrentDirectory());
-            sb.Append(System.IO.Path.PathSeparator);
-            sb.Append(_colorCreationsLocalFileName);
-            LoadColorCreations(sb.ToString());
+            LoadColorCreations(_colorCreationsPathAndFilename);
         }
 
         /// <summary>
         /// load given file into list of color creations
         /// </summary>
-        /// <param name="filename"></param>
-        public static void LoadColorCreations(string filename)
+        /// <param name="path"></param>
+        public static void LoadColorCreations(string path)
         {
+            ColorCreation cc;
             ColorCreations = new List<ColorCreation>();
-            if (System.IO.File.Exists(filename))
+            if (System.IO.File.Exists(path))
             {
                 using (System.IO.StreamReader sr =
-                    new System.IO.StreamReader(filename))
+                    new System.IO.StreamReader(path))
                 {
                     string line;
                     while (!string.IsNullOrWhiteSpace(line = sr.ReadLine()))
                     {
-                        ColorCreations.Add(ColorCreation.FromCsv(line));
+                        cc = ColorCreation.FromCsv(line);
+                        if (cc.RgbValue.Length > 2) //can't accept if no color
+                        {
+                            ColorCreations.Add(ColorCreation.FromCsv(line));
+                        }
                     }
                 }//from using sw
             }

@@ -503,7 +503,7 @@ namespace MinhaCor
                         string.Empty, //details
                         DateTime.Now,
                         DateTime.MinValue);
-                    MainClass.ColorCreations.Add(cc);
+                    MainClass.ColorCreations.Insert(0, cc);
                     MainClass.SaveColorCreations();
                     FormMinhaCor.Instance.LoadDisplayGrid();
                 }

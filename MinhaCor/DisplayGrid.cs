@@ -18,6 +18,12 @@ namespace MinhaCor
         private int _swatchHeight;
         private int _swatchWidth;
         private int _colorCreationsStartingIndex = 0;
+        private Font _fontForColorNames;
+        private Font _fontForPersonNames;
+        private Font _fontForDetails;
+        private Brush _brushForLightText;
+        private Brush _brusForDarkText;
+
         /// <summary>
         /// display group of ColorCreations
         /// </summary>
@@ -43,13 +49,15 @@ namespace MinhaCor
             panelGridDisplay.Controls.Add(panelColors);
             panelGo.Click += new System.EventHandler(this.panelGridDisplay_Click);
 
-
+            panelGridDisplay.Invalidate();
 
         }
 
         private void DisplayGrid_Load(object sender, EventArgs e)
         {
             setMeasurements();
+            _brusForDarkText = Brushes.Brown;
+            _brushForLightText = Brushes.Tan;
         }
 
         private void setMeasurements()
@@ -58,6 +66,10 @@ namespace MinhaCor
                 (double)panelGridDisplay.Width / (double)MainClass.Columns);
             _swatchHeight = (int)Math.Floor(
                 (double)panelGridDisplay.Height / (double)MainClass.Rows);
+            //adjust fonts
+            _fontForColorNames = new Font("Comic Sans", 12, FontStyle.Bold);
+            _fontForDetails = new Font("Comic Sans", 8);
+            _fontForPersonNames = new Font("Comic Sans", 10);
         }
 
         private void panelGridDisplay_Paint(object sender, PaintEventArgs e)
@@ -91,6 +103,21 @@ namespace MinhaCor
                             brush = new SolidBrush(Color.FromArgb(BitConverter.ToInt32(argb, 0)));
                             e.Graphics.FillRectangle(brush,
                                 new Rectangle(location, new Size(_swatchWidth, _swatchHeight)));
+                            //color name
+                            e.Graphics.DrawString(cc.ColorName, 
+                                _fontForColorNames,
+                                ((cc.RgbValue[0] + cc.RgbValue[1] + cc.RgbValue[2]) > 384)?
+                                _brusForDarkText:_brushForLightText,
+                                new PointF((location.X + 5), 
+                                location.Y + _swatchHeight - 70));
+                            //person name
+                            e.Graphics.DrawString((string.IsNullOrEmpty(cc.PersonName)?
+                                "":("by " +cc.PersonName)),
+                                _fontForPersonNames,
+                                ((cc.RgbValue[0] + cc.RgbValue[1] + cc.RgbValue[2]) > 384) ?
+                                _brusForDarkText : _brushForLightText,
+                                new PointF((location.X + 5),
+                                location.Y + _swatchHeight - 40));
                         }//from if that many color creations exist
                     }//from skip first spot
                 }//from for each column

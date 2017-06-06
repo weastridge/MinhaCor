@@ -32,9 +32,9 @@ namespace MinhaCor
         /// </summary>
         public DateTime WhenCreated = DateTime.MinValue;
         /// <summary>
-        /// when last edited
+        /// when x-d out 
         /// </summary>
-        public DateTime WhenLastEdited = DateTime.MinValue;
+        public DateTime WhenXdOut = DateTime.MinValue;
 
         #region constructors
         public ColorCreation(string colorName, 
@@ -49,7 +49,7 @@ namespace MinhaCor
             RgbValue = rgbValue;
             Details = details;
             WhenCreated = whenCreated;
-            WhenLastEdited = whenLastEdited;
+            WhenXdOut = whenLastEdited;
         }
         #endregion constructors
 
@@ -66,7 +66,7 @@ namespace MinhaCor
                 Wve.WveTools.BytesToHex(RgbValue,string.Empty),
                 Details,
                 WhenCreated.ToShortDateString(),
-                WhenLastEdited.ToShortDateString()
+                WhenXdOut.ToShortDateString()
             },
             false); //false to append last comma
         }

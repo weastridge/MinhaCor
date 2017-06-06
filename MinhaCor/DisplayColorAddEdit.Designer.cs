@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelControls = new System.Windows.Forms.Panel();
+            this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -43,11 +44,9 @@
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.trackBarLightness = new System.Windows.Forms.TrackBar();
-            this.buttonTemp = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelBackground = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.panelControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLightness)).BeginInit();
             this.panelBackground.SuspendLayout();
@@ -70,12 +69,25 @@
             this.panelControls.Controls.Add(this.richTextBox2);
             this.panelControls.Controls.Add(this.richTextBox1);
             this.panelControls.Controls.Add(this.trackBarLightness);
-            this.panelControls.Controls.Add(this.buttonTemp);
             this.panelControls.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControls.Location = new System.Drawing.Point(0, 0);
             this.panelControls.Name = "panelControls";
             this.panelControls.Size = new System.Drawing.Size(166, 657);
             this.panelControls.TabIndex = 0;
+            // 
+            // textBoxTitle
+            // 
+            this.textBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxTitle.Enabled = false;
+            this.textBoxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTitle.Location = new System.Drawing.Point(14, 23);
+            this.textBoxTitle.Multiline = true;
+            this.textBoxTitle.Name = "textBoxTitle";
+            this.textBoxTitle.ReadOnly = true;
+            this.textBoxTitle.Size = new System.Drawing.Size(100, 80);
+            this.textBoxTitle.TabIndex = 15;
+            this.textBoxTitle.Text = "Name Your Own Skin Tone!";
+            this.textBoxTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -151,6 +163,7 @@
             // textBoxPersonName
             // 
             this.textBoxPersonName.Location = new System.Drawing.Point(14, 419);
+            this.textBoxPersonName.MaxLength = 18;
             this.textBoxPersonName.Name = "textBoxPersonName";
             this.textBoxPersonName.Size = new System.Drawing.Size(100, 21);
             this.textBoxPersonName.TabIndex = 7;
@@ -158,6 +171,7 @@
             // textBoxColorName
             // 
             this.textBoxColorName.Location = new System.Drawing.Point(14, 377);
+            this.textBoxColorName.MaxLength = 19;
             this.textBoxColorName.Name = "textBoxColorName";
             this.textBoxColorName.Size = new System.Drawing.Size(100, 21);
             this.textBoxColorName.TabIndex = 6;
@@ -213,16 +227,6 @@
             this.trackBarLightness.TabIndex = 1;
             this.trackBarLightness.Scroll += new System.EventHandler(this.trackBarLightness_Scroll);
             // 
-            // buttonTemp
-            // 
-            this.buttonTemp.Location = new System.Drawing.Point(15, 605);
-            this.buttonTemp.Name = "buttonTemp";
-            this.buttonTemp.Size = new System.Drawing.Size(75, 23);
-            this.buttonTemp.TabIndex = 0;
-            this.buttonTemp.Text = "temp";
-            this.buttonTemp.UseVisualStyleBackColor = true;
-            this.buttonTemp.Click += new System.EventHandler(this.buttonTemp_Click);
-            // 
             // splitter1
             // 
             this.splitter1.Location = new System.Drawing.Point(166, 0);
@@ -254,20 +258,6 @@
             this.panelMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseUp);
             this.panelMain.Resize += new System.EventHandler(this.panelMain_Resize_1);
             // 
-            // textBoxTitle
-            // 
-            this.textBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxTitle.Enabled = false;
-            this.textBoxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTitle.Location = new System.Drawing.Point(14, 23);
-            this.textBoxTitle.Multiline = true;
-            this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.ReadOnly = true;
-            this.textBoxTitle.Size = new System.Drawing.Size(100, 80);
-            this.textBoxTitle.TabIndex = 15;
-            this.textBoxTitle.Text = "Name Your Own Skin Tone!";
-            this.textBoxTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // DisplayColorAddEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -293,7 +283,6 @@
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Panel panelBackground;
         private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.Button buttonTemp;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxPersonName;
