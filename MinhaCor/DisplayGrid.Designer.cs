@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplayGrid));
             this.panelHeader = new System.Windows.Forms.Panel();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonPrior = new System.Windows.Forms.Button();
@@ -39,52 +40,37 @@
             // 
             this.panelHeader.Controls.Add(this.buttonNext);
             this.panelHeader.Controls.Add(this.buttonPrior);
-            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.panelHeader, "panelHeader");
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1008, 33);
-            this.panelHeader.TabIndex = 0;
             // 
             // buttonNext
             // 
-            this.buttonNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonNext.Location = new System.Drawing.Point(976, 4);
+            resources.ApplyResources(this.buttonNext, "buttonNext");
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(29, 23);
-            this.buttonNext.TabIndex = 1;
-            this.buttonNext.Text = "->";
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // buttonPrior
             // 
-            this.buttonPrior.Location = new System.Drawing.Point(4, 4);
+            resources.ApplyResources(this.buttonPrior, "buttonPrior");
             this.buttonPrior.Name = "buttonPrior";
-            this.buttonPrior.Size = new System.Drawing.Size(29, 23);
-            this.buttonPrior.TabIndex = 0;
-            this.buttonPrior.Text = "<-";
             this.buttonPrior.UseVisualStyleBackColor = true;
             this.buttonPrior.Click += new System.EventHandler(this.buttonPrior_Click);
             // 
             // panelGridDisplay
             // 
-            this.panelGridDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelGridDisplay.Location = new System.Drawing.Point(0, 33);
+            resources.ApplyResources(this.panelGridDisplay, "panelGridDisplay");
             this.panelGridDisplay.Name = "panelGridDisplay";
-            this.panelGridDisplay.Size = new System.Drawing.Size(1008, 624);
-            this.panelGridDisplay.TabIndex = 1;
             this.panelGridDisplay.Paint += new System.Windows.Forms.PaintEventHandler(this.panelGridDisplay_Paint);
             this.panelGridDisplay.Resize += new System.EventHandler(this.panelGridDisplay_Resize);
             // 
             // DisplayGrid
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelGridDisplay);
             this.Controls.Add(this.panelHeader);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "DisplayGrid";
-            this.Size = new System.Drawing.Size(1008, 657);
             this.Load += new System.EventHandler(this.DisplayGrid_Load);
             this.panelHeader.ResumeLayout(false);
             this.ResumeLayout(false);

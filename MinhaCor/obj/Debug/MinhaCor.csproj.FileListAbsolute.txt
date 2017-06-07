@@ -59,3 +59,4 @@ C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.Fo
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.FormSettings.resources
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.Properties.Resources.resources
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.csproj.GenerateResource.Cache
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.FormAbout.resources

@@ -104,5 +104,21 @@ namespace MinhaCor
         {
             this.Close();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (Wve.HourglassCursor waitCursor = new Wve.HourglassCursor())
+            {
+                try
+                {
+                    FormAbout dlg = new FormAbout();
+                    dlg.ShowDialog();
+                }
+                catch (Exception er)
+                {
+                    Wve.MyEr.Show(this, er, true);
+                }
+            }
+        }
     }
 }

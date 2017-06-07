@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplayColorAddEdit));
             this.panelControls = new System.Windows.Forms.Panel();
             this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,6 +48,9 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelBackground = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panelControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLightness)).BeginInit();
             this.panelBackground.SuspendLayout();
@@ -54,6 +58,9 @@
             // 
             // panelControls
             // 
+            this.panelControls.Controls.Add(this.label7);
+            this.panelControls.Controls.Add(this.label6);
+            this.panelControls.Controls.Add(this.label5);
             this.panelControls.Controls.Add(this.textBoxTitle);
             this.panelControls.Controls.Add(this.label4);
             this.panelControls.Controls.Add(this.label3);
@@ -69,205 +76,151 @@
             this.panelControls.Controls.Add(this.richTextBox2);
             this.panelControls.Controls.Add(this.richTextBox1);
             this.panelControls.Controls.Add(this.trackBarLightness);
-            this.panelControls.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControls.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.panelControls, "panelControls");
             this.panelControls.Name = "panelControls";
-            this.panelControls.Size = new System.Drawing.Size(166, 657);
-            this.panelControls.TabIndex = 0;
             // 
             // textBoxTitle
             // 
             this.textBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxTitle.Enabled = false;
-            this.textBoxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTitle.Location = new System.Drawing.Point(14, 23);
-            this.textBoxTitle.Multiline = true;
+            resources.ApplyResources(this.textBoxTitle, "textBoxTitle");
             this.textBoxTitle.Name = "textBoxTitle";
             this.textBoxTitle.ReadOnly = true;
-            this.textBoxTitle.Size = new System.Drawing.Size(100, 80);
-            this.textBoxTitle.TabIndex = 15;
-            this.textBoxTitle.Text = "Name Your Own Skin Tone!";
-            this.textBoxTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label4, "label4");
             this.label4.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label4.Location = new System.Drawing.Point(65, 631);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 16);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "darker";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label3, "label3");
             this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label3.Location = new System.Drawing.Point(77, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 16);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "lighter";
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(14, 522);
+            resources.ApplyResources(this.buttonCancel, "buttonCancel");
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(100, 36);
-            this.buttonCancel.TabIndex = 12;
-            this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(15, 461);
+            resources.ApplyResources(this.buttonOK, "buttonOK");
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(101, 55);
-            this.buttonOK.TabIndex = 11;
-            this.buttonOK.Text = "&OK";
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // buttonReset
             // 
-            this.buttonReset.Location = new System.Drawing.Point(14, 576);
+            resources.ApplyResources(this.buttonReset, "buttonReset");
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(100, 23);
-            this.buttonReset.TabIndex = 10;
-            this.buttonReset.Text = "Reset";
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 401);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 15);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Your name:";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 359);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 15);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Name for your color:";
             // 
             // textBoxPersonName
             // 
-            this.textBoxPersonName.Location = new System.Drawing.Point(14, 419);
-            this.textBoxPersonName.MaxLength = 18;
+            resources.ApplyResources(this.textBoxPersonName, "textBoxPersonName");
             this.textBoxPersonName.Name = "textBoxPersonName";
-            this.textBoxPersonName.Size = new System.Drawing.Size(100, 21);
-            this.textBoxPersonName.TabIndex = 7;
             // 
             // textBoxColorName
             // 
-            this.textBoxColorName.Location = new System.Drawing.Point(14, 377);
-            this.textBoxColorName.MaxLength = 19;
+            resources.ApplyResources(this.textBoxColorName, "textBoxColorName");
             this.textBoxColorName.Name = "textBoxColorName";
-            this.textBoxColorName.Size = new System.Drawing.Size(100, 21);
-            this.textBoxColorName.TabIndex = 6;
             // 
             // panelSwatch
             // 
-            this.panelSwatch.Location = new System.Drawing.Point(14, 258);
+            resources.ApplyResources(this.panelSwatch, "panelSwatch");
             this.panelSwatch.Name = "panelSwatch";
-            this.panelSwatch.Size = new System.Drawing.Size(101, 98);
-            this.panelSwatch.TabIndex = 5;
             this.panelSwatch.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSwatch_Paint);
             // 
             // richTextBox3
             // 
             this.richTextBox3.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox3.Enabled = false;
-            this.richTextBox3.Location = new System.Drawing.Point(14, 207);
+            resources.ApplyResources(this.richTextBox3, "richTextBox3");
             this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(91, 45);
-            this.richTextBox3.TabIndex = 4;
-            this.richTextBox3.Text = "3. Name your color";
             // 
             // richTextBox2
             // 
             this.richTextBox2.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Enabled = false;
-            this.richTextBox2.Location = new System.Drawing.Point(14, 109);
+            resources.ApplyResources(this.richTextBox2, "richTextBox2");
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(91, 41);
-            this.richTextBox2.TabIndex = 3;
-            this.richTextBox2.Text = "1. Drag bar to adjust lightness.";
             // 
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(14, 158);
+            resources.ApplyResources(this.richTextBox1, "richTextBox1");
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(91, 45);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "2. Drag square to adjust color.  ";
             // 
             // trackBarLightness
             // 
-            this.trackBarLightness.Dock = System.Windows.Forms.DockStyle.Right;
-            this.trackBarLightness.Location = new System.Drawing.Point(121, 0);
+            resources.ApplyResources(this.trackBarLightness, "trackBarLightness");
             this.trackBarLightness.Name = "trackBarLightness";
-            this.trackBarLightness.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBarLightness.Size = new System.Drawing.Size(45, 657);
-            this.trackBarLightness.TabIndex = 1;
             this.trackBarLightness.Scroll += new System.EventHandler(this.trackBarLightness_Scroll);
             // 
             // splitter1
             // 
-            this.splitter1.Location = new System.Drawing.Point(166, 0);
+            resources.ApplyResources(this.splitter1, "splitter1");
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 657);
-            this.splitter1.TabIndex = 1;
             this.splitter1.TabStop = false;
             // 
             // panelBackground
             // 
             this.panelBackground.Controls.Add(this.panelMain);
-            this.panelBackground.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBackground.Location = new System.Drawing.Point(169, 0);
+            resources.ApplyResources(this.panelBackground, "panelBackground");
             this.panelBackground.Name = "panelBackground";
-            this.panelBackground.Size = new System.Drawing.Size(839, 657);
-            this.panelBackground.TabIndex = 2;
             this.panelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBackground_Paint);
             // 
             // panelMain
             // 
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.panelMain, "panelMain");
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(839, 657);
-            this.panelMain.TabIndex = 0;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             this.panelMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseDown);
             this.panelMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseMove);
             this.panelMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseUp);
             this.panelMain.Resize += new System.EventHandler(this.panelMain_Resize_1);
             // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.label5.Name = "label5";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.label6.Name = "label6";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.label7.Name = "label7";
+            // 
             // DisplayColorAddEdit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelBackground);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.panelControls);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "DisplayColorAddEdit";
-            this.Size = new System.Drawing.Size(1008, 657);
             this.Load += new System.EventHandler(this.DisplayColorAddEdit_Load);
             this.panelControls.ResumeLayout(false);
             this.panelControls.PerformLayout();
@@ -298,5 +251,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxTitle;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }
