@@ -54,6 +54,7 @@
             this.buttonNext.TabIndex = 1;
             this.buttonNext.Text = "->";
             this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // buttonPrior
             // 
@@ -63,6 +64,7 @@
             this.buttonPrior.TabIndex = 0;
             this.buttonPrior.Text = "<-";
             this.buttonPrior.UseVisualStyleBackColor = true;
+            this.buttonPrior.Click += new System.EventHandler(this.buttonPrior_Click);
             // 
             // panelGridDisplay
             // 

@@ -65,8 +65,8 @@ namespace MinhaCor
                 PersonName,
                 Wve.WveTools.BytesToHex(RgbValue,string.Empty),
                 Details,
-                WhenCreated.ToShortDateString(),
-                WhenXdOut.ToShortDateString()
+                WhenCreated.ToString("o"), //iso 8601 format
+                WhenXdOut.ToString("o")
             },
             false); //false to append last comma
         }

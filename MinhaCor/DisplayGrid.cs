@@ -23,6 +23,9 @@ namespace MinhaCor
         private Font _fontForDetails;
         private Brush _brushForLightText;
         private Brush _brusForDarkText;
+        private int _fromBottomColorName;
+        private int _fromBottomPersonName;
+        private int _fromBottomDetails;
 
         /// <summary>
         /// display group of ColorCreations
@@ -32,6 +35,9 @@ namespace MinhaCor
             InitializeComponent();
         }
 
+        /// <summary>
+        /// draw or redraw grid
+        /// </summary>
         internal void DrawGrid()
         {
             panelGridDisplay.Controls.Clear();
@@ -67,9 +73,16 @@ namespace MinhaCor
             _swatchHeight = (int)Math.Floor(
                 (double)panelGridDisplay.Height / (double)MainClass.Rows);
             //adjust fonts
-            _fontForColorNames = new Font("Comic Sans", 12, FontStyle.Bold);
-            _fontForDetails = new Font("Comic Sans", 8);
-            _fontForPersonNames = new Font("Comic Sans", 10);
+            _fontForColorNames = new Font("Comic Sans", 
+                (int)Math.Floor((double) 12 * _swatchWidth / 168), 
+                FontStyle.Bold);
+            _fontForPersonNames = new Font("Comic Sans",
+                (int)Math.Floor((double)10 * _swatchWidth / 168));
+            _fontForDetails = new Font("Comic Sans",
+                (int)Math.Floor((double)8 * _swatchWidth / 168));
+            _fromBottomColorName = (int)Math.Floor((double) 70 *  _swatchHeight / 156);
+            _fromBottomPersonName = (int)Math.Floor((double)40 * _swatchHeight / 156);
+            _fromBottomDetails = (int)Math.Floor((double)20 * _swatchHeight / 156);
         }
 
         private void panelGridDisplay_Paint(object sender, PaintEventArgs e)
@@ -109,7 +122,7 @@ namespace MinhaCor
                                 ((cc.RgbValue[0] + cc.RgbValue[1] + cc.RgbValue[2]) > 384)?
                                 _brusForDarkText:_brushForLightText,
                                 new PointF((location.X + 5), 
-                                location.Y + _swatchHeight - 70));
+                                location.Y + _swatchHeight - _fromBottomColorName));
                             //person name
                             e.Graphics.DrawString((string.IsNullOrEmpty(cc.PersonName)?
                                 "":("by " +cc.PersonName)),
@@ -117,7 +130,19 @@ namespace MinhaCor
                                 ((cc.RgbValue[0] + cc.RgbValue[1] + cc.RgbValue[2]) > 384) ?
                                 _brusForDarkText : _brushForLightText,
                                 new PointF((location.X + 5),
-                                location.Y + _swatchHeight - 40));
+                                location.Y + _swatchHeight - _fromBottomPersonName));
+                            //color
+                            e.Graphics.DrawString(Wve.WveTools.BytesToHex(cc.RgbValue,string.Empty) + 
+                                "  " +
+                                ((cc.WhenCreated == DateTime.MinValue)?
+                                string.Empty:
+                                cc.WhenCreated.ToShortDateString()),
+                                _fontForDetails,
+                                ((cc.RgbValue[0] + cc.RgbValue[1] + cc.RgbValue[2]) > 384) ?
+                                _brusForDarkText : _brushForLightText,
+                                new PointF((location.X + 5),
+                                location.Y + _swatchHeight - _fromBottomDetails));
+
                         }//from if that many color creations exist
                     }//from skip first spot
                 }//from for each column
@@ -145,6 +170,51 @@ namespace MinhaCor
         {
             setMeasurements();
             DrawGrid();
+        }
+
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            using (Wve.HourglassCursor waitCursor = new Wve.HourglassCursor())
+            {
+                try
+                { 
+                    //if more swatches to show...
+                    if (MainClass.ColorCreations.Count > 
+                        _colorCreationsStartingIndex + (MainClass.Columns * MainClass.Rows))
+                    {
+                        _colorCreationsStartingIndex += (MainClass.Columns * MainClass.Rows);
+                    }
+                    DrawGrid();
+                }
+                catch (Exception er)
+                {
+                    Wve.MyEr.Show(this, er, true);
+                }
+            }
+        }
+
+        private void buttonPrior_Click(object sender, EventArgs e)
+        {
+            using (Wve.HourglassCursor waitCursor = new Wve.HourglassCursor())
+            {
+                try
+                {
+                    //if more swatches to show...
+                    if (_colorCreationsStartingIndex > (MainClass.Columns * MainClass.Rows))
+                    {
+                        _colorCreationsStartingIndex -= (MainClass.Columns * MainClass.Rows);
+                    } 
+                    else if(_colorCreationsStartingIndex > 0)
+                    {
+                        _colorCreationsStartingIndex = 0;
+                    }
+                    DrawGrid();
+                }
+                catch (Exception er)
+                {
+                    Wve.MyEr.Show(this, er, true);
+                }
+            }
         }
     }
 }

@@ -128,7 +128,8 @@ namespace MinhaCor
             if (System.IO.File.Exists(path))
             {
                 using (System.IO.StreamReader sr =
-                    new System.IO.StreamReader(path))
+                    new System.IO.StreamReader(
+                        System.IO.File.OpenRead(path)))
                 {
                     string line;
                     while (!string.IsNullOrWhiteSpace(line = sr.ReadLine()))
