@@ -73,81 +73,91 @@ namespace MinhaCor
             _swatchHeight = (int)Math.Floor(
                 (double)panelGridDisplay.Height / (double)MainClass.Rows);
             //adjust fonts
-            _fontForColorNames = new Font("Comic Sans", 
-                (int)Math.Floor((double) 12 * _swatchWidth / 168), 
+            float sizeF = (float)Math.Floor((double)12 * _swatchWidth / 168);
+            _fontForColorNames = new Font("Comic Sans",
+                sizeF>8?sizeF:8, 
                 FontStyle.Bold);
+            sizeF = (float)Math.Floor((double)10 * _swatchWidth / 168);
             _fontForPersonNames = new Font("Comic Sans",
-                (int)Math.Floor((double)10 * _swatchWidth / 168));
+                sizeF>8?sizeF:8);
+            sizeF = (float)Math.Floor((double)10 * _swatchWidth / 168);
             _fontForDetails = new Font("Comic Sans",
-                (int)Math.Floor((double)8 * _swatchWidth / 168));
+                sizeF > 8 ? sizeF : 8);
             _fromBottomColorName = (int)Math.Floor((double) 70 *  _swatchHeight / 156);
             _fromBottomPersonName = (int)Math.Floor((double)40 * _swatchHeight / 156);
             _fromBottomDetails = (int)Math.Floor((double)20 * _swatchHeight / 156);
+
         }
 
         private void panelGridDisplay_Paint(object sender, PaintEventArgs e)
         {
-            Point location;
-            Brush brush;
-            ColorCreation cc;
-            int colorCreationIndex;
-            //load swatches
-            for (int r = 0; r < MainClass.Rows; r++)
+            try
             {
-                for (int c = 0; c < MainClass.Columns; c++)
+                Point location;
+                Brush brush;
+                ColorCreation cc;
+                int colorCreationIndex;
+                //load swatches
+                for (int r = 0; r < MainClass.Rows; r++)
                 {
-                    //skip first one which is the start buttton 
-                    if ((r != 0) || (c != 0))
+                    for (int c = 0; c < MainClass.Columns; c++)
                     {
-                        colorCreationIndex = _colorCreationsStartingIndex +
-                            (r * MainClass.Columns) + c - 1; //because first spot is for start button
-                        if (colorCreationIndex < MainClass.ColorCreations.Count)
+                        //skip first one which is the start buttton 
+                        if ((r != 0) || (c != 0))
                         {
-                            cc = MainClass.ColorCreations[colorCreationIndex];
-                            location = new Point(
-                                (panelGridDisplay.Width/MainClass.Columns) * c,
-                                (panelGridDisplay.Height/MainClass.Rows) * r);
-                            byte[] argb = new byte[4];
-                            //reverse endian!
-                            argb[3] = 255;
-                            argb[2] = cc.RgbValue[0];
-                            argb[1] = cc.RgbValue[1];
-                            argb[0] = cc.RgbValue[2];
-                            brush = new SolidBrush(Color.FromArgb(BitConverter.ToInt32(argb, 0)));
-                            e.Graphics.FillRectangle(brush,
-                                new Rectangle(location, new Size(_swatchWidth, _swatchHeight)));
-                            //color name
-                            e.Graphics.DrawString(cc.ColorName, 
-                                _fontForColorNames,
-                                ((cc.RgbValue[0] + cc.RgbValue[1] + cc.RgbValue[2]) > 384)?
-                                _brusForDarkText:_brushForLightText,
-                                new PointF((location.X + 5), 
-                                location.Y + _swatchHeight - _fromBottomColorName));
-                            //person name
-                            e.Graphics.DrawString((string.IsNullOrEmpty(cc.PersonName)?
-                                "":("by " +cc.PersonName)),
-                                _fontForPersonNames,
-                                ((cc.RgbValue[0] + cc.RgbValue[1] + cc.RgbValue[2]) > 384) ?
-                                _brusForDarkText : _brushForLightText,
-                                new PointF((location.X + 5),
-                                location.Y + _swatchHeight - _fromBottomPersonName));
-                            //color
-                            e.Graphics.DrawString(Wve.WveTools.BytesToHex(cc.RgbValue,string.Empty) + 
-                                "  " +
-                                ((cc.WhenCreated == DateTime.MinValue)?
-                                string.Empty:
-                                cc.WhenCreated.ToShortDateString()),
-                                _fontForDetails,
-                                ((cc.RgbValue[0] + cc.RgbValue[1] + cc.RgbValue[2]) > 384) ?
-                                _brusForDarkText : _brushForLightText,
-                                new PointF((location.X + 5),
-                                location.Y + _swatchHeight - _fromBottomDetails));
+                            colorCreationIndex = _colorCreationsStartingIndex +
+                                (r * MainClass.Columns) + c - 1; //because first spot is for start button
+                            if (colorCreationIndex < MainClass.ColorCreations.Count)
+                            {
+                                cc = MainClass.ColorCreations[colorCreationIndex];
+                                location = new Point(
+                                    (panelGridDisplay.Width / MainClass.Columns) * c,
+                                    (panelGridDisplay.Height / MainClass.Rows) * r);
+                                byte[] argb = new byte[4];
+                                //reverse endian!
+                                argb[3] = 255;
+                                argb[2] = cc.RgbValue[0];
+                                argb[1] = cc.RgbValue[1];
+                                argb[0] = cc.RgbValue[2];
+                                brush = new SolidBrush(Color.FromArgb(BitConverter.ToInt32(argb, 0)));
+                                e.Graphics.FillRectangle(brush,
+                                    new Rectangle(location, new Size(_swatchWidth, _swatchHeight)));
+                                //color name
+                                e.Graphics.DrawString(cc.ColorName,
+                                    _fontForColorNames,
+                                    ((cc.RgbValue[0] + cc.RgbValue[1] + cc.RgbValue[2]) > 384) ?
+                                    _brusForDarkText : _brushForLightText,
+                                    new PointF((location.X + 5),
+                                    location.Y + _swatchHeight - _fromBottomColorName));
+                                //person name
+                                e.Graphics.DrawString((string.IsNullOrEmpty(cc.PersonName) ?
+                                    "" : ("by " + cc.PersonName)),
+                                    _fontForPersonNames,
+                                    ((cc.RgbValue[0] + cc.RgbValue[1] + cc.RgbValue[2]) > 384) ?
+                                    _brusForDarkText : _brushForLightText,
+                                    new PointF((location.X + 5),
+                                    location.Y + _swatchHeight - _fromBottomPersonName));
+                                //color
+                                e.Graphics.DrawString(Wve.WveTools.BytesToHex(cc.RgbValue, string.Empty) +
+                                    "  " +
+                                    ((cc.WhenCreated == DateTime.MinValue) ?
+                                    string.Empty :
+                                    cc.WhenCreated.ToShortDateString()),
+                                    _fontForDetails,
+                                    ((cc.RgbValue[0] + cc.RgbValue[1] + cc.RgbValue[2]) > 384) ?
+                                    _brusForDarkText : _brushForLightText,
+                                    new PointF((location.X + 5),
+                                    location.Y + _swatchHeight - _fromBottomDetails));
 
-                        }//from if that many color creations exist
-                    }//from skip first spot
-                }//from for each column
-            }//from for each row
-
+                            }//from if that many color creations exist
+                        }//from skip first spot
+                    }//from for each column
+                }//from for each row
+            }
+            catch (Exception er)
+            {
+                Wve.MyEr.Show(this, er, true);
+            }
         }
 
 
@@ -168,8 +178,15 @@ namespace MinhaCor
 
         private void panelGridDisplay_Resize(object sender, EventArgs e)
         {
-            setMeasurements();
-            DrawGrid();
+            try
+            {
+                setMeasurements();
+                DrawGrid();
+            }
+            catch (Exception er)
+            {
+                Wve.MyEr.Show(this, er, true);
+            }
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
