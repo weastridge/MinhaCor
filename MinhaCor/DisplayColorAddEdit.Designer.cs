@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplayColorAddEdit));
             this.panelControls = new System.Windows.Forms.Panel();
+            this.panelGradient = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.trackBarLightness = new System.Windows.Forms.TrackBar();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,14 +52,10 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelBackground = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.panelGradient = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.trackBarLightness = new System.Windows.Forms.TrackBar();
             this.panelControls.SuspendLayout();
-            this.panelBackground.SuspendLayout();
             this.panelGradient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLightness)).BeginInit();
+            this.panelBackground.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControls
@@ -78,6 +78,34 @@
             this.panelControls.Controls.Add(this.richTextBox2);
             this.panelControls.Controls.Add(this.richTextBox1);
             this.panelControls.Name = "panelControls";
+            // 
+            // panelGradient
+            // 
+            resources.ApplyResources(this.panelGradient, "panelGradient");
+            this.panelGradient.BackgroundImage = global::MinhaCor.Properties.Resources.gradient;
+            this.panelGradient.Controls.Add(this.label3);
+            this.panelGradient.Controls.Add(this.label4);
+            this.panelGradient.Controls.Add(this.trackBarLightness);
+            this.panelGradient.Name = "panelGradient";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label3.Name = "label3";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label4.Name = "label4";
+            // 
+            // trackBarLightness
+            // 
+            resources.ApplyResources(this.trackBarLightness, "trackBarLightness");
+            this.trackBarLightness.BackColor = System.Drawing.SystemColors.Control;
+            this.trackBarLightness.Name = "trackBarLightness";
+            this.trackBarLightness.Scroll += new System.EventHandler(this.trackBarLightness_Scroll);
             // 
             // label7
             // 
@@ -195,34 +223,6 @@
             this.panelMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseUp);
             this.panelMain.Resize += new System.EventHandler(this.panelMain_Resize_1);
             // 
-            // panelGradient
-            // 
-            resources.ApplyResources(this.panelGradient, "panelGradient");
-            this.panelGradient.BackgroundImage = global::MinhaCor.Properties.Resources.gradient;
-            this.panelGradient.Controls.Add(this.label3);
-            this.panelGradient.Controls.Add(this.label4);
-            this.panelGradient.Controls.Add(this.trackBarLightness);
-            this.panelGradient.Name = "panelGradient";
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label3.Name = "label3";
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label4.Name = "label4";
-            // 
-            // trackBarLightness
-            // 
-            resources.ApplyResources(this.trackBarLightness, "trackBarLightness");
-            this.trackBarLightness.BackColor = System.Drawing.SystemColors.Control;
-            this.trackBarLightness.Name = "trackBarLightness";
-            this.trackBarLightness.Scroll += new System.EventHandler(this.trackBarLightness_Scroll);
-            // 
             // DisplayColorAddEdit
             // 
             resources.ApplyResources(this, "$this");
@@ -234,10 +234,10 @@
             this.Load += new System.EventHandler(this.DisplayColorAddEdit_Load);
             this.panelControls.ResumeLayout(false);
             this.panelControls.PerformLayout();
-            this.panelBackground.ResumeLayout(false);
             this.panelGradient.ResumeLayout(false);
             this.panelGradient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLightness)).EndInit();
+            this.panelBackground.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
