@@ -64,3 +64,7 @@ C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\bin\Debug\pt-BR\Minha
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.FormMinhaCor.pt-BR.resources
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\pt-BR\MinhaCor.resources.dll
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.DisplayColorAddEdit.pt-BR.resources
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\bin\Debug\en-US\MinhaCor.resources.dll
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.Resources.en-US.resources
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.Resources.pt-BR.resources
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\en-US\MinhaCor.resources.dll

@@ -12,6 +12,8 @@ Custom Resource Files:  for string resources in name=value pairs, which are non-
 To use localizatoin in VS:  set form's Localizable to true, change its language property and make changes to the properties and controls
 see https://msdn.microsoft.com/en-us/library/system.globalization.cultureinfo(v=vs.110).aspx
 https://msdn.microsoft.com/en-us/library/h6270d0z(v=vs.110).aspx
+using custom resources (old document:) https://msdn.microsoft.com/en-us/library/s9ckwb4b(v=vs.100).aspx
+
 
 to reduce flicker, just make background and foreground same colors, and make foreground formMain transparent around rectangle rather than ellipse - quicker and lets the 3 dots stay on the background where they don't flicker.
 
