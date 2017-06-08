@@ -120,6 +120,7 @@
             this.comboBoxCulture.Name = "comboBoxCulture";
             this.comboBoxCulture.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCulture.TabIndex = 8;
+            this.comboBoxCulture.SelectedIndexChanged += new System.EventHandler(this.comboBoxCulture_SelectedIndexChanged);
             // 
             // label5
             // 

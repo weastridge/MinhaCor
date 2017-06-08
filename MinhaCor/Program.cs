@@ -16,6 +16,16 @@ namespace MinhaCor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //set default culture before any changes are made
+            try
+            {
+                MainClass.StartUpCulture = System.Globalization.CultureInfo.CurrentCulture;
+                MainClass.StartUpUICulture = System.Globalization.CultureInfo.CurrentUICulture;
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(er.ToString());
+            }
             Application.Run(new FormMinhaCor());
         }
     }

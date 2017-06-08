@@ -28,8 +28,9 @@ namespace MinhaCor
             {
                 try
                 {
-                    InitializeComponent();
+                    //initialize main class first because it sets culture info
                     MainClass.Initialize();
+                    InitializeComponent();
                     _displayColorAddEditInstance = new DisplayColorAddEdit();
                     _displayGridInstance = new DisplayGrid();
                     Instance = this;

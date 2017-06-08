@@ -64,11 +64,30 @@ namespace MinhaCor
                 ConfigSettings.SetValue("Columns", _columns.ToString());
             }
         }
+        /// <summary>
+        /// Name of culture to set the thread to for this program per config settings
+        /// </summary>
+        public static string DefaultCultureName
+        {
+            get
+            {
+                _defaultCultureName = ConfigSettings.GetValue("DefaultCulture");
+                return _defaultCultureName;
+            }
+
+            set
+            {
+                _defaultCultureName = value;
+                ConfigSettings.SetValue("DefaultCulture", _defaultCultureName);
+            }
+        }
 
         /// <summary>
         /// the working list of ColorCreations
         /// </summary>
         public static List<ColorCreation> ColorCreations;
+
+        private static string _defaultCultureName;
 
 
         /// <summary>
@@ -82,8 +101,18 @@ namespace MinhaCor
             {
                 MainClass.ConfigSettings.SetValue("Rows", "4");
                 MainClass.ConfigSettings.SetValue("Columns", "6");
-                MainClass.ConfigSettings.SetValue("Culture", "en-US");
+                MainClass.ConfigSettings.SetValue("Culture", "default");
                 MainClass.ConfigSettings.SetValue("Password", string.Empty);
+            }
+
+            //set current culture
+            if((!string.IsNullOrWhiteSpace(MainClass.DefaultCultureName)) &&
+                (DefaultCultureName != "default"))
+            {
+                System.Globalization.CultureInfo.CurrentCulture = 
+                    new System.Globalization.CultureInfo(MainClass.DefaultCultureName);
+                System.Globalization.CultureInfo.CurrentUICulture = 
+                    new System.Globalization.CultureInfo(MainClass.DefaultCultureName);
             }
 
             StringBuilder sb = new StringBuilder();
@@ -143,5 +172,14 @@ namespace MinhaCor
                 }//from using sw
             }
         }
+
+        /// <summary>
+        /// this is the default culture info determined at program statup in the Program startup
+        /// </summary>
+        public static System.Globalization.CultureInfo StartUpCulture;
+        /// <summary>
+        /// default ui culture info determined at program startup in the program setup
+        /// </summary>
+        public static System.Globalization.CultureInfo StartUpUICulture;
     }
 }

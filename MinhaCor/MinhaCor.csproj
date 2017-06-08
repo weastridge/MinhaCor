@@ -101,6 +101,9 @@
     <Compile Include="MainClassLibrary.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DisplayColorAddEdit.pt-BR.resx">
+      <DependentUpon>DisplayColorAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAbout.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMainTest.resx">
       <DependentUpon>FormMainTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMinhaCor.pt-BR.resx">
+      <DependentUpon>FormMinhaCor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMinhaCor.resx">
       <DependentUpon>FormMinhaCor.cs</DependentUpon>
@@ -147,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="notes.txt" />
+    <None Include="Resources\gradient.png" />
     <None Include="Resources\start.png" />
   </ItemGroup>
   <ItemGroup>

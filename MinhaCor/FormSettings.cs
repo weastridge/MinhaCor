@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace MinhaCor
 {
@@ -15,6 +16,8 @@ namespace MinhaCor
     /// </summary>
     public partial class FormSettings : Form
     {
+        private bool _ignoreChangeEvents = false;
+        private bool _cultureWasChanged = false;
         private int _rows;
         private int _columns;
         /// <summary>
@@ -27,20 +30,65 @@ namespace MinhaCor
 
         private void FormSettings_Load(object sender, EventArgs e)
         {
-            loadSettings();
+            using (Wve.HourglassCursor waitCursor = new Wve.HourglassCursor())
+            {
+                try
+                {
+                    loadSettings();
+                }
+                catch (Exception er)
+                {
+                    Wve.MyEr.Show(this, er, true);
+                }
+            }
         }
 
         private void loadSettings()
         {
+            _ignoreChangeEvents = true;
             textBoxRows.Text = MainClass.ConfigSettings.GetValue("Rows");
             textBoxColumns.Text = MainClass.ConfigSettings.GetValue("Columns");
-            setCulture(MainClass.ConfigSettings.GetValue("Culture"));
             textBoxPassword.Text = MainClass.ConfigSettings.GetValue("Password");
+            comboBoxCulture.Items.Clear();
+            comboBoxCulture.Items.Add("default");
+            comboBoxCulture.Items.Add("en-US");
+            comboBoxCulture.Items.Add("pt-BR");
+            comboBoxCulture.SelectedIndex = 0; //unless config is otherwise
+            for(int i=0; i<comboBoxCulture.Items.Count; i++)
+            {
+                if(MainClass.DefaultCultureName.Trim().ToLower() == 
+                    comboBoxCulture.Items[i].ToString().Trim().ToLower())
+                {
+                    comboBoxCulture.SelectedIndex = i;
+                    break;
+                }
+            }
+            _ignoreChangeEvents = false;
         }
 
         private void setCulture(string culture)
         {
-
+            if(culture == "default")
+            {
+                //revert to default found at startup
+                System.Globalization.CultureInfo.CurrentCulture = MainClass.StartUpCulture;
+                System.Globalization.CultureInfo.CurrentUICulture = MainClass.StartUpUICulture;
+            }
+            else
+            {
+                try
+                {
+                    CultureInfo.CurrentCulture = new CultureInfo(culture);
+                }
+                catch (Exception er)
+                {
+                    Wve.MyEr.Show(this, er, true);
+                }
+            }
+            //save for future use
+            MainClass.DefaultCultureName = culture;
+            //notify
+            MessageBox.Show("Culture changes made.  Please restart program now for consistency.");
         }
         private void buttonOK_Click(object sender, EventArgs e)
         {
@@ -84,9 +132,19 @@ namespace MinhaCor
             MainClass.ConfigSettings.SetValue("Columns", _columns.ToString());
             MainClass.ConfigSettings.SetValue("Culture", comboBoxCulture.SelectedText);
             MainClass.ConfigSettings.SetValue("Password", textBoxPassword.Text);
+            if(_cultureWasChanged)
+            {
+                setCulture(comboBoxCulture.SelectedItem.ToString());
+            }
             return validated;
         }
 
-
+        private void comboBoxCulture_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(!_ignoreChangeEvents)
+            {
+                _cultureWasChanged = true;
+            }
+        }
     }
 }

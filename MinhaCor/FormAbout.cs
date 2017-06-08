@@ -41,10 +41,17 @@ namespace MinhaCor
             {
                 try
                 {
+                    //intro
                     StringBuilder sb = new StringBuilder();
                     sb.Append("MinhaCor (MyColor) is a fun way to show that our own " +
                         "skin color is unique, yet part of a wonderful family of colors.");
                     textBox1.Text = sb.ToString();
+
+                    //culture
+                    labelCulture.Text = "Current Culture is " + 
+                        System.Globalization.CultureInfo.CurrentCulture.DisplayName;
+                    labelUICulture.Text = "Current User Interface Culture is " + 
+                        System.Globalization.CultureInfo.CurrentUICulture.DisplayName;
                 }
                 catch (Exception er)
                 {

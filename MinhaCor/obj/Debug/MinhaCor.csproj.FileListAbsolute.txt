@@ -60,3 +60,7 @@ C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.Fo
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.Properties.Resources.resources
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.csproj.GenerateResource.Cache
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.FormAbout.resources
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\bin\Debug\pt-BR\MinhaCor.resources.dll
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.FormMinhaCor.pt-BR.resources
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\pt-BR\MinhaCor.resources.dll
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.DisplayColorAddEdit.pt-BR.resources

@@ -30,6 +30,8 @@
         {
             this.buttonOK = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelCulture = new System.Windows.Forms.Label();
+            this.labelUICulture = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonOK
@@ -54,6 +56,24 @@
             this.textBox1.Size = new System.Drawing.Size(619, 74);
             this.textBox1.TabIndex = 1;
             // 
+            // labelCulture
+            // 
+            this.labelCulture.AutoSize = true;
+            this.labelCulture.Location = new System.Drawing.Point(13, 213);
+            this.labelCulture.Name = "labelCulture";
+            this.labelCulture.Size = new System.Drawing.Size(46, 15);
+            this.labelCulture.TabIndex = 2;
+            this.labelCulture.Text = "Culture";
+            // 
+            // labelUICulture
+            // 
+            this.labelUICulture.AutoSize = true;
+            this.labelUICulture.Location = new System.Drawing.Point(13, 237);
+            this.labelUICulture.Name = "labelUICulture";
+            this.labelUICulture.Size = new System.Drawing.Size(58, 15);
+            this.labelUICulture.TabIndex = 3;
+            this.labelUICulture.Text = "UICulture";
+            // 
             // FormAbout
             // 
             this.AcceptButton = this.buttonOK;
@@ -62,6 +82,8 @@
             this.CancelButton = this.buttonOK;
             this.ClientSize = new System.Drawing.Size(644, 643);
             this.ControlBox = false;
+            this.Controls.Add(this.labelUICulture);
+            this.Controls.Add(this.labelCulture);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonOK);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -78,5 +100,7 @@
 
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label labelCulture;
+        private System.Windows.Forms.Label labelUICulture;
     }
 }
