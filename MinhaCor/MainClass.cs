@@ -87,7 +87,7 @@ namespace MinhaCor
         /// </summary>
         public static List<ColorCreation> ColorCreations;
 
-        private static string _defaultCultureName;
+        private static string _defaultCultureName = null;
 
 
         /// <summary>

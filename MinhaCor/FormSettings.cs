@@ -56,8 +56,9 @@ namespace MinhaCor
             comboBoxCulture.SelectedIndex = 0; //unless config is otherwise
             for(int i=0; i<comboBoxCulture.Items.Count; i++)
             {
-                if(MainClass.DefaultCultureName.Trim().ToLower() == 
-                    comboBoxCulture.Items[i].ToString().Trim().ToLower())
+                if((!string.IsNullOrWhiteSpace(MainClass.DefaultCultureName)) && 
+                    (MainClass.DefaultCultureName.Trim().ToLower() == 
+                    comboBoxCulture.Items[i].ToString().Trim().ToLower()))
                 {
                     comboBoxCulture.SelectedIndex = i;
                     break;
