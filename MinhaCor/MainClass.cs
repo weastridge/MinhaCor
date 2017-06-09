@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -83,11 +84,29 @@ namespace MinhaCor
         }
 
         /// <summary>
+        /// ResourceManager for the project, such as for culture-specific resources
+        /// </summary>
+        public static ResourceManager MinhaCorResourceManager
+        {
+            get
+            {
+                return _minhaCorResourceManager;
+            }
+
+            set
+            {
+                _minhaCorResourceManager = value;
+            }
+        }
+
+        /// <summary>
         /// the working list of ColorCreations
         /// </summary>
         public static List<ColorCreation> ColorCreations;
 
         private static string _defaultCultureName = null;
+
+        private static System.Resources.ResourceManager _minhaCorResourceManager;
 
 
         /// <summary>
@@ -114,6 +133,9 @@ namespace MinhaCor
                 System.Globalization.CultureInfo.CurrentUICulture = 
                     new System.Globalization.CultureInfo(MainClass.DefaultCultureName);
             }
+            MinhaCorResourceManager = new ResourceManager(
+                "MinhaCor.resources", 
+                typeof(Program).Assembly);
 
             StringBuilder sb = new StringBuilder();
             sb.Append(System.IO.Directory.GetCurrentDirectory());

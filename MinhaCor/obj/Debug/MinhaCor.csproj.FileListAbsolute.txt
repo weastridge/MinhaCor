@@ -68,3 +68,6 @@ C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\bin\Debug\en-US\Minha
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.Resources.en-US.resources
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.Resources.pt-BR.resources
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\en-US\MinhaCor.resources.dll
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.FormHelp.resources
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.FormMinhaCor.en-US.resources
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.FormAbout.pt-BR.resources

@@ -160,7 +160,14 @@ namespace Wve
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Button buttonMore;
         private System.Windows.Forms.Panel panelButtons;
+        /// <summary>
+        /// message
+        /// </summary>
         public System.Windows.Forms.TextBox TextBoxMessage;
+        /// <summary>
+        /// details
+        /// 
+        /// </summary>
         public System.Windows.Forms.TextBox TextBoxDetails;
         private System.Windows.Forms.Button buttonCopy;
     }

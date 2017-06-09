@@ -127,6 +127,9 @@
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Panel panel1;
+        /// <summary>
+        /// viewer
+        /// </summary>
         public DocumentViewer DocumentViewer1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }

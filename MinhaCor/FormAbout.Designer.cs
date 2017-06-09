@@ -28,79 +28,86 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout));
             this.buttonOK = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxIntro = new System.Windows.Forms.TextBox();
             this.labelCulture = new System.Windows.Forms.Label();
             this.labelUICulture = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxDetails = new System.Windows.Forms.TextBox();
+            this.linkLabelMinhaCor = new System.Windows.Forms.LinkLabel();
+            this.linkLabelHumanae = new System.Windows.Forms.LinkLabel();
+            this.linkLabelAngelica = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // buttonOK
             // 
+            resources.ApplyResources(this.buttonOK, "buttonOK");
             this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonOK.Location = new System.Drawing.Point(557, 608);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(75, 23);
-            this.buttonOK.TabIndex = 0;
-            this.buttonOK.Text = "&OK";
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
-            // textBox1
+            // textBoxIntro
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(13, 13);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(619, 74);
-            this.textBox1.TabIndex = 1;
+            resources.ApplyResources(this.textBoxIntro, "textBoxIntro");
+            this.textBoxIntro.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxIntro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxIntro.Name = "textBoxIntro";
             // 
             // labelCulture
             // 
-            this.labelCulture.AutoSize = true;
-            this.labelCulture.Location = new System.Drawing.Point(10, 569);
+            resources.ApplyResources(this.labelCulture, "labelCulture");
             this.labelCulture.Name = "labelCulture";
-            this.labelCulture.Size = new System.Drawing.Size(46, 15);
-            this.labelCulture.TabIndex = 2;
-            this.labelCulture.Text = "Culture";
             // 
             // labelUICulture
             // 
-            this.labelUICulture.AutoSize = true;
-            this.labelUICulture.Location = new System.Drawing.Point(10, 593);
+            resources.ApplyResources(this.labelUICulture, "labelUICulture");
             this.labelUICulture.Name = "labelUICulture";
-            this.labelUICulture.Size = new System.Drawing.Size(58, 15);
-            this.labelUICulture.TabIndex = 3;
-            this.labelUICulture.Text = "UICulture";
             // 
-            // panel1
+            // textBoxDetails
             // 
-            this.panel1.BackgroundImage = global::MinhaCor.Properties.Resources.illustration;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(12, 93);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(620, 447);
-            this.panel1.TabIndex = 4;
+            resources.ApplyResources(this.textBoxDetails, "textBoxDetails");
+            this.textBoxDetails.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxDetails.Name = "textBoxDetails";
+            // 
+            // linkLabelMinhaCor
+            // 
+            resources.ApplyResources(this.linkLabelMinhaCor, "linkLabelMinhaCor");
+            this.linkLabelMinhaCor.Name = "linkLabelMinhaCor";
+            this.linkLabelMinhaCor.TabStop = true;
+            this.linkLabelMinhaCor.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelMinhaCor_LinkClicked);
+            // 
+            // linkLabelHumanae
+            // 
+            resources.ApplyResources(this.linkLabelHumanae, "linkLabelHumanae");
+            this.linkLabelHumanae.Name = "linkLabelHumanae";
+            this.linkLabelHumanae.TabStop = true;
+            this.linkLabelHumanae.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelHumanae_LinkClicked);
+            // 
+            // linkLabelAngelica
+            // 
+            resources.ApplyResources(this.linkLabelAngelica, "linkLabelAngelica");
+            this.linkLabelAngelica.Name = "linkLabelAngelica";
+            this.linkLabelAngelica.TabStop = true;
+            this.linkLabelAngelica.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelAngelica_LinkClicked);
             // 
             // FormAbout
             // 
             this.AcceptButton = this.buttonOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonOK;
-            this.ClientSize = new System.Drawing.Size(644, 643);
             this.ControlBox = false;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.linkLabelAngelica);
+            this.Controls.Add(this.linkLabelHumanae);
+            this.Controls.Add(this.linkLabelMinhaCor);
+            this.Controls.Add(this.textBoxDetails);
             this.Controls.Add(this.labelUICulture);
             this.Controls.Add(this.labelCulture);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxIntro);
             this.Controls.Add(this.buttonOK);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FormAbout";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "About";
             this.Load += new System.EventHandler(this.About_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -110,9 +117,12 @@
         #endregion
 
         private System.Windows.Forms.Button buttonOK;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxIntro;
         private System.Windows.Forms.Label labelCulture;
         private System.Windows.Forms.Label labelUICulture;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBoxDetails;
+        private System.Windows.Forms.LinkLabel linkLabelMinhaCor;
+        private System.Windows.Forms.LinkLabel linkLabelHumanae;
+        private System.Windows.Forms.LinkLabel linkLabelAngelica;
     }
 }

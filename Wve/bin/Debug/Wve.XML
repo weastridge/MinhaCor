@@ -65,6 +65,11 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
+        <member name="M:Wve.ExpandableFormBase.onButtonCancelClick">
+            <summary>
+            cancel
+            </summary>
+        </member>
         <member name="F:Wve.ExpandableFormBase.components">
             <summary>
             Required designer variable.
@@ -110,6 +115,16 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="F:Wve.InputStringForm.LabelPrompt">
+            <summary>
+            prompt
+            </summary>
+        </member>
+        <member name="F:Wve.InputStringForm.TextBoxInput">
+            <summary>
+            input
+            </summary>
+        </member>
         <member name="T:Wve.InputTextForm">
             <summary>
             form to input text
@@ -135,6 +150,16 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Wve.InputTextForm.LabelPrompt">
+            <summary>
+            prompt
+            </summary>
+        </member>
+        <member name="F:Wve.InputTextForm.TextBoxInput">
+            <summary>
+            input
             </summary>
         </member>
         <member name="T:Wve.MyConfigSettings">
@@ -415,6 +440,17 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="F:Wve.DisplayErrorForm.TextBoxMessage">
+            <summary>
+            message
+            </summary>
+        </member>
+        <member name="F:Wve.DisplayErrorForm.TextBoxDetails">
+            <summary>
+            details
+            
+            </summary>
+        </member>
         <member name="T:Wve.MyEventLog">
             <summary>
             outputs errors
@@ -652,6 +688,26 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="F:Wve.TextViewer.ButtonCustomButton">
+            <summary>
+            custom button
+            </summary>
+        </member>
+        <member name="F:Wve.TextViewer.ButtonOK">
+            <summary>
+            ok
+            </summary>
+        </member>
+        <member name="F:Wve.TextViewer.ButtonClose">
+            <summary>
+            close
+            </summary>
+        </member>
+        <member name="F:Wve.TextViewer.RichTextBox1">
+            <summary>
+            rich text box
+            </summary>
+        </member>
         <member name="T:Wve.WveCalc">
             <summary>
             some calculation methods
@@ -711,6 +767,7 @@
             Isotope Dilution Mass Spectrometry which all modern values should be - default to true</param>
             <param name="result">outputs result with message qualifying the result if any</param>
             <param name="formula">outputs the formula used in the calculation</param>
+            <param name="comment"></param>
             <returns></returns>
         </member>
         <member name="T:Wve.WveConvert">
@@ -743,7 +800,7 @@
             <summary>
             /kilograms to pounds 2.2046226
             </summary>
-            <param name="grams"></param>
+            <param name="kilograms"></param>
             <returns></returns>
         </member>
         <member name="M:Wve.WveConvert.InchesToMeters(System.Double)">
@@ -1121,6 +1178,11 @@
             save current document
             </summary>
         </member>
+        <member name="M:Wve.WveDocViewer.DocumentViewer.SetViewType">
+            <summary>
+            set view type doesn't do anything
+            </summary>
+        </member>
         <member name="M:Wve.WveDocViewer.DocumentViewer.manualDispose(System.Boolean)">
             <summary>
             called from dispose() in Designer, this
@@ -1171,6 +1233,11 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Wve.WveDocViewer.DocumentViewerForm.DocumentViewer1">
+            <summary>
+            viewer
             </summary>
         </member>
         <member name="T:Wve.WveDocViewer.WveDocViewerClass">
@@ -2246,8 +2313,7 @@
             SureScripts XML DateTime format YYYY-MM-DDT12:00:00-05:00 for example, 
             for surescripts UtcDate specify convertToUTC
             </summary>
-            <param name="date"></param>
-            <param name="precision"></param>
+            <param name="value"></param>
             <param name="timezone">significant ONLY if convertToUTC is false!</param>
             <param name="convertToUTC">if true, converts to zulu time - OVERRIDES and IGNORES 
             timezone value.  If you send a date that is already in UTC, just give it a 
@@ -2259,12 +2325,12 @@
             W3C XML Schema DateTime format YYYY-MM-DDT12:00:00.000-05:00 for example, 
             for SureScripts UtcDate as well as SAML DateTime specify convertToUTC
             </summary>
-            <param name="date"></param>
-            <param name="precision"></param>
+            <param name="value"></param>
             <param name="timezone">significant ONLY if convertToUTC is false!</param>
             <param name="convertToUTC">if true, converts value to zulu time - OVERRIDES and IGNORES 
             timezone value.  If you send a date that is already in UTC, you can give it a 
             timezone value of zero and leave convertToUTC false.</param>
+            <param name="includeMilliseconds"></param>
             <returns></returns>
         </member>
         <member name="M:Wve.WveTools.DateTimeToCompactString(System.DateTime)">

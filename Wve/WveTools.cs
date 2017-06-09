@@ -351,8 +351,7 @@ namespace Wve
         /// SureScripts XML DateTime format YYYY-MM-DDT12:00:00-05:00 for example, 
         /// for surescripts UtcDate specify convertToUTC
         /// </summary>
-        /// <param name="date"></param>
-        /// <param name="precision"></param>
+        /// <param name="value"></param>
         /// <param name="timezone">significant ONLY if convertToUTC is false!</param>
         /// <param name="convertToUTC">if true, converts to zulu time - OVERRIDES and IGNORES 
         /// timezone value.  If you send a date that is already in UTC, just give it a 
@@ -405,12 +404,12 @@ namespace Wve
         /// W3C XML Schema DateTime format YYYY-MM-DDT12:00:00.000-05:00 for example, 
         /// for SureScripts UtcDate as well as SAML DateTime specify convertToUTC
         /// </summary>
-        /// <param name="date"></param>
-        /// <param name="precision"></param>
+        /// <param name="value"></param>
         /// <param name="timezone">significant ONLY if convertToUTC is false!</param>
         /// <param name="convertToUTC">if true, converts value to zulu time - OVERRIDES and IGNORES 
         /// timezone value.  If you send a date that is already in UTC, you can give it a 
         /// timezone value of zero and leave convertToUTC false.</param>
+        /// <param name="includeMilliseconds"></param>
         /// <returns></returns>
         public static string DateToXMLSchema(DateTimeOffset value,
             int timezone, bool convertToUTC, bool includeMilliseconds)

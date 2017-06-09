@@ -10,9 +10,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Wve</RootNamespace>
     <AssemblyName>Wve</AssemblyName>
-    <SignAssembly>false</SignAssembly>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Eastridges.pfx</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -194,6 +193,7 @@
   <ItemGroup>
     <Content Include="LICENSE.txt" />
     <Content Include="Notes.txt" />
+    <None Include="Eastridges.pfx" />
     <None Include="Resources\CDA.xsl" />
     <Content Include="RTF\Notes.txt" />
   </ItemGroup>

@@ -36,6 +36,7 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemShowHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelDisplayArea = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
@@ -85,8 +86,15 @@
             // 
             resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemShowHelp,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            // 
+            // toolStripMenuItemShowHelp
+            // 
+            resources.ApplyResources(this.toolStripMenuItemShowHelp, "toolStripMenuItemShowHelp");
+            this.toolStripMenuItemShowHelp.Name = "toolStripMenuItemShowHelp";
+            this.toolStripMenuItemShowHelp.Click += new System.EventHandler(this.toolStripMenuItemShowHelp_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -126,5 +134,6 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Panel panelDisplayArea;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemShowHelp;
     }
 }

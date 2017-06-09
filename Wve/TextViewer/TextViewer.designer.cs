@@ -162,13 +162,25 @@ namespace Wve
         #endregion
 
         private System.Windows.Forms.Panel panelButtons;
+        /// <summary>
+        /// custom button
+        /// </summary>
         public System.Windows.Forms.Button ButtonCustomButton;
+        /// <summary>
+        /// ok
+        /// </summary>
         public System.Windows.Forms.Button ButtonOK;
         private System.Windows.Forms.Button buttonCopy;
         private System.Windows.Forms.Button buttonFind;
         private System.Windows.Forms.TextBox textBoxFind;
+        /// <summary>
+        /// close
+        /// </summary>
         public System.Windows.Forms.Button ButtonClose;
         private System.Windows.Forms.Splitter splitter1;
+        /// <summary>
+        /// rich text box
+        /// </summary>
         public RichTextBoxEx RichTextBox1;
     }
 }

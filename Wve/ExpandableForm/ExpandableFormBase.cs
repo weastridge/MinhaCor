@@ -121,6 +121,9 @@ namespace Wve
             onButtonCancelClick();
         }
 
+        /// <summary>
+        /// cancel
+        /// </summary>
         protected virtual void onButtonCancelClick()
         {
             DialogResult = DialogResult.Cancel;

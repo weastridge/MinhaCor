@@ -50,6 +50,9 @@
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Eastridges.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -81,6 +84,12 @@
     </Compile>
     <Compile Include="DisplayGrid.Designer.cs">
       <DependentUpon>DisplayGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHelp.Designer.cs">
+      <DependentUpon>FormHelp.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMainTest.cs">
       <SubType>Form</SubType>
@@ -117,6 +126,9 @@
     <EmbeddedResource Include="DisplayColorAddEdit.pt-BR.resx">
       <DependentUpon>DisplayColorAddEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAbout.pt-BR.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAbout.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,8 +138,14 @@
     <EmbeddedResource Include="DisplayGrid.resx">
       <DependentUpon>DisplayGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormHelp.resx">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMainTest.resx">
       <DependentUpon>FormMainTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMinhaCor.en-US.resx">
+      <DependentUpon>FormMinhaCor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMinhaCor.pt-BR.resx">
       <DependentUpon>FormMinhaCor.cs</DependentUpon>
@@ -156,6 +174,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.pt-BR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Eastridges.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

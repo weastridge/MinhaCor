@@ -100,7 +100,13 @@ namespace Wve
 
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonOk;
+        /// <summary>
+        /// prompt
+        /// </summary>
         public System.Windows.Forms.Label LabelPrompt;
+        /// <summary>
+        /// input
+        /// </summary>
         public System.Windows.Forms.TextBox TextBoxInput;
     }
 }

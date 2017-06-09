@@ -42,7 +42,7 @@ namespace Wve
         /// <summary>
         /// /kilograms to pounds 2.2046226
         /// </summary>
-        /// <param name="grams"></param>
+        /// <param name="kilograms"></param>
         /// <returns></returns>
         public static double KilogramsToPounds(double kilograms)
         {

@@ -121,5 +121,18 @@ namespace MinhaCor
                 }
             }
         }
+
+        private void toolStripMenuItemShowHelp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormHelp dlg = new FormHelp();
+                dlg.ShowDialog();
+            }
+            catch (Exception er)
+            {
+                Wve.MyEr.Show(this, er, true);
+            }
+        }
     }
 }

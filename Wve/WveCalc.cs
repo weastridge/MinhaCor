@@ -203,6 +203,7 @@ minimum of SCr /k or 1, and max indicates the maximum of SCr /k or 1.
         /// Isotope Dilution Mass Spectrometry which all modern values should be - default to true</param>
         /// <param name="result">outputs result with message qualifying the result if any</param>
         /// <param name="formula">outputs the formula used in the calculation</param>
+        /// <param name="comment"></param>
         /// <returns></returns>
         public static double CalculateGFR(double creatinine,
             double age,

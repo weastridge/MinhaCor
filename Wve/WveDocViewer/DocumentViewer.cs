@@ -388,6 +388,9 @@ namespace Wve.WveDocViewer
             }
         }
 
+        /// <summary>
+        /// set view type doesn't do anything
+        /// </summary>
         public void SetViewType()
         {
 
