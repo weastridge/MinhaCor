@@ -32,6 +32,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.labelCulture = new System.Windows.Forms.Label();
             this.labelUICulture = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // buttonOK
@@ -59,7 +60,7 @@
             // labelCulture
             // 
             this.labelCulture.AutoSize = true;
-            this.labelCulture.Location = new System.Drawing.Point(13, 213);
+            this.labelCulture.Location = new System.Drawing.Point(10, 569);
             this.labelCulture.Name = "labelCulture";
             this.labelCulture.Size = new System.Drawing.Size(46, 15);
             this.labelCulture.TabIndex = 2;
@@ -68,11 +69,20 @@
             // labelUICulture
             // 
             this.labelUICulture.AutoSize = true;
-            this.labelUICulture.Location = new System.Drawing.Point(13, 237);
+            this.labelUICulture.Location = new System.Drawing.Point(10, 593);
             this.labelUICulture.Name = "labelUICulture";
             this.labelUICulture.Size = new System.Drawing.Size(58, 15);
             this.labelUICulture.TabIndex = 3;
             this.labelUICulture.Text = "UICulture";
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::MinhaCor.Properties.Resources.illustration;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Location = new System.Drawing.Point(12, 93);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(620, 447);
+            this.panel1.TabIndex = 4;
             // 
             // FormAbout
             // 
@@ -82,6 +92,7 @@
             this.CancelButton = this.buttonOK;
             this.ClientSize = new System.Drawing.Size(644, 643);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelUICulture);
             this.Controls.Add(this.labelCulture);
             this.Controls.Add(this.textBox1);
@@ -102,5 +113,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label labelCulture;
         private System.Windows.Forms.Label labelUICulture;
+        private System.Windows.Forms.Panel panel1;
     }
 }
