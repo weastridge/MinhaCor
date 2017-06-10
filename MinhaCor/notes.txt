@@ -26,10 +26,11 @@ Celebrate Your Color
 2017June3 uploaded to GitHub weastridge
 2017June4 clarified in VS that local repository is in Documents\GitHub\MinhaCor
 
-todo:  check for ColorCreations.csv in use before getting error message (or make readonly)
-todo:  make about form
-todo:  with diagram of darkness, hue and saturation
+na..:  check for ColorCreations.csv in use before getting error message (or make readonly)
+done:  make about form
+done:  with diagram of darkness, hue and saturation
 todo:  open and save ColorCreations.csv
-todo:  make localizable
+doing:  make localizable
 todo:  make kiosk mode
 
+2017June 9:  notice for SetupMinhaCor- need same UpgradeCode but different ProductCode in order for it to replace old versions
