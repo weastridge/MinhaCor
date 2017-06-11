@@ -5,6 +5,6 @@
     <add key="Columns" value="6" />
     <add key="Culture" value="" />
     <add key="Password" value="" />
-    <add key="DefaultCulture" value="pt-BR" />
+    <add key="DefaultCulture" value="default" />
   </appSettings>
 </configuration>
