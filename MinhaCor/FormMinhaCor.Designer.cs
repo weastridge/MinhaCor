@@ -39,6 +39,8 @@
             this.toolStripMenuItemShowHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelDisplayArea = new System.Windows.Forms.Panel();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,11 +66,13 @@
             // 
             resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             resources.ApplyResources(this.saveAsToolStripMenuItem, "saveAsToolStripMenuItem");
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
@@ -107,6 +111,15 @@
             resources.ApplyResources(this.panelDisplayArea, "panelDisplayArea");
             this.panelDisplayArea.Name = "panelDisplayArea";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
+            // 
+            // saveFileDialog1
+            // 
+            resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
+            // 
             // FormMinhaCor
             // 
             resources.ApplyResources(this, "$this");
@@ -135,5 +148,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Panel panelDisplayArea;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemShowHelp;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

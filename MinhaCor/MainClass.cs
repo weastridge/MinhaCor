@@ -12,8 +12,8 @@ namespace MinhaCor
     /// </summary>
     public static class MainClass
     {
-        private static string _colorCreationsLocalFileName = "ColorCreations.csv";
-        private static string _colorCreationsPathAndFilename;
+        internal static string ColorCreationsLocalFileName = "ColorCreations.csv";
+        internal static string ColorCreationsPathAndFilename;
         /// <summary>
         /// configuration settings
         /// </summary>
@@ -141,14 +141,14 @@ namespace MinhaCor
             sb.Append(System.IO.Directory.GetCurrentDirectory());
             sb.Append(@"\");
             //doesnt work:  sb.Append(System.IO.Path.PathSeparator);
-            sb.Append(_colorCreationsLocalFileName);
-            _colorCreationsPathAndFilename = sb.ToString();
+            sb.Append(ColorCreationsLocalFileName);
+            ColorCreationsPathAndFilename = sb.ToString();
         }
 
 
         public static void SaveColorCreations()
         {
-            SaveColorCreations(_colorCreationsPathAndFilename);
+            SaveColorCreations(ColorCreationsPathAndFilename);
         }
 
         public static void SaveColorCreations(string path)
@@ -165,7 +165,7 @@ namespace MinhaCor
 
         public static void LoadColorCreations()
         {
-            LoadColorCreations(_colorCreationsPathAndFilename);
+            LoadColorCreations(ColorCreationsPathAndFilename);
         }
 
         /// <summary>

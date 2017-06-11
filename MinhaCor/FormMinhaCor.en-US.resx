@@ -117,16 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="openToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
-  </data>
-  <data name="saveAsToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="saveAsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
@@ -137,10 +130,13 @@
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
-  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="toolStripMenuItemShowHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 22</value>
   </data>
   <data name="toolStripMenuItemShowHelp.Text" xml:space="preserve">
     <value>&amp;Show help</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 22</value>
   </data>
 </root>

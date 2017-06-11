@@ -34,6 +34,13 @@ namespace MinhaCor
                     _displayColorAddEditInstance = new DisplayColorAddEdit();
                     _displayGridInstance = new DisplayGrid();
                     Instance = this;
+                    //set defaults
+                    openFileDialog1.InitialDirectory = System.IO.Directory.GetCurrentDirectory();
+                    openFileDialog1.DefaultExt = "csv";
+                    openFileDialog1.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+                    saveFileDialog1.InitialDirectory = System.IO.Directory.GetCurrentDirectory();
+                    saveFileDialog1.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+                    saveFileDialog1.DefaultExt = ".csv";
                 }
                 catch (Exception er)
                 {
@@ -132,6 +139,60 @@ namespace MinhaCor
             catch (Exception er)
             {
                 Wve.MyEr.Show(this, er, true);
+            }
+        }
+        /// <summary>
+        /// open named file into list of ColorCreations after saving
+        /// the current list to a backup file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (Wve.HourglassCursor waitCursor = new Wve.HourglassCursor())
+            {
+                try
+                {
+                    if(openFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        //then first save current file backup
+                        StringBuilder sb = new StringBuilder();
+                        sb.Append(MainClass.ColorCreationsPathAndFilename.Replace(".csv", "_bak_"));
+                        sb.Append(Wve.WveTools.DateTimeToCompactString(DateTime.Now));
+                        sb.Append(".csv");
+                        MainClass.SaveColorCreations(sb.ToString());
+                        //and then save the new file
+                        MainClass.LoadColorCreations(openFileDialog1.FileName);
+                        //refresh grid
+                        LoadDisplayGrid();
+                    }
+                }
+                catch (Exception er)
+                {
+                    Wve.MyEr.Show(this, er, true);
+                }
+            }
+        }
+        /// <summary>
+        /// save current list of ColorCreations to named file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (Wve.HourglassCursor waitCursor = new Wve.HourglassCursor())
+            {
+                try
+                {
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        MainClass.SaveColorCreations(saveFileDialog1.FileName);
+                    }
+                }
+                catch (Exception er)
+                {
+                    Wve.MyEr.Show(this, er, true);
+                }
             }
         }
     }

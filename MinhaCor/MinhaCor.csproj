@@ -144,6 +144,9 @@
     <EmbeddedResource Include="FormMainTest.resx">
       <DependentUpon>FormMainTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMinhaCor.aa.resx">
+      <DependentUpon>FormMinhaCor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMinhaCor.en-US.resx">
       <DependentUpon>FormMinhaCor.cs</DependentUpon>
     </EmbeddedResource>

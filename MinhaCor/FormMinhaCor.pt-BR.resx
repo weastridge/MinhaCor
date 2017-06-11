@@ -117,43 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="openToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 22</value>
-  </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>Abrir</value>
-  </data>
-  <data name="saveAsToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="saveAsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 22</value>
-  </data>
-  <data name="saveAsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Guardar</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 22</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Configurações</value>
-  </data>
-  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 22</value>
-  </data>
-  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>Sair</value>
-  </data>
   <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 20</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Arquivo</value>
+  </data>
+  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ajuda</value>
+  </data>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
+  <data name="saveAsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sair</value>
   </data>
   <data name="toolStripMenuItemShowHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 22</value>
@@ -166,12 +153,6 @@
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>Sobre</value>
-  </data>
-  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
-  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ajuda</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Dê um nome à cor da sua pele</value>
