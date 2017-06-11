@@ -127,11 +127,11 @@ namespace MinhaCor
         private void setDefaults()
         {
             trackBarLightness.Maximum = _trackbarMaxValue;
-            _lightness = 0.8;
+            _lightness = 0.94;
             trackBarLightness.Value = (int)Math.Floor(_trackbarMaxValue * _lightness);
             panelMain.BackColor = Color.Transparent;
-            _currentLocation = new Point((int)Math.Floor(panelMain.Width * 0.57),
-                (int)Math.Floor(panelMain.Height * (0.3)));
+            _currentLocation = new Point((int)Math.Floor(panelMain.Width * 0.53),
+                (int)Math.Floor(panelMain.Height * (0.42)));
             //now draw initial setting
             _mouseDown = true;
             panelMain_MouseMove("first call", new MouseEventArgs(MouseButtons,
