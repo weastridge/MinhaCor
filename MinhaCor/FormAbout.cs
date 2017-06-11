@@ -117,7 +117,7 @@ namespace MinhaCor
             {
                 try
                 {
-                    System.Diagnostics.Process.Start("http://eastridges.com/minhacor");
+                    System.Diagnostics.Process.Start("https://eastridges.com/minhacor");
                 }
                 catch (Exception er)
                 {

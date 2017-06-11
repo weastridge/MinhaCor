@@ -49,9 +49,9 @@
             // 
             // textBoxIntro
             // 
-            resources.ApplyResources(this.textBoxIntro, "textBoxIntro");
             this.textBoxIntro.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxIntro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBoxIntro, "textBoxIntro");
             this.textBoxIntro.Name = "textBoxIntro";
             // 
             // labelCulture
@@ -66,9 +66,9 @@
             // 
             // textBoxDetails
             // 
-            resources.ApplyResources(this.textBoxDetails, "textBoxDetails");
             this.textBoxDetails.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBoxDetails, "textBoxDetails");
             this.textBoxDetails.Name = "textBoxDetails";
             // 
             // linkLabelMinhaCor

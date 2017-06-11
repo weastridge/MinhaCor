@@ -200,6 +200,7 @@
   <ItemGroup>
     <Content Include="MinhaCor.ico" />
     <Content Include="notes.txt" />
+    <None Include="Resources\startButton.png" />
     <None Include="Resources\illustration.png" />
     <None Include="Resources\gradient.png" />
     <None Include="Resources\start.png" />
