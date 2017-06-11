@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_599EA977868A40B3A0540B2D7027299A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_63B965834A2C4501B74EC8EC75AEB9BA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -150,6 +156,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_599EA977868A40B3A0540B2D7027299A"
+            {
+            "SourcePath" = "8:..\\images\\MinhaCor.ico"
+            "TargetName" = "8:MinhaCor.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_F694AA006F5C4053A0764B62F297529F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BBEE2834651463E099CF4F2259523578"
             {
             "AssemblyRegister" = "3:1"
@@ -310,18 +336,18 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:MinhaCor"
-        "ProductCode" = "8:{B33C4A5B-4344-4D22-8B60-4A66EC109FD5}"
-        "PackageCode" = "8:{94270401-9F4E-4DC4-956E-CF91253FE60F}"
+        "ProductCode" = "8:{4F13DC4F-6034-40BC-AC8E-689B40964E85}"
+        "PackageCode" = "8:{FF8AF112-4381-43E4-963D-99A5EB210FDE}"
         "UpgradeCode" = "8:{34E19074-0F66-4619-99BC-1A165245A801}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.3"
+        "ProductVersion" = "8:1.0.4"
         "Manufacturer" = "8:EastRidges"
         "ARPHELPTELEPHONE" = "8:"
-        "ARPHELPLINK" = "8:"
+        "ARPHELPLINK" = "8:https://eastridges.com/minhacor"
         "Title" = "8:SetupMinhaCor"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Wesley Eastridge"
@@ -442,7 +468,7 @@
             "Target" = "8:_63B965834A2C4501B74EC8EC75AEB9BA"
             "Folder" = "8:_1AE1A52BDEF6407EA5FD2DABBEEFD206"
             "WorkingFolder" = "8:_F694AA006F5C4053A0764B62F297529F"
-            "Icon" = "8:"
+            "Icon" = "8:_599EA977868A40B3A0540B2D7027299A"
             "Feature" = "8:"
             }
         }
