@@ -31,7 +31,9 @@ done:  make about form
 done:  with diagram of darkness, hue and saturation
 done:  open and save ColorCreations.csv
 done:  make localizable
-todo:  make kiosk mode
-todo:  make windows icon
+done:  make windows icon
+idea:  show rgb status as mouse moves
+idea:  make kiosk mode
 
 2017June 9:  notice for SetupMinhaCor- need same UpgradeCode but different ProductCode in order for it to replace old versions
+signing code:  signtool sign /a setup.exe  and MinhaCor.msi;  then zip them to SetupMinhaCor.zip and upload
