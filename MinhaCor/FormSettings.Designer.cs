@@ -39,6 +39,8 @@
             this.comboBoxCulture = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.radioButtonEasy = new System.Windows.Forms.RadioButton();
+            this.radioButtonFullColor = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // buttonOK
@@ -107,7 +109,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 113);
+            this.label4.Location = new System.Drawing.Point(13, 96);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 7;
@@ -116,7 +118,7 @@
             // comboBoxCulture
             // 
             this.comboBoxCulture.FormattingEnabled = true;
-            this.comboBoxCulture.Location = new System.Drawing.Point(19, 130);
+            this.comboBoxCulture.Location = new System.Drawing.Point(16, 113);
             this.comboBoxCulture.Name = "comboBoxCulture";
             this.comboBoxCulture.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCulture.TabIndex = 8;
@@ -125,7 +127,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 186);
+            this.label5.Location = new System.Drawing.Point(9, 305);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(207, 13);
             this.label5.TabIndex = 9;
@@ -133,10 +135,32 @@
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(19, 203);
+            this.textBoxPassword.Location = new System.Drawing.Point(12, 322);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(100, 20);
             this.textBoxPassword.TabIndex = 10;
+            // 
+            // radioButtonEasy
+            // 
+            this.radioButtonEasy.AutoSize = true;
+            this.radioButtonEasy.Location = new System.Drawing.Point(16, 162);
+            this.radioButtonEasy.Name = "radioButtonEasy";
+            this.radioButtonEasy.Size = new System.Drawing.Size(100, 17);
+            this.radioButtonEasy.TabIndex = 11;
+            this.radioButtonEasy.TabStop = true;
+            this.radioButtonEasy.Text = "easy skin colors";
+            this.radioButtonEasy.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonFullColor
+            // 
+            this.radioButtonFullColor.AutoSize = true;
+            this.radioButtonFullColor.Location = new System.Drawing.Point(16, 185);
+            this.radioButtonFullColor.Name = "radioButtonFullColor";
+            this.radioButtonFullColor.Size = new System.Drawing.Size(95, 17);
+            this.radioButtonFullColor.TabIndex = 12;
+            this.radioButtonFullColor.TabStop = true;
+            this.radioButtonFullColor.Text = "full color wheel";
+            this.radioButtonFullColor.UseVisualStyleBackColor = true;
             // 
             // FormSettings
             // 
@@ -146,6 +170,8 @@
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(287, 385);
             this.ControlBox = false;
+            this.Controls.Add(this.radioButtonFullColor);
+            this.Controls.Add(this.radioButtonEasy);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxCulture);
@@ -179,5 +205,7 @@
         private System.Windows.Forms.ComboBox comboBoxCulture;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.RadioButton radioButtonEasy;
+        private System.Windows.Forms.RadioButton radioButtonFullColor;
     }
 }

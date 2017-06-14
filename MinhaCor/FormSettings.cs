@@ -64,6 +64,14 @@ namespace MinhaCor
                     break;
                 }
             }
+            if(MainClass.EditMode == MainClass.MinhaCorEditMode.fullColor)
+            {
+                radioButtonFullColor.Checked = true;
+            }
+            else
+            {
+                radioButtonEasy.Checked = true;
+            }
             _ignoreChangeEvents = false;
         }
 
@@ -133,6 +141,15 @@ namespace MinhaCor
             MainClass.ConfigSettings.SetValue("Columns", _columns.ToString());
             MainClass.ConfigSettings.SetValue("Culture", comboBoxCulture.SelectedText);
             MainClass.ConfigSettings.SetValue("Password", textBoxPassword.Text);
+
+            if(radioButtonEasy.Checked)
+            {
+                MainClass.EditMode = MainClass.MinhaCorEditMode.easy;
+            }
+            else
+            {
+                MainClass.EditMode = MainClass.MinhaCorEditMode.fullColor;
+            }
             if(_cultureWasChanged)
             {
                 setCulture(comboBoxCulture.SelectedItem.ToString());

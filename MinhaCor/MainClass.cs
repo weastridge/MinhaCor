@@ -20,6 +20,50 @@ namespace MinhaCor
         public static Wve.MyConfigSettings ConfigSettings;
         private static int _rows = int.MinValue;
         /// <summary>
+        /// mode for editing or creating colors
+        /// </summary>
+        public enum MinhaCorEditMode
+        {
+            /// <summary>
+            /// not specified
+            /// </summary>
+            unspecified,
+            /// <summary>
+            /// easy skin colors
+            /// </summary>
+            easy,
+            /// <summary>
+            /// full color wheel
+            /// </summary>
+            fullColor
+        }
+
+        private static MinhaCorEditMode _editMode = MinhaCorEditMode.unspecified;
+        /// <summary>
+        /// mode for editing or creating colors
+        /// </summary>
+        public static MinhaCorEditMode EditMode
+        {
+            get
+            {
+                if(_editMode == MinhaCorEditMode.unspecified)
+                {
+                    if (!string.IsNullOrWhiteSpace(ConfigSettings.GetValue("EditMode")))
+                    {
+                        _editMode = (MinhaCorEditMode)Enum.Parse(
+                            typeof(MinhaCorEditMode),
+                            ConfigSettings.GetValue("EditMode"));
+                    }
+                }
+                return _editMode;
+            }
+            set
+            {
+                _editMode = value;
+                ConfigSettings.SetValue("EditMode", _editMode.ToString());
+            }
+        }
+        /// <summary>
         /// number of rows
         /// </summary>
         public static int Rows

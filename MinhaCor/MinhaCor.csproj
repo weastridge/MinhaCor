@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DisplaySimpleSkinColorAddEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisplaySimpleSkinColorAddEdit.Designer.cs">
+      <DependentUpon>DisplaySimpleSkinColorAddEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.pt-BR.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DisplaySimpleSkinColorAddEdit.pt-BR.resx">
+      <DependentUpon>DisplaySimpleSkinColorAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplaySimpleSkinColorAddEdit.resx">
+      <DependentUpon>DisplaySimpleSkinColorAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DisplayColorAddEdit.pt-BR.resx">
       <DependentUpon>DisplayColorAddEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +212,9 @@
   <ItemGroup>
     <Content Include="MinhaCor.ico" />
     <Content Include="notes.txt" />
+    <None Include="Resources\simpleIllustration.png" />
+    <None Include="Resources\greenRedGradient.png" />
+    <None Include="Resources\SaturationGradient.png" />
     <None Include="Resources\startButton.png" />
     <None Include="Resources\illustration.png" />
     <None Include="Resources\gradient.png" />

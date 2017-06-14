@@ -22,7 +22,24 @@ namespace MinhaCor
 
         private void FormHelp_Load(object sender, EventArgs e)
         {
-
+            using (Wve.HourglassCursor waitCursor = new Wve.HourglassCursor())
+            {
+                try
+                {
+                    if(MainClass.EditMode == MainClass.MinhaCorEditMode.fullColor)
+                    {
+                        panel1.BackgroundImage = MinhaCor.Properties.Resources.illustration;
+                    }
+                    else
+                    {
+                        panel1.BackgroundImage = MinhaCor.Properties.Resources.simpleIllustration;
+                    }
+                }
+                catch (Exception er)
+                {
+                    Wve.MyEr.Show(this, er, true);
+                }
+            }
         }
 
         private void buttonOK_Click(object sender, EventArgs e)

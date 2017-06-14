@@ -17,6 +17,7 @@ namespace MinhaCor
     {
         private DisplayGrid _displayGridInstance;
         private DisplayColorAddEdit _displayColorAddEditInstance;
+        private DisplaySimpleSkinColorAddEdit _displaySimpleSkinColorEditInstance;
         internal static FormMinhaCor Instance = null;
 
         /// <summary>
@@ -33,6 +34,8 @@ namespace MinhaCor
                     InitializeComponent();
                     _displayColorAddEditInstance = new DisplayColorAddEdit();
                     _displayGridInstance = new DisplayGrid();
+                    _displaySimpleSkinColorEditInstance = new DisplaySimpleSkinColorAddEdit();
+                    
                     Instance = this;
                     //set defaults
                     openFileDialog1.InitialDirectory = System.IO.Directory.GetCurrentDirectory();
@@ -90,6 +93,15 @@ namespace MinhaCor
         {
             LoadDisplay(_displayColorAddEditInstance);
             _displayColorAddEditInstance.Reset();
+        }
+
+        /// <summary>
+        /// load the simple skin color edit display
+        /// </summary>
+        internal void LoadDisplaySimpleSkinColorAddEdit()
+        {
+            LoadDisplay(_displaySimpleSkinColorEditInstance);
+            _displaySimpleSkinColorEditInstance.Reset();
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)

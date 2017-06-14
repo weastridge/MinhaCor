@@ -167,7 +167,14 @@ namespace MinhaCor
             {
                 try
                 {
-                    FormMinhaCor.Instance.LoadDisplayColorAddEdit();
+                    if (MainClass.EditMode == MainClass.MinhaCorEditMode.fullColor)
+                    {
+                        FormMinhaCor.Instance.LoadDisplayColorAddEdit();
+                    }
+                    else
+                    {
+                        FormMinhaCor.Instance.LoadDisplaySimpleSkinColorAddEdit();
+                    }
                 }
                 catch (Exception er)
                 {

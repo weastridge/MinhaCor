@@ -34,6 +34,7 @@ done:  make localizable
 done:  make windows icon
 idea:  show rgb status as mouse moves
 idea:  make kiosk mode
+idea:  make rectangular easy skin color mode with spectrum bar on top and black bar on bottom and trackbar for saturation from gray to color
 
 2017June 9:  notice for SetupMinhaCor- need same UpgradeCode but different ProductCode in order for it to replace old versions
 signing code:  signtool sign /a setup.exe  and MinhaCor.msi;  then zip them to SetupMinhaCor.zip and upload
