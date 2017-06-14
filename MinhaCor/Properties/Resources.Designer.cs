@@ -73,6 +73,16 @@ namespace MinhaCor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap greenBlackGradient {
+            get {
+                object obj = ResourceManager.GetObject("greenBlackGradient", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap greenRedGradient {
             get {
                 object obj = ResourceManager.GetObject("greenRedGradient", resourceCulture);
@@ -86,6 +96,16 @@ namespace MinhaCor.Properties {
         internal static System.Drawing.Bitmap illustration {
             get {
                 object obj = ResourceManager.GetObject("illustration", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap redBlackGradient {
+            get {
+                object obj = ResourceManager.GetObject("redBlackGradient", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

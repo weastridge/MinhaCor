@@ -237,24 +237,24 @@ namespace MinhaCor
 
         private void panelBackground_Paint(object sender, PaintEventArgs e)
         {
-            if (!_ignoreControlEvents)
-            {
-                try
-                {
-                    e.Graphics.FillEllipse(Brushes.Lime, new Rectangle(20, 20, 20, 20));
-                    e.Graphics.FillEllipse(Brushes.Red, new Rectangle((panelBackground.Width - 40),
-                        20, 20, 20));
-                    e.Graphics.FillEllipse(Brushes.Black,
-                        new Rectangle(20, panelBackground.Height - 40, 20, 20));
-                    e.Graphics.FillEllipse(Brushes.Black,
-                        new Rectangle(panelBackground.Width - 40,
-                        panelBackground.Height - 40, 20, 20));
-                }
-                catch (Exception er)
-                {
-                    Wve.MyEr.Show(this, er, true);
-                }
-            }//from if not ignoring events
+        //    if (!_ignoreControlEvents)
+        //    {
+        //        try
+        //        {
+        //            e.Graphics.FillEllipse(Brushes.Lime, new Rectangle(20, 20, 20, 20));
+        //            e.Graphics.FillEllipse(Brushes.Red, new Rectangle((panelBackground.Width - 40),
+        //                20, 20, 20));
+        //            e.Graphics.FillEllipse(Brushes.Black,
+        //                new Rectangle(20, panelBackground.Height - 40, 20, 20));
+        //            e.Graphics.FillEllipse(Brushes.Black,
+        //                new Rectangle(panelBackground.Width - 40,
+        //                panelBackground.Height - 40, 20, 20));
+        //        }
+        //        catch (Exception er)
+        //        {
+        //            Wve.MyEr.Show(this, er, true);
+        //        }
+        //    }//from if not ignoring events
         }
 
         private void panelMain_MouseDown(object sender, MouseEventArgs e)

@@ -212,6 +212,8 @@
   <ItemGroup>
     <Content Include="MinhaCor.ico" />
     <Content Include="notes.txt" />
+    <None Include="Resources\redBlackGradient.png" />
+    <None Include="Resources\greenBlackGradient.png" />
     <None Include="Resources\SaturationGradient.png" />
     <None Include="Resources\simpleIllustration.png" />
     <None Include="Resources\greenRedGradient.png" />
