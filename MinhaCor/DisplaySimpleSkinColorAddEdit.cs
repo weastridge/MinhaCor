@@ -121,7 +121,7 @@ namespace MinhaCor
         private void setDefaults()
         {
             trackBarSaturation.Maximum = _trackbarMaxValue;
-            _saturation = 0.20;
+            _saturation = 0.30;
             trackBarSaturation.Value = (int)Math.Floor(_trackbarMaxValue * (1-_saturation));
             panelMain.BackColor = Color.Transparent;
             _currentLocation = new Point((int)Math.Floor(panelMain.Width * 0.70),
