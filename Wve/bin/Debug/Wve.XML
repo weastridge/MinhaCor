@@ -2638,6 +2638,17 @@
             <param name="addPadsIfNeeded"></param>
             <returns></returns>
         </member>
+        <member name="T:Wve.WveTrackbar">
+            <summary>
+            custom trackbar, not useful at this point
+            </summary>
+        </member>
+        <member name="M:Wve.WveTrackbar.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            paint
+            </summary>
+            <param name="e"></param>
+        </member>
         <member name="T:Wve.HourglassCursor">
             <summary>
             simple object to save current cursor, show WaitCursor,

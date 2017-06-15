@@ -89,6 +89,7 @@ namespace MinhaCor
         {
             InitializeComponent();
             panelMain.MouseWheel += PanelMain_MouseWheel;
+            
         }
         #endregion constructor
 
@@ -118,14 +119,17 @@ namespace MinhaCor
             textBoxPersonName.Clear();
         }
 
-        private void setDefaults()
+        private void setDisplay(Tuple<double,double,double> t) 
         {
+            double saturation = t.Item1;
+            double x = t.Item2;
+            double y = t.Item3;
             trackBarSaturation.Maximum = _trackbarMaxValue;
-            _saturation = 0.30;
-            trackBarSaturation.Value = (int)Math.Floor(_trackbarMaxValue * (1-_saturation));
+            _saturation = saturation;
+            trackBarSaturation.Value = (int)Math.Floor(_trackbarMaxValue * (1 - _saturation));
             panelMain.BackColor = Color.Transparent;
-            _currentLocation = new Point((int)Math.Floor(panelMain.Width * 0.70),
-                (int)Math.Floor(panelMain.Height * (0.08)));
+            _currentLocation = new Point((int)Math.Floor(panelMain.Width * x),
+                (int)Math.Floor(panelMain.Height * (y)));
             //now draw initial setting
             _mouseDown = true;
             panelMain_MouseMove("first call", new MouseEventArgs(MouseButtons,
@@ -135,7 +139,83 @@ namespace MinhaCor
                 int.MinValue));
             panelBackground.BackColor = _currentColor;
             panelBackground.Invalidate();
+            panelSwatch.Invalidate();
             _mouseDown = false;
+        }
+
+        private void setDefaults()
+        {
+            panelLightLight.BackColor = Color.FromArgb(0xF7, 0xE7, 0xC7);
+            panelLight.BackColor = Color.FromArgb(0xEA, 0xCE, 0xA4);
+            panelMedium.BackColor = Color.FromArgb(0x6C, 0x53, 0x3D);
+            panelDark.BackColor = Color.FromArgb(0x2E, 0x1B, 0x0C);
+            setDisplay(new Tuple<double, double, double>(0.30, 0.70, 0.08));
+            //trackBarSaturation.Maximum = _trackbarMaxValue;
+            //_saturation = 0.30;
+            //trackBarSaturation.Value = (int)Math.Floor(_trackbarMaxValue * (1-_saturation));
+            //panelMain.BackColor = Color.Transparent;
+            //_currentLocation = new Point((int)Math.Floor(panelMain.Width * 0.70),
+            //    (int)Math.Floor(panelMain.Height * (0.08)));
+            ////now draw initial setting
+            //_mouseDown = true;
+            //panelMain_MouseMove("first call", new MouseEventArgs(MouseButtons,
+            //    int.MinValue,
+            //    _currentLocation.X,
+            //    _currentLocation.Y,
+            //    int.MinValue));
+            //panelBackground.BackColor = _currentColor;
+            //panelBackground.Invalidate();
+            //panelSwatch.Invalidate();
+            //_mouseDown = false;
+        }
+
+        private Tuple<double,double, double> colorToLocation(Color c)
+        {
+            //amount of white added to color
+            double saturation;
+            //amount of red
+            double x;
+            //amount of dark = (1-lightness)
+            double y;
+            if (c.R == c.G) 
+            {
+                if (c.R == 0) //then rgb is black
+                {
+                    y = 1;
+                    x = 0; //can be anything
+                    saturation = 1;
+                }
+                else
+                {
+                    //blue part all comes from saturation
+                    saturation = 1 - ((double)c.B / c.R);
+                    //lightness is r divided by what it could be
+                    //y inv of lightness
+                    y = 1 - ((double)c.R / 256);
+                    x = 0.5;
+                }
+            }
+            else if(c.R > c.G) //then r > b too
+            {
+                //blue part all comes from saturation
+                saturation = 1 - ((double)c.B / c.R);
+                //lightness is r divided by what it could be
+                //y inv of lightness
+                y = 1- ((double)c.R / 256 );
+                //x is inverse of amount of green decreasing from 1 at half width to 0 by full width
+                x = 0.5 + (0.5 * (1 - (((double)c.G - c.B) / ((double)c.R - c.B))));
+            }
+            else //then (g > r) and (g > b)
+            {
+                //blue part all comes from saturation
+                saturation = 1 - ((double)c.B / c.G);
+                //lightness is g divided by what it could be
+                //y inv of lightness
+                y = 1 - ((double)c.G  / 256);
+                //x is measure of amount of red up to 100% by half width of panel
+                x = 0.5 * (((double)c.R - c.B) / ((double)c.G - c.B));
+            }
+            return new Tuple<double, double, double>(saturation, x, y);
         }
 
 
@@ -226,6 +306,13 @@ namespace MinhaCor
                     //mark center
                     e.Graphics.FillRectangle(Brushes.White,
                         panelMain.Width / 2, panelMain.Height / 2, 1, 1);
+
+                    //show rgb
+                    labelrgb.Text = Wve.WveTools.BytesToHex(new byte[] {
+                    _currentColor.R,
+                    _currentColor.G,
+                    _currentColor.B},
+                    " ");
                 }
                 catch (Exception er)
                 {
@@ -237,24 +324,7 @@ namespace MinhaCor
 
         private void panelBackground_Paint(object sender, PaintEventArgs e)
         {
-        //    if (!_ignoreControlEvents)
-        //    {
-        //        try
-        //        {
-        //            e.Graphics.FillEllipse(Brushes.Lime, new Rectangle(20, 20, 20, 20));
-        //            e.Graphics.FillEllipse(Brushes.Red, new Rectangle((panelBackground.Width - 40),
-        //                20, 20, 20));
-        //            e.Graphics.FillEllipse(Brushes.Black,
-        //                new Rectangle(20, panelBackground.Height - 40, 20, 20));
-        //            e.Graphics.FillEllipse(Brushes.Black,
-        //                new Rectangle(panelBackground.Width - 40,
-        //                panelBackground.Height - 40, 20, 20));
-        //        }
-        //        catch (Exception er)
-        //        {
-        //            Wve.MyEr.Show(this, er, true);
-        //        }
-        //    }//from if not ignoring events
+
         }
 
         private void panelMain_MouseDown(object sender, MouseEventArgs e)
@@ -447,6 +517,25 @@ namespace MinhaCor
                 try
                 {
                     FormMinhaCor.Instance.LoadDisplayGrid();
+                }
+                catch (Exception er)
+                {
+                    Wve.MyEr.Show(this, er, true);
+                }
+            }
+        }
+
+        private void panelExample_Click(object sender, EventArgs e)
+        {
+            using (Wve.HourglassCursor waitCursor = new Wve.HourglassCursor())
+            {
+                try
+                {
+                    if(sender is Panel)
+                    {
+                        setDisplay(colorToLocation(((Panel)sender).BackColor));
+                        //setDisplay(new Tuple<double, double, double>(1, 1, 0));
+                    }
                 }
                 catch (Exception er)
                 {

@@ -146,6 +146,9 @@
     </Compile>
     <Compile Include="WveServUtil\Task.cs" />
     <Compile Include="WveTools.cs" />
+    <Compile Include="WveTrackbar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="WveTypes.cs" />
     <Compile Include="WveXmlStuff.cs" />
     <Compile Include="WveXML-Unused\WXMLLib.cs" />
