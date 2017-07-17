@@ -173,7 +173,7 @@ namespace MinhaCor
                     }
                     else
                     {
-                        FormMinhaCor.Instance.LoadDisplaySimpleSkinColorAddEdit();
+                        FormMinhaCor.Instance.LoadDisplaySkinColorAddEdit();
                     }
                 }
                 catch (Exception er)

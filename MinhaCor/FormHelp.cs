@@ -32,7 +32,7 @@ namespace MinhaCor
                     }
                     else
                     {
-                        panel1.BackgroundImage = MinhaCor.Properties.Resources.simpleIllustration;
+                        panel1.BackgroundImage = MinhaCor.Properties.Resources.skinColorInfo;
                     }
                 }
                 catch (Exception er)

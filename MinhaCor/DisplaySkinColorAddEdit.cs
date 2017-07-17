@@ -13,40 +13,23 @@ namespace MinhaCor
     /// <summary>
     /// edit and name color
     /// </summary>
-    public partial class DisplaySimpleSkinColorAddEdit : UserControl
+    public partial class DisplaySkinColorAddEdit : UserControl
     {
 
         private bool _ignoreControlEvents = false;
-        private int _trackbarMaxValue = 1000;
-        private Point _currentLocation;
+        private int _trackbarMaxValue = 999; //1000 possible values
+        private Point _currentLocation = new Point(0,0);
         /// <summary>
         /// the color that we change
         /// </summary>
         private Color _currentColor = Color.Tan;
-        ///// <summary>
-        ///// current angle of selection
-        ///// </summary>
-        //private double _currentAngle = double.MinValue;
-        ///// <summary>
-        ///// current distance of selection from center, in pixels
-        ///// </summary>
-        ////private double _currentDistance = int.MinValue;
-        ///// <summary>
-        ///// smaller of ht or width of ellipse
-        ///// </summary>
-        //private int _circleRadius = int.MinValue;
-        ///// <summary>
-        ///// on axis with origin in middle of ellipse 
-        ///// </summary>
-        //private int _xPos = int.MinValue;
-        //private int _yPos = int.MinValue;
-        ////one twelfth of the circle
-        //private double _segment = 2 * Math.PI / 12;
+
 
         //we define the color in terms of:
         // 1. color tone in terms of red, green and blue as if fully saturated
-        // 2. saturation, i.e. inverse of how much gray is addded to the orig rgb tone
-        // 3. lightness, i.e. the sum of the combined r,g,b values
+        // 2. saturation, i.e. inverse of how much white is addded to the orig rgb tone
+        // color and saturation define the hue
+        // 3. lightness, i.e. number between 0 and 1 to multiply hue by, zero being black
 
         /// <summary>
         /// red component as if fully saturated, 0 to 1
@@ -65,9 +48,9 @@ namespace MinhaCor
         private double _gTemp;
         private double _bTemp;
         /// <summary>
-        /// the saturation of the color, 0 to 1
+        /// the desaturation of the color, 0 saturated to 1 white
         /// </summary>
-        private double _saturation = 1;
+        private double _desaturation = 0;
         /// <summary>
         /// adjustment to brightness of the color, 0 to 1
         /// </summary>
@@ -76,16 +59,16 @@ namespace MinhaCor
         /// true if mouse down within panelMain, until released
         /// </summary>
         private bool _mouseDown = false;
-        /// <summary>
-        /// r+g+b of _currentColor
-        /// </summary>
-        private int _totalIntensityAtMouseDown;
+        ///// <summary>
+        ///// r+g+b of _currentColor
+        ///// </summary>
+        //private int _totalIntensityAtMouseDown;
 
         #region constructor
         /// <summary>
         /// control for creating and naming color
         /// </summary>
-        public DisplaySimpleSkinColorAddEdit()
+        public DisplaySkinColorAddEdit()
         {
             InitializeComponent();
             panelMain.MouseWheel += PanelMain_MouseWheel;
@@ -119,17 +102,44 @@ namespace MinhaCor
             textBoxPersonName.Clear();
         }
 
+        /// <summary>
+        /// lightness, color, desaturation
+        /// </summary>
+        /// <param name="t"></param>
         private void setDisplay(Tuple<double,double,double> t) 
         {
-            double saturation = t.Item1;
-            double x = t.Item2;
-            double y = t.Item3;
-            trackBarSaturation.Maximum = _trackbarMaxValue;
-            _saturation = saturation;
-            trackBarSaturation.Value = (int)Math.Floor(_trackbarMaxValue * (1 - _saturation));
+            double lightness = t.Item1;
+            double color = t.Item2;
+            double desaturation = t.Item3;
+            trackBarLightness.Maximum = _trackbarMaxValue;
+            _lightness = lightness;
+            if (lightness == 1)
+            {
+                trackBarLightness.Value = _trackbarMaxValue;
+            }
+            else
+            {
+                trackBarLightness.Value = (int)Math.Floor(
+                    (_trackbarMaxValue + 1) * (_lightness));
+            }
             panelMain.BackColor = Color.Transparent;
-            _currentLocation = new Point((int)Math.Floor(panelMain.Width * x),
-                (int)Math.Floor(panelMain.Height * (y)));
+            if(color == 1)
+            {
+                _currentLocation.X = panelMain.Width - 1;
+            }
+            else
+            {
+                _currentLocation.X = (int)Math.Floor(panelMain.Width * color);
+            }
+            
+            if(desaturation==1)
+            {
+                _currentLocation.Y = panelMain.Height - 1;
+            }
+            else
+            {
+                _currentLocation.Y = (int)Math.Floor(panelMain.Height * desaturation);
+            }
             //now draw initial setting
             _mouseDown = true;
             panelMain_MouseMove("first call", new MouseEventArgs(MouseButtons,
@@ -149,73 +159,62 @@ namespace MinhaCor
             panelLight.BackColor = Color.FromArgb(0xEA, 0xCE, 0xA4);
             panelMedium.BackColor = Color.FromArgb(0x6C, 0x53, 0x3D);
             panelDark.BackColor = Color.FromArgb(0x2E, 0x1B, 0x0C);
-            setDisplay(new Tuple<double, double, double>(0.30, 0.70, 0.08));
-            //trackBarSaturation.Maximum = _trackbarMaxValue;
-            //_saturation = 0.30;
-            //trackBarSaturation.Value = (int)Math.Floor(_trackbarMaxValue * (1-_saturation));
-            //panelMain.BackColor = Color.Transparent;
-            //_currentLocation = new Point((int)Math.Floor(panelMain.Width * 0.70),
-            //    (int)Math.Floor(panelMain.Height * (0.08)));
-            ////now draw initial setting
-            //_mouseDown = true;
-            //panelMain_MouseMove("first call", new MouseEventArgs(MouseButtons,
-            //    int.MinValue,
-            //    _currentLocation.X,
-            //    _currentLocation.Y,
-            //    int.MinValue));
-            //panelBackground.BackColor = _currentColor;
-            //panelBackground.Invalidate();
-            //panelSwatch.Invalidate();
-            //_mouseDown = false;
+            //setDisplay(new Tuple<double, double, double>(0.30, 0.70, 0.90));
+            setDisplay(colorToLocation(panelLight.BackColor));
+
         }
 
+        /// <summary>
+        /// lightness, color, desaturation
+        /// </summary>
+        /// <param name="c"></param>
+        /// <returns></returns>
         private Tuple<double,double, double> colorToLocation(Color c)
         {
-            //amount of white added to color
-            double saturation;
-            //amount of red
-            double x;
-            //amount of dark = (1-lightness)
-            double y;
+            //1- amount of white added to color
+            double desaturation;  //corresponds with y
+            //0 green, 1 red
+            double color;
+            //0 to 1, 0 is black
+            double lightness;
+            //if yellow
             if (c.R == c.G) 
             {
                 if (c.R == 0) //then rgb is black
                 {
-                    y = 1;
-                    x = 0; //can be anything
-                    saturation = 1;
+                    desaturation = 0.5; //can be anything
+                    color = 0.5; //yellow, but could be anything
+                    lightness = 0;
                 }
                 else
                 {
-                    //blue part all comes from saturation
-                    saturation = 1 - ((double)c.B / c.R);
+                    //blue part all comes from desaturation
+                    desaturation =  ((double)c.B / c.R);
                     //lightness is r divided by what it could be
                     //y inv of lightness
-                    y = 1 - ((double)c.R / 256);
-                    x = 0.5;
+                    lightness = ((double)c.R / 256);
+                    color = 0.5;
                 }
             }
             else if(c.R > c.G) //then r > b too
             {
-                //blue part all comes from saturation
-                saturation = 1 - ((double)c.B / c.R);
+                //blue part all comes from desaturation
+                desaturation = ((double)c.B / c.R);
                 //lightness is r divided by what it could be
-                //y inv of lightness
-                y = 1- ((double)c.R / 256 );
+                lightness =  ((double)c.R / 255 );
                 //x is inverse of amount of green decreasing from 1 at half width to 0 by full width
-                x = 0.5 + (0.5 * (1 - (((double)c.G - c.B) / ((double)c.R - c.B))));
+                color = 0.5 + (0.5 * (1 - (((double)c.G - c.B) / ((double)c.R - c.B))));
             }
             else //then (g > r) and (g > b)
             {
-                //blue part all comes from saturation
-                saturation = 1 - ((double)c.B / c.G);
+                //blue part all comes from desaturation
+                desaturation =  ((double)c.B / c.G);
                 //lightness is g divided by what it could be
-                //y inv of lightness
-                y = 1 - ((double)c.G  / 256);
+                lightness = ((double)c.G  / 255);
                 //x is measure of amount of red up to 100% by half width of panel
-                x = 0.5 * (((double)c.R - c.B) / ((double)c.G - c.B));
+                color = 0.5 * (((double)c.R - c.B) / ((double)c.G - c.B));
             }
-            return new Tuple<double, double, double>(saturation, x, y);
+            return new Tuple<double, double, double>(lightness, color, desaturation);
         }
 
 
@@ -227,19 +226,27 @@ namespace MinhaCor
                 //adjust 1% per delta
                 if (e.Delta < 0)
                 {
-                    if (trackBarSaturation.Value > _trackbarMaxValue / 100)
+                    if (trackBarLightness.Value >= (int)Math.Floor((double) _trackbarMaxValue / 100))
                     {
-                        trackBarSaturation.Value -= _trackbarMaxValue / 100;
+                        trackBarLightness.Value -= (int)Math.Floor((double)_trackbarMaxValue / 100);
+                    }
+                    else
+                    {
+                        trackBarLightness.Value = 0;
                     }
                 }
                 else
                 {
-                    if (trackBarSaturation.Value < _trackbarMaxValue - _trackbarMaxValue / 100)
+                    if (trackBarLightness.Value < (int)Math.Floor((double)_trackbarMaxValue - _trackbarMaxValue / 100))
                     {
-                        trackBarSaturation.Value += _trackbarMaxValue / 100;
+                        trackBarLightness.Value += (int)Math.Floor((double)_trackbarMaxValue / 100);
+                    }
+                    else
+                    {
+                        trackBarLightness.Value = _trackbarMaxValue;
                     }
                 }
-                trackBarSaturation_Scroll(sender, e);
+                trackBarLightness_Scroll(sender, e);
             }
             catch (Exception er)
             {
@@ -255,53 +262,71 @@ namespace MinhaCor
                 try
                 {
                     //define color
-                    //but first calculate the intensity of the color compared to _totalIntensityAtMousedown
-                    // and ajust _lightness accordingly  
-                    _rTemp = ((_r * _saturation) + (1 - _saturation)) * 255;
-                    _gTemp = ((_g * _saturation) + (1 - _saturation)) * 255;
-                    _bTemp = ((_b * _saturation) + (1 - _saturation)) * 255;
-                    //check for rounding errors
-                    if(_rTemp < 0)
-                    {
-                        _rTemp = 0;
-                    }
-                    if(_gTemp < 0)
-                    {
-                        _gTemp = 0;
-                    }
-                    if(_bTemp < 0)
-                    {
-                        _bTemp = 0;
-                    }
-                    //if (_mouseDown)
+                    ////but first calculate the intensity of the color compared to _totalIntensityAtMousedown
+                    //// and ajust _lightness accordingly  
+                    //_rTemp = ((_r * _saturation) + (1 - _saturation)) * 255;
+                    //_gTemp = ((_g * _saturation) + (1 - _saturation)) * 255;
+                    //_bTemp = ((_b * _saturation) + (1 - _saturation)) * 255;
+                    ////check for rounding errors
+                    //if(_rTemp < 0)
                     //{
-                    //    //adjust lightness as much as we can to keep the final intensity the 
-                    //    //same during mouse drags, but of course can't let it be > 100%
-                    //    _lightness = (double)_totalIntensityAtMouseDown / (double)(_rTemp + _gTemp + _bTemp);
-                    //    _lightness = _lightness > 1 ? 1 : _lightness;
+                    //    _rTemp = 0;
                     //}
-                    // as (pure hue plus whiteness of desaturation ) adjusted for lightness
+                    //if(_gTemp < 0)
+                    //{
+                    //    _gTemp = 0;
+                    //}
+                    //if(_bTemp < 0)
+                    //{
+                    //    _bTemp = 0;
+                    //}
+                    ////if (_mouseDown)
+                    ////{
+                    ////    //adjust lightness as much as we can to keep the final intensity the 
+                    ////    //same during mouse drags, but of course can't let it be > 100%
+                    ////    _lightness = (double)_totalIntensityAtMouseDown / (double)(_rTemp + _gTemp + _bTemp);
+                    ////    _lightness = _lightness > 1 ? 1 : _lightness;
+                    ////}
+                    //// as (pure hue plus whiteness of desaturation ) adjusted for lightness
+                    //_currentColor = Color.FromArgb(255,
+                    //     (int)Math.Floor((_rTemp * _lightness) > 255 ? 255 : (_rTemp * _lightness)),
+                    //     (int)Math.Floor((_gTemp * _lightness) > 255 ? 255 : (_gTemp * _lightness)),
+                    //     (int)Math.Floor((_bTemp * _lightness) > 255 ? 255 : (_bTemp * _lightness)));
+
+                    //first figure r,g,b  as floating numbers between zero and one
+                    _rTemp = ((_r * (1 - _desaturation)) + _desaturation) * _lightness;
+                    _gTemp = ((_g * (1 - _desaturation)) + _desaturation) * _lightness;
+                    _bTemp = ((_b * (1 - _desaturation)) + _desaturation) * _lightness;
+                    //watch for rounding errors
+                    if (_rTemp < 0)
+                        _rTemp = 0;
+                    if (_gTemp < 0)
+                        _gTemp = 0;
+                    if (_bTemp < 0)
+                        _bTemp = 0;
+                    //then  convert to int 0-255
                     _currentColor = Color.FromArgb(255,
-                         (int)Math.Floor((_rTemp * _lightness) > 255 ? 255 : (_rTemp * _lightness)),
-                         (int)Math.Floor((_gTemp * _lightness) > 255 ? 255 : (_gTemp * _lightness)),
-                         (int)Math.Floor((_bTemp * _lightness) > 255 ? 255 : (_bTemp * _lightness)));
+                        _rTemp >= 1 ? 255 : (int)Math.Floor(_rTemp * 256),
+                        _gTemp >= 1 ? 255 : (int)Math.Floor(_gTemp * 256),
+                        _bTemp >= 1 ? 255 : (int)Math.Floor(_bTemp * 256));
+
 
                     //if (_mouseDown)
                     if (true)
                     {
                         panelBackground.BackColor = _currentColor; //to reduce flicker
                     }
-                    using (Brush b = new SolidBrush(_currentColor)) //Color.FromArgb(255, 128, 128, 56)))
+                    using (Brush b = new SolidBrush(_currentColor)) 
                     {
                         e.Graphics.FillRectangle(b,
                              new Rectangle(new Point(40, 40), new Size(
                                 panelMain.Width - 80, panelMain.Height - 80)));
                     }
-                    e.Graphics.FillRectangle(Brushes.Black,
-                        _currentLocation.X - 4,
-                        _currentLocation.Y - 4,
-                        8,
-                        8);
+                    e.Graphics.FillRectangle(Brushes.DodgerBlue,
+                        _currentLocation.X - 6,
+                        _currentLocation.Y - 6,
+                        12,
+                        12);
 
                     //mark center
                     e.Graphics.FillRectangle(Brushes.White,
@@ -337,7 +362,7 @@ namespace MinhaCor
                 panelBackground.BackgroundImage = null;
                 this.Cursor = new Cursor(Cursor.Current.Handle);
                 Cursor.Position = panelMain.PointToScreen(_currentLocation);
-                _totalIntensityAtMouseDown = _currentColor.R + _currentColor.G + _currentColor.B;
+                //_totalIntensityAtMouseDown = _currentColor.R + _currentColor.G + _currentColor.B;
                 _ignoreControlEvents = false;
             }
             catch (Exception er)
@@ -354,17 +379,17 @@ namespace MinhaCor
                 {
                     //don't assign currentLocation if sender is "first call" or if mouse is out of bounds
                     if ((sender is Panel) &&
-                        ((e.Y >= 0) && (e.Y <= panelMain.Height)) &&
-                        ((e.X >= 0) && (e.X <= panelMain.Width )))
+                        ((e.Y >= 0) && (e.Y <= panelMain.Height -1)) &&
+                        ((e.X >= 0) && (e.X <= panelMain.Width - 1 )))
                     {
                         _currentLocation = e.Location;
                     }
                     //lightness
-                    if ((e.Y >= 0) && (e.Y <= panelMain.Height))
-                    {
-                        _lightness = ((double)panelMain.Height - e.Y) / panelMain.Height;
-                    }
-                    //hue
+                    //if ((e.Y >= 0) && (e.Y <= panelMain.Height))
+                    //{
+                    //    _lightness = ((double)panelMain.Height - e.Y) / panelMain.Height;
+                    //}
+                    //color
                     if ((e.X >= 0) && (e.X <= panelMain.Width/2))
                     {
                         _r = (double)e.X / (panelMain.Width / 2);
@@ -377,13 +402,14 @@ namespace MinhaCor
                         _g = 1 - (((double)e.X - panelMain.Width / 2) / (panelMain.Width / 2));
                         _b = 0;
                     }
+                    //saturation
+                    _desaturation = (double)e.Y / (panelMain.Height - 1);
 
-
-                    //set if this is before the mouse was pressed...
-                    if ((sender is string) && ((string)sender == "first call"))
-                    {
-                        _totalIntensityAtMouseDown = _currentColor.R + _currentColor.G + _currentColor.B;
-                    }
+                    ////set if this is before the mouse was pressed...
+                    //if ((sender is string) && ((string)sender == "first call"))
+                    //{
+                    //    _totalIntensityAtMouseDown = _currentColor.R + _currentColor.G + _currentColor.B;
+                    //}
                     panelMain.Invalidate();
                 }
                 catch (Exception er)
@@ -393,6 +419,8 @@ namespace MinhaCor
             }
         }
 
+        //got here
+
         private void panelMain_MouseUp(object sender, MouseEventArgs e)
         {
             try
@@ -401,7 +429,7 @@ namespace MinhaCor
                 //labelUpDown.Text = "Up";
                 _ignoreControlEvents = true;
                 //panelBackground.BackgroundImage = global::MinhaCor.Properties.Resources.rgb;
-                trackBarSaturation.Value = (int)Math.Round((1-_saturation) * _trackbarMaxValue);
+                //trackBarLightness.Value = (int)Math.Round((1-_saturation) * _trackbarMaxValue);
                 _ignoreControlEvents = false;
                 panelMain.Invalidate();
                 panelSwatch.Invalidate();
@@ -424,11 +452,12 @@ namespace MinhaCor
             }
         }
 
-        private void trackBarSaturation_Scroll(object sender, EventArgs e)
+        private void trackBarLightness_Scroll(object sender, EventArgs e)
         {
             try
             {
-                _saturation = 1-((double)trackBarSaturation.Value / (double)_trackbarMaxValue);
+                //got here
+                _lightness = ((double)trackBarLightness.Value / (double)_trackbarMaxValue);
                 panelMain.Invalidate();
                 panelSwatch.Invalidate();
             }
@@ -550,6 +579,16 @@ namespace MinhaCor
             {
                 e.Graphics.FillRectangle(Brushes.DodgerBlue, 
                     new Rectangle(10, labelAdjustHue.Location.Y, 12, 12));
+                //Point[] pointerPoints = new Point[]
+                e.Graphics.FillPolygon(Brushes.DodgerBlue,
+                    new Point[] 
+                {
+                    new Point(10, labelAdjustLightness.Location.Y),
+                    new Point(10 + 12, labelAdjustLightness.Location.Y),
+                    new Point(10 + 18, labelAdjustLightness.Location.Y + 6),
+                    new Point(10 + 12, labelAdjustLightness.Location.Y + 12),
+                    new Point(10, labelAdjustLightness.Location.Y + 12),
+                });
             }
             catch (Exception er)
             {

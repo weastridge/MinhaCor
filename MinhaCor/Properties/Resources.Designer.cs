@@ -63,6 +63,16 @@ namespace MinhaCor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blackWhiteGradient {
+            get {
+                object obj = ResourceManager.GetObject("blackWhiteGradient", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gradient {
             get {
                 object obj = ResourceManager.GetObject("gradient", resourceCulture);
@@ -93,6 +103,16 @@ namespace MinhaCor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GreenToGrayGradient {
+            get {
+                object obj = ResourceManager.GetObject("GreenToGrayGradient", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap illustration {
             get {
                 object obj = ResourceManager.GetObject("illustration", resourceCulture);
@@ -106,6 +126,16 @@ namespace MinhaCor.Properties {
         internal static System.Drawing.Bitmap redBlackGradient {
             get {
                 object obj = ResourceManager.GetObject("redBlackGradient", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RedToGrayGradient {
+            get {
+                object obj = ResourceManager.GetObject("RedToGrayGradient", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +166,16 @@ namespace MinhaCor.Properties {
         internal static System.Drawing.Bitmap simpleIllustration {
             get {
                 object obj = ResourceManager.GetObject("simpleIllustration", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap skinColorInfo {
+            get {
+                object obj = ResourceManager.GetObject("skinColorInfo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

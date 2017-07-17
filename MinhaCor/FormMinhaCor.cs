@@ -18,6 +18,7 @@ namespace MinhaCor
         private DisplayGrid _displayGridInstance;
         private DisplayColorAddEdit _displayColorAddEditInstance;
         private DisplaySimpleSkinColorAddEdit _displaySimpleSkinColorEditInstance;
+        private DisplaySkinColorAddEdit _displaySkinColorAddEdit;
         internal static FormMinhaCor Instance = null;
 
         /// <summary>
@@ -35,6 +36,7 @@ namespace MinhaCor
                     _displayColorAddEditInstance = new DisplayColorAddEdit();
                     _displayGridInstance = new DisplayGrid();
                     _displaySimpleSkinColorEditInstance = new DisplaySimpleSkinColorAddEdit();
+                    _displaySkinColorAddEdit = new DisplaySkinColorAddEdit();
                     
                     Instance = this;
                     //set defaults
@@ -96,7 +98,16 @@ namespace MinhaCor
         }
 
         /// <summary>
+        /// load thes skin color edit diaplay
+        /// </summary>
+        internal void LoadDisplaySkinColorAddEdit()
+        {
+            LoadDisplay(_displaySkinColorAddEdit);
+            _displaySkinColorAddEdit.Reset();
+        }
+        /// <summary>
         /// load the simple skin color edit display
+        /// (not used)
         /// </summary>
         internal void LoadDisplaySimpleSkinColorAddEdit()
         {

@@ -1,6 +1,6 @@
 ﻿namespace MinhaCor
 {
-    partial class DisplayColorAddEdit
+    partial class DisplaySkinColorAddEdit
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplayColorAddEdit));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplaySkinColorAddEdit));
             this.panelControls = new System.Windows.Forms.Panel();
+            this.labelAdjustLightness = new System.Windows.Forms.Label();
+            this.labelAdjustHue = new System.Windows.Forms.Label();
+            this.labelStartingColor = new System.Windows.Forms.Label();
+            this.panelMedium = new System.Windows.Forms.Panel();
+            this.panelDark = new System.Windows.Forms.Panel();
+            this.panelLight = new System.Windows.Forms.Panel();
+            this.panelLightLight = new System.Windows.Forms.Panel();
+            this.labelrgb = new System.Windows.Forms.Label();
             this.panelGradient = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelLight = new System.Windows.Forms.Label();
+            this.labelDark = new System.Windows.Forms.Label();
             this.trackBarLightness = new System.Windows.Forms.TrackBar();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
@@ -46,26 +50,29 @@
             this.textBoxPersonName = new System.Windows.Forms.TextBox();
             this.textBoxColorName = new System.Windows.Forms.TextBox();
             this.panelSwatch = new System.Windows.Forms.Panel();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelBackground = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.panelRight = new System.Windows.Forms.Panel();
+            this.panelLeft = new System.Windows.Forms.Panel();
             this.panelControls.SuspendLayout();
             this.panelGradient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLightness)).BeginInit();
             this.panelBackground.SuspendLayout();
+            this.panelMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControls
             // 
-            resources.ApplyResources(this.panelControls, "panelControls");
+            this.panelControls.Controls.Add(this.labelAdjustLightness);
+            this.panelControls.Controls.Add(this.labelAdjustHue);
+            this.panelControls.Controls.Add(this.labelStartingColor);
+            this.panelControls.Controls.Add(this.panelMedium);
+            this.panelControls.Controls.Add(this.panelDark);
+            this.panelControls.Controls.Add(this.panelLight);
+            this.panelControls.Controls.Add(this.panelLightLight);
+            this.panelControls.Controls.Add(this.labelrgb);
             this.panelControls.Controls.Add(this.panelGradient);
-            this.panelControls.Controls.Add(this.label7);
-            this.panelControls.Controls.Add(this.label6);
-            this.panelControls.Controls.Add(this.label5);
-            this.panelControls.Controls.Add(this.textBoxTitle);
             this.panelControls.Controls.Add(this.buttonCancel);
             this.panelControls.Controls.Add(this.buttonOK);
             this.panelControls.Controls.Add(this.buttonReset);
@@ -74,63 +81,81 @@
             this.panelControls.Controls.Add(this.textBoxPersonName);
             this.panelControls.Controls.Add(this.textBoxColorName);
             this.panelControls.Controls.Add(this.panelSwatch);
-            this.panelControls.Controls.Add(this.richTextBox3);
-            this.panelControls.Controls.Add(this.richTextBox2);
-            this.panelControls.Controls.Add(this.richTextBox1);
+            resources.ApplyResources(this.panelControls, "panelControls");
             this.panelControls.Name = "panelControls";
+            this.panelControls.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControls_Paint);
+            // 
+            // labelAdjustLightness
+            // 
+            resources.ApplyResources(this.labelAdjustLightness, "labelAdjustLightness");
+            this.labelAdjustLightness.Name = "labelAdjustLightness";
+            // 
+            // labelAdjustHue
+            // 
+            resources.ApplyResources(this.labelAdjustHue, "labelAdjustHue");
+            this.labelAdjustHue.Name = "labelAdjustHue";
+            // 
+            // labelStartingColor
+            // 
+            resources.ApplyResources(this.labelStartingColor, "labelStartingColor");
+            this.labelStartingColor.Name = "labelStartingColor";
+            // 
+            // panelMedium
+            // 
+            resources.ApplyResources(this.panelMedium, "panelMedium");
+            this.panelMedium.Name = "panelMedium";
+            this.panelMedium.Click += new System.EventHandler(this.panelExample_Click);
+            // 
+            // panelDark
+            // 
+            resources.ApplyResources(this.panelDark, "panelDark");
+            this.panelDark.Name = "panelDark";
+            this.panelDark.Click += new System.EventHandler(this.panelExample_Click);
+            // 
+            // panelLight
+            // 
+            resources.ApplyResources(this.panelLight, "panelLight");
+            this.panelLight.Name = "panelLight";
+            this.panelLight.Click += new System.EventHandler(this.panelExample_Click);
+            // 
+            // panelLightLight
+            // 
+            resources.ApplyResources(this.panelLightLight, "panelLightLight");
+            this.panelLightLight.Name = "panelLightLight";
+            this.panelLightLight.Click += new System.EventHandler(this.panelExample_Click);
+            // 
+            // labelrgb
+            // 
+            resources.ApplyResources(this.labelrgb, "labelrgb");
+            this.labelrgb.Name = "labelrgb";
             // 
             // panelGradient
             // 
+            this.panelGradient.BackgroundImage = global::MinhaCor.Properties.Resources.blackWhiteGradient;
             resources.ApplyResources(this.panelGradient, "panelGradient");
-            this.panelGradient.BackgroundImage = global::MinhaCor.Properties.Resources.gradient;
-            this.panelGradient.Controls.Add(this.label3);
-            this.panelGradient.Controls.Add(this.label4);
+            this.panelGradient.Controls.Add(this.labelLight);
+            this.panelGradient.Controls.Add(this.labelDark);
             this.panelGradient.Controls.Add(this.trackBarLightness);
             this.panelGradient.Name = "panelGradient";
             // 
-            // label3
+            // labelLight
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label3.Name = "label3";
+            resources.ApplyResources(this.labelLight, "labelLight");
+            this.labelLight.ForeColor = System.Drawing.Color.LightSteelBlue;
+            this.labelLight.Name = "labelLight";
             // 
-            // label4
+            // labelDark
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.labelDark, "labelDark");
+            this.labelDark.ForeColor = System.Drawing.Color.DarkBlue;
+            this.labelDark.Name = "labelDark";
             // 
             // trackBarLightness
             // 
-            resources.ApplyResources(this.trackBarLightness, "trackBarLightness");
             this.trackBarLightness.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.trackBarLightness, "trackBarLightness");
             this.trackBarLightness.Name = "trackBarLightness";
             this.trackBarLightness.Scroll += new System.EventHandler(this.trackBarLightness_Scroll);
-            // 
-            // label7
-            // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.label7.Name = "label7";
-            // 
-            // label6
-            // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.label6.Name = "label6";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.label5.Name = "label5";
-            // 
-            // textBoxTitle
-            // 
-            resources.ApplyResources(this.textBoxTitle, "textBoxTitle");
-            this.textBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.ReadOnly = true;
             // 
             // buttonCancel
             // 
@@ -179,27 +204,6 @@
             this.panelSwatch.Name = "panelSwatch";
             this.panelSwatch.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSwatch_Paint);
             // 
-            // richTextBox3
-            // 
-            resources.ApplyResources(this.richTextBox3, "richTextBox3");
-            this.richTextBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox3.Name = "richTextBox3";
-            // 
-            // richTextBox2
-            // 
-            resources.ApplyResources(this.richTextBox2, "richTextBox2");
-            this.richTextBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Name = "richTextBox2";
-            // 
-            // richTextBox1
-            // 
-            resources.ApplyResources(this.richTextBox1, "richTextBox1");
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Name = "richTextBox1";
-            // 
             // splitter1
             // 
             resources.ApplyResources(this.splitter1, "splitter1");
@@ -208,13 +212,14 @@
             // 
             // panelBackground
             // 
-            resources.ApplyResources(this.panelBackground, "panelBackground");
             this.panelBackground.Controls.Add(this.panelMain);
+            resources.ApplyResources(this.panelBackground, "panelBackground");
             this.panelBackground.Name = "panelBackground";
             this.panelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBackground_Paint);
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.panelRight);
             resources.ApplyResources(this.panelMain, "panelMain");
             this.panelMain.Name = "panelMain";
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
@@ -223,14 +228,27 @@
             this.panelMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseUp);
             this.panelMain.Resize += new System.EventHandler(this.panelMain_Resize_1);
             // 
-            // DisplayColorAddEdit
+            // panelRight
+            // 
+            this.panelRight.BackgroundImage = global::MinhaCor.Properties.Resources.RedToGrayGradient;
+            resources.ApplyResources(this.panelRight, "panelRight");
+            this.panelRight.Name = "panelRight";
+            // 
+            // panelLeft
+            // 
+            this.panelLeft.BackgroundImage = global::MinhaCor.Properties.Resources.GreenToGrayGradient;
+            resources.ApplyResources(this.panelLeft, "panelLeft");
+            this.panelLeft.Name = "panelLeft";
+            // 
+            // DisplaySkinColorAddEdit
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelBackground);
+            this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.panelControls);
-            this.Name = "DisplayColorAddEdit";
+            this.Name = "DisplaySkinColorAddEdit";
             this.Load += new System.EventHandler(this.DisplayColorAddEdit_Load);
             this.panelControls.ResumeLayout(false);
             this.panelControls.PerformLayout();
@@ -238,6 +256,7 @@
             this.panelGradient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLightness)).EndInit();
             this.panelBackground.ResumeLayout(false);
+            this.panelMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -253,19 +272,22 @@
         private System.Windows.Forms.TextBox textBoxPersonName;
         private System.Windows.Forms.TextBox textBoxColorName;
         private System.Windows.Forms.Panel panelSwatch;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TrackBar trackBarLightness;
         private System.Windows.Forms.Button buttonReset;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonOK;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxTitle;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelLight;
+        private System.Windows.Forms.Label labelDark;
         private System.Windows.Forms.Panel panelGradient;
+        private System.Windows.Forms.Panel panelRight;
+        private System.Windows.Forms.Panel panelLeft;
+        private System.Windows.Forms.Label labelrgb;
+        private System.Windows.Forms.Panel panelMedium;
+        private System.Windows.Forms.Panel panelDark;
+        private System.Windows.Forms.Panel panelLight;
+        private System.Windows.Forms.Panel panelLightLight;
+        private System.Windows.Forms.Label labelAdjustLightness;
+        private System.Windows.Forms.Label labelAdjustHue;
+        private System.Windows.Forms.Label labelStartingColor;
     }
 }

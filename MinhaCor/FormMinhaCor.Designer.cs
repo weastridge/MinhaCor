@@ -1,4 +1,6 @@
-﻿namespace MinhaCor
+﻿using System;
+
+namespace MinhaCor
 {
     partial class FormMinhaCor
     {

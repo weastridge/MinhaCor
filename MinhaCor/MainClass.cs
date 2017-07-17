@@ -38,7 +38,7 @@ namespace MinhaCor
             fullColor
         }
 
-        private static MinhaCorEditMode _editMode = MinhaCorEditMode.unspecified;
+        private static MinhaCorEditMode _editMode = MinhaCorEditMode.easy;
         /// <summary>
         /// mode for editing or creating colors
         /// </summary>
