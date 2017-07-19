@@ -262,47 +262,18 @@ namespace MinhaCor
                 try
                 {
                     //define color
-                    ////but first calculate the intensity of the color compared to _totalIntensityAtMousedown
-                    //// and ajust _lightness accordingly  
-                    //_rTemp = ((_r * _saturation) + (1 - _saturation)) * 255;
-                    //_gTemp = ((_g * _saturation) + (1 - _saturation)) * 255;
-                    //_bTemp = ((_b * _saturation) + (1 - _saturation)) * 255;
-                    ////check for rounding errors
-                    //if(_rTemp < 0)
-                    //{
-                    //    _rTemp = 0;
-                    //}
-                    //if(_gTemp < 0)
-                    //{
-                    //    _gTemp = 0;
-                    //}
-                    //if(_bTemp < 0)
-                    //{
-                    //    _bTemp = 0;
-                    //}
-                    ////if (_mouseDown)
-                    ////{
-                    ////    //adjust lightness as much as we can to keep the final intensity the 
-                    ////    //same during mouse drags, but of course can't let it be > 100%
-                    ////    _lightness = (double)_totalIntensityAtMouseDown / (double)(_rTemp + _gTemp + _bTemp);
-                    ////    _lightness = _lightness > 1 ? 1 : _lightness;
-                    ////}
-                    //// as (pure hue plus whiteness of desaturation ) adjusted for lightness
-                    //_currentColor = Color.FromArgb(255,
-                    //     (int)Math.Floor((_rTemp * _lightness) > 255 ? 255 : (_rTemp * _lightness)),
-                    //     (int)Math.Floor((_gTemp * _lightness) > 255 ? 255 : (_gTemp * _lightness)),
-                    //     (int)Math.Floor((_bTemp * _lightness) > 255 ? 255 : (_bTemp * _lightness)));
+
 
                     //first figure r,g,b  as floating numbers between zero and one
                     _rTemp = ((_r * (1 - _desaturation)) + _desaturation) * _lightness;
                     _gTemp = ((_g * (1 - _desaturation)) + _desaturation) * _lightness;
                     _bTemp = ((_b * (1 - _desaturation)) + _desaturation) * _lightness;
                     //watch for rounding errors
-                    if (_rTemp < 0)
+                    if ((double.IsNaN(_rTemp)) || (_rTemp < 0))
                         _rTemp = 0;
-                    if (_gTemp < 0)
+                    if ((double.IsNaN(_gTemp)) || (_gTemp < 0))
                         _gTemp = 0;
-                    if (_bTemp < 0)
+                    if ((double.IsNaN(_bTemp)) || (_bTemp < 0))
                         _bTemp = 0;
                     //then  convert to int 0-255
                     _currentColor = Color.FromArgb(255,
@@ -487,6 +458,12 @@ namespace MinhaCor
             panelSwatch.BackColor = _currentColor;
         }
 
+        /// <summary>
+        /// set color and cursor square position to the page default 
+        /// so cursor doesn't get lost
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void panelMain_Resize_1(object sender, EventArgs e)
         {
             if (!_ignoreControlEvents)

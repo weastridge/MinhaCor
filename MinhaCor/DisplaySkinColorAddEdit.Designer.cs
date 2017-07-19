@@ -98,6 +98,7 @@
             // labelStartingColor
             // 
             resources.ApplyResources(this.labelStartingColor, "labelStartingColor");
+            this.labelStartingColor.ForeColor = System.Drawing.Color.DodgerBlue;
             this.labelStartingColor.Name = "labelStartingColor";
             // 
             // panelMedium
@@ -226,7 +227,7 @@
             this.panelMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseDown);
             this.panelMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseMove);
             this.panelMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseUp);
-            this.panelMain.Resize += new System.EventHandler(this.panelMain_Resize_1);
+            this.panelMain.Resize += new System.EventHandler(this.panelMain_Resize);
             // 
             // panelRight
             // 
