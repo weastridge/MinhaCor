@@ -6,6 +6,6 @@
     <add key="Culture" value="" />
     <add key="Password" value="" />
     <add key="DefaultCulture" value="en-US" />
-    <add key="EditMode" value="easy" />
+    <add key="EditMode" value="fullColor" />
   </appSettings>
 </configuration>

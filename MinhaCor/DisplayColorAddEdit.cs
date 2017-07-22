@@ -227,11 +227,13 @@ namespace MinhaCor
                     e.Graphics.FillRectangle(Brushes.White,
                         panelMain.Width / 2, panelMain.Height / 2, 1, 1);
 
-                    ////debug:
-                    //labelRadians.Text = _currentAngle.ToString();
-                    //labelR.Text = _rTemp + "->" + _currentColor.R.ToString();
-                    //labelG.Text = _gTemp + "->" + _currentColor.G.ToString();
-                    //labelB.Text = _bTemp + "->" + _currentColor.B.ToString();
+                    //show rgb
+                    labelrgb.Text = Wve.WveTools.BytesToHex(new byte[] {
+                    _currentColor.R,
+                    _currentColor.G,
+                    _currentColor.B},
+                    " ");
+                    panelRgb.Invalidate();
                 }
                 catch (Exception er)
                 {
@@ -529,6 +531,24 @@ namespace MinhaCor
                 {
                     Wve.MyEr.Show(this, er, true);
                 }
+            }
+        }
+
+        private void panelRgb_Paint(object sender, PaintEventArgs e)
+        {
+            try
+            {
+                //e.Graphics.DrawString(labelrgb.Width.ToString(),this.Font, Brushes.Black, new PointF(0,0));
+                e.Graphics.FillRectangle(Brushes.Red, new Rectangle(0,
+                    (int)Math.Floor((255 - _currentColor.R) * 26 / 255D), 14, 26)); //D for double
+                e.Graphics.FillRectangle(Brushes.Lime, new Rectangle(20,
+                    (int)Math.Floor((255 - _currentColor.G) * 26 / 255D), 14, 26)); //D for double
+                e.Graphics.FillRectangle(Brushes.Blue, new Rectangle(40,
+                    (int)Math.Floor((255 - _currentColor.B) * 26 / 255D), 14, 26)); //D for double
+            }
+            catch
+            {
+                e.Graphics.Clear(Color.Red);
             }
         }
     }

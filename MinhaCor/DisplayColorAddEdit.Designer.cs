@@ -52,6 +52,8 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelBackground = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.panelRgb = new System.Windows.Forms.Panel();
+            this.labelrgb = new System.Windows.Forms.Label();
             this.panelControls.SuspendLayout();
             this.panelGradient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLightness)).BeginInit();
@@ -60,7 +62,8 @@
             // 
             // panelControls
             // 
-            resources.ApplyResources(this.panelControls, "panelControls");
+            this.panelControls.Controls.Add(this.panelRgb);
+            this.panelControls.Controls.Add(this.labelrgb);
             this.panelControls.Controls.Add(this.panelGradient);
             this.panelControls.Controls.Add(this.label7);
             this.panelControls.Controls.Add(this.label6);
@@ -77,12 +80,13 @@
             this.panelControls.Controls.Add(this.richTextBox3);
             this.panelControls.Controls.Add(this.richTextBox2);
             this.panelControls.Controls.Add(this.richTextBox1);
+            resources.ApplyResources(this.panelControls, "panelControls");
             this.panelControls.Name = "panelControls";
             // 
             // panelGradient
             // 
-            resources.ApplyResources(this.panelGradient, "panelGradient");
             this.panelGradient.BackgroundImage = global::MinhaCor.Properties.Resources.gradient;
+            resources.ApplyResources(this.panelGradient, "panelGradient");
             this.panelGradient.Controls.Add(this.label3);
             this.panelGradient.Controls.Add(this.label4);
             this.panelGradient.Controls.Add(this.trackBarLightness);
@@ -102,8 +106,8 @@
             // 
             // trackBarLightness
             // 
-            resources.ApplyResources(this.trackBarLightness, "trackBarLightness");
             this.trackBarLightness.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.trackBarLightness, "trackBarLightness");
             this.trackBarLightness.Name = "trackBarLightness";
             this.trackBarLightness.Scroll += new System.EventHandler(this.trackBarLightness_Scroll);
             // 
@@ -127,8 +131,8 @@
             // 
             // textBoxTitle
             // 
-            resources.ApplyResources(this.textBoxTitle, "textBoxTitle");
             this.textBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBoxTitle, "textBoxTitle");
             this.textBoxTitle.Name = "textBoxTitle";
             this.textBoxTitle.ReadOnly = true;
             // 
@@ -181,23 +185,23 @@
             // 
             // richTextBox3
             // 
-            resources.ApplyResources(this.richTextBox3, "richTextBox3");
             this.richTextBox3.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.richTextBox3, "richTextBox3");
             this.richTextBox3.Name = "richTextBox3";
             // 
             // richTextBox2
             // 
-            resources.ApplyResources(this.richTextBox2, "richTextBox2");
             this.richTextBox2.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.richTextBox2, "richTextBox2");
             this.richTextBox2.Name = "richTextBox2";
             // 
             // richTextBox1
             // 
-            resources.ApplyResources(this.richTextBox1, "richTextBox1");
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.richTextBox1, "richTextBox1");
             this.richTextBox1.Name = "richTextBox1";
             // 
             // splitter1
@@ -208,8 +212,8 @@
             // 
             // panelBackground
             // 
-            resources.ApplyResources(this.panelBackground, "panelBackground");
             this.panelBackground.Controls.Add(this.panelMain);
+            resources.ApplyResources(this.panelBackground, "panelBackground");
             this.panelBackground.Name = "panelBackground";
             this.panelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBackground_Paint);
             // 
@@ -222,6 +226,17 @@
             this.panelMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseMove);
             this.panelMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseUp);
             this.panelMain.Resize += new System.EventHandler(this.panelMain_Resize_1);
+            // 
+            // panelRgb
+            // 
+            resources.ApplyResources(this.panelRgb, "panelRgb");
+            this.panelRgb.Name = "panelRgb";
+            this.panelRgb.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRgb_Paint);
+            // 
+            // labelrgb
+            // 
+            resources.ApplyResources(this.labelrgb, "labelrgb");
+            this.labelrgb.Name = "labelrgb";
             // 
             // DisplayColorAddEdit
             // 
@@ -267,5 +282,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panelGradient;
+        private System.Windows.Forms.Panel panelRgb;
+        private System.Windows.Forms.Label labelrgb;
     }
 }
