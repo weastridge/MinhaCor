@@ -309,6 +309,7 @@ namespace MinhaCor
                     _currentColor.G,
                     _currentColor.B},
                     " ");
+                    panelRgb.Invalidate();
                 }
                 catch (Exception er)
                 {
@@ -570,6 +571,24 @@ namespace MinhaCor
             catch (Exception er)
             {
                 Wve.MyEr.Show(this, er, true);
+            }
+        }
+
+        private void panelRgb_Paint(object sender, PaintEventArgs e)
+        {
+            try
+            {
+                //e.Graphics.DrawString(labelrgb.Width.ToString(),this.Font, Brushes.Black, new PointF(0,0));
+                e.Graphics.FillRectangle(Brushes.Red, new Rectangle(0,
+                    (int)Math.Floor((255-_currentColor.R)*26/255D), 14, 26)); //D for double
+                e.Graphics.FillRectangle(Brushes.Lime, new Rectangle(20,
+                    (int)Math.Floor((255 - _currentColor.G) * 26 / 255D), 14, 26)); //D for double
+                e.Graphics.FillRectangle(Brushes.Blue, new Rectangle(40,
+                    (int)Math.Floor((255 - _currentColor.B) * 26 / 255D), 14, 26)); //D for double
+            }
+            catch
+            {
+                e.Graphics.Clear(Color.Red);
             }
         }
     }

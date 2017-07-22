@@ -55,6 +55,7 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.panelRgb = new System.Windows.Forms.Panel();
             this.panelControls.SuspendLayout();
             this.panelGradient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLightness)).BeginInit();
@@ -64,6 +65,7 @@
             // 
             // panelControls
             // 
+            this.panelControls.Controls.Add(this.panelRgb);
             this.panelControls.Controls.Add(this.labelAdjustLightness);
             this.panelControls.Controls.Add(this.labelAdjustHue);
             this.panelControls.Controls.Add(this.labelStartingColor);
@@ -88,11 +90,13 @@
             // labelAdjustLightness
             // 
             resources.ApplyResources(this.labelAdjustLightness, "labelAdjustLightness");
+            this.labelAdjustLightness.ForeColor = System.Drawing.Color.DodgerBlue;
             this.labelAdjustLightness.Name = "labelAdjustLightness";
             // 
             // labelAdjustHue
             // 
             resources.ApplyResources(this.labelAdjustHue, "labelAdjustHue");
+            this.labelAdjustHue.ForeColor = System.Drawing.Color.DodgerBlue;
             this.labelAdjustHue.Name = "labelAdjustHue";
             // 
             // labelStartingColor
@@ -241,6 +245,12 @@
             resources.ApplyResources(this.panelLeft, "panelLeft");
             this.panelLeft.Name = "panelLeft";
             // 
+            // panelRgb
+            // 
+            resources.ApplyResources(this.panelRgb, "panelRgb");
+            this.panelRgb.Name = "panelRgb";
+            this.panelRgb.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRgb_Paint);
+            // 
             // DisplaySkinColorAddEdit
             // 
             resources.ApplyResources(this, "$this");
@@ -290,5 +300,6 @@
         private System.Windows.Forms.Label labelAdjustLightness;
         private System.Windows.Forms.Label labelAdjustHue;
         private System.Windows.Forms.Label labelStartingColor;
+        private System.Windows.Forms.Panel panelRgb;
     }
 }
