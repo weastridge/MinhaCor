@@ -161,7 +161,7 @@ namespace MinhaCor
             panelDark.BackColor = Color.FromArgb(0x2E, 0x1B, 0x0C);
             //setDisplay(new Tuple<double, double, double>(0.30, 0.70, 0.90));
             setDisplay(colorToLocation(panelLight.BackColor));
-
+            textBoxColorName.Focus();
         }
 
         /// <summary>

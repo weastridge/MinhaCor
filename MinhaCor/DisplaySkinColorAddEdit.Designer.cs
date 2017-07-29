@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplaySkinColorAddEdit));
             this.panelControls = new System.Windows.Forms.Panel();
+            this.panelRgb = new System.Windows.Forms.Panel();
             this.labelAdjustLightness = new System.Windows.Forms.Label();
             this.labelAdjustHue = new System.Windows.Forms.Label();
             this.labelStartingColor = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.panelRgb = new System.Windows.Forms.Panel();
             this.panelControls.SuspendLayout();
             this.panelGradient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLightness)).BeginInit();
@@ -86,6 +86,12 @@
             resources.ApplyResources(this.panelControls, "panelControls");
             this.panelControls.Name = "panelControls";
             this.panelControls.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControls_Paint);
+            // 
+            // panelRgb
+            // 
+            resources.ApplyResources(this.panelRgb, "panelRgb");
+            this.panelRgb.Name = "panelRgb";
+            this.panelRgb.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRgb_Paint);
             // 
             // labelAdjustLightness
             // 
@@ -244,12 +250,6 @@
             this.panelLeft.BackgroundImage = global::MinhaCor.Properties.Resources.GreenToGrayGradient;
             resources.ApplyResources(this.panelLeft, "panelLeft");
             this.panelLeft.Name = "panelLeft";
-            // 
-            // panelRgb
-            // 
-            resources.ApplyResources(this.panelRgb, "panelRgb");
-            this.panelRgb.Name = "panelRgb";
-            this.panelRgb.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRgb_Paint);
             // 
             // DisplaySkinColorAddEdit
             // 
