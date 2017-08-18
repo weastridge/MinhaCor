@@ -73,7 +73,7 @@ namespace Wve.Properties {
         ///  Revision History:  09/17/10 Jingdong Li updated
         ///  Revision History:  01/05/11 Jingdong Li updated
         ///  Specification: ANSI/HL7 CDAR2  
-        ///  The current version and documentation are available at http://www.la [rest of string was truncated]&quot;;.
+        ///  The current version and documentation are available at h [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string CDA {
             get {
