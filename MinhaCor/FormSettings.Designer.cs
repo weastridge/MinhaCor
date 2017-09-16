@@ -41,6 +41,13 @@
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.radioButtonEasy = new System.Windows.Forms.RadioButton();
             this.radioButtonFullColor = new System.Windows.Forms.RadioButton();
+            this.textBoxLocation = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBoxDatabase = new System.Windows.Forms.GroupBox();
+            this.radioButtonLocal = new System.Windows.Forms.RadioButton();
+            this.radioButtonOnline = new System.Windows.Forms.RadioButton();
+            this.textBoxDatabase = new System.Windows.Forms.TextBox();
+            this.groupBoxDatabase.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonOK
@@ -143,7 +150,7 @@
             // radioButtonEasy
             // 
             this.radioButtonEasy.AutoSize = true;
-            this.radioButtonEasy.Location = new System.Drawing.Point(16, 162);
+            this.radioButtonEasy.Location = new System.Drawing.Point(16, 140);
             this.radioButtonEasy.Name = "radioButtonEasy";
             this.radioButtonEasy.Size = new System.Drawing.Size(100, 17);
             this.radioButtonEasy.TabIndex = 11;
@@ -154,13 +161,73 @@
             // radioButtonFullColor
             // 
             this.radioButtonFullColor.AutoSize = true;
-            this.radioButtonFullColor.Location = new System.Drawing.Point(16, 185);
+            this.radioButtonFullColor.Location = new System.Drawing.Point(16, 163);
             this.radioButtonFullColor.Name = "radioButtonFullColor";
             this.radioButtonFullColor.Size = new System.Drawing.Size(95, 17);
             this.radioButtonFullColor.TabIndex = 12;
             this.radioButtonFullColor.TabStop = true;
             this.radioButtonFullColor.Text = "full color wheel";
             this.radioButtonFullColor.UseVisualStyleBackColor = true;
+            // 
+            // textBoxLocation
+            // 
+            this.textBoxLocation.Location = new System.Drawing.Point(16, 200);
+            this.textBoxLocation.Name = "textBoxLocation";
+            this.textBoxLocation.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLocation.TabIndex = 14;
+            this.textBoxLocation.Text = "unspecified";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 183);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Location";
+            // 
+            // groupBoxDatabase
+            // 
+            this.groupBoxDatabase.Controls.Add(this.textBoxDatabase);
+            this.groupBoxDatabase.Controls.Add(this.radioButtonLocal);
+            this.groupBoxDatabase.Controls.Add(this.radioButtonOnline);
+            this.groupBoxDatabase.Location = new System.Drawing.Point(16, 227);
+            this.groupBoxDatabase.Name = "groupBoxDatabase";
+            this.groupBoxDatabase.Size = new System.Drawing.Size(200, 75);
+            this.groupBoxDatabase.TabIndex = 15;
+            this.groupBoxDatabase.TabStop = false;
+            this.groupBoxDatabase.Text = "database";
+            // 
+            // radioButtonLocal
+            // 
+            this.radioButtonLocal.AutoSize = true;
+            this.radioButtonLocal.Location = new System.Drawing.Point(74, 17);
+            this.radioButtonLocal.Name = "radioButtonLocal";
+            this.radioButtonLocal.Size = new System.Drawing.Size(47, 17);
+            this.radioButtonLocal.TabIndex = 14;
+            this.radioButtonLocal.TabStop = true;
+            this.radioButtonLocal.Text = "local";
+            this.radioButtonLocal.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonOnline
+            // 
+            this.radioButtonOnline.AutoSize = true;
+            this.radioButtonOnline.Location = new System.Drawing.Point(6, 17);
+            this.radioButtonOnline.Name = "radioButtonOnline";
+            this.radioButtonOnline.Size = new System.Drawing.Size(53, 17);
+            this.radioButtonOnline.TabIndex = 13;
+            this.radioButtonOnline.TabStop = true;
+            this.radioButtonOnline.Text = "online";
+            this.radioButtonOnline.UseVisualStyleBackColor = true;
+            // 
+            // textBoxDatabase
+            // 
+            this.textBoxDatabase.Location = new System.Drawing.Point(6, 40);
+            this.textBoxDatabase.Name = "textBoxDatabase";
+            this.textBoxDatabase.ReadOnly = true;
+            this.textBoxDatabase.Size = new System.Drawing.Size(188, 20);
+            this.textBoxDatabase.TabIndex = 15;
+            this.textBoxDatabase.Text = "eastridges.com\\minhacor";
             // 
             // FormSettings
             // 
@@ -170,6 +237,9 @@
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(287, 385);
             this.ControlBox = false;
+            this.Controls.Add(this.groupBoxDatabase);
+            this.Controls.Add(this.textBoxLocation);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.radioButtonFullColor);
             this.Controls.Add(this.radioButtonEasy);
             this.Controls.Add(this.textBoxPassword);
@@ -187,6 +257,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Settings";
             this.Load += new System.EventHandler(this.FormSettings_Load);
+            this.groupBoxDatabase.ResumeLayout(false);
+            this.groupBoxDatabase.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +279,11 @@
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.RadioButton radioButtonEasy;
         private System.Windows.Forms.RadioButton radioButtonFullColor;
+        private System.Windows.Forms.TextBox textBoxLocation;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBoxDatabase;
+        private System.Windows.Forms.TextBox textBoxDatabase;
+        private System.Windows.Forms.RadioButton radioButtonLocal;
+        private System.Windows.Forms.RadioButton radioButtonOnline;
     }
 }

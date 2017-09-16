@@ -139,6 +139,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.pt-BR.resx</DependentUpon>
     </Compile>
+    <Compile Include="SplashForSkin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashForSkin.Designer.cs">
+      <DependentUpon>SplashForSkin.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DisplaySkinColorAddEdit.pt-BR.resx">
       <DependentUpon>DisplaySkinColorAddEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +211,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.pt-BR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="SplashForSkin.resx">
+      <DependentUpon>SplashForSkin.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Eastridges.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -225,6 +234,16 @@
   <ItemGroup>
     <Content Include="MinhaCor.ico" />
     <Content Include="notes.txt" />
+    <None Include="Resources\Help4_en.png" />
+    <None Include="Resources\Help4.png" />
+    <None Include="Resources\Help3_en.png" />
+    <None Include="Resources\Help3.png" />
+    <None Include="Resources\Help2_en.png" />
+    <None Include="Resources\Help2.png" />
+    <None Include="Resources\Help1_en.png" />
+    <None Include="Resources\Help1.png" />
+    <None Include="Resources\Help0_en.png" />
+    <None Include="Resources\Help0.png" />
     <None Include="Resources\skinColorInfo.png" />
     <None Include="Resources\RedToGrayGradient.png" />
     <None Include="Resources\GreenToGrayGradient.png" />

@@ -13,12 +13,13 @@ namespace MinhaCor
     /// <summary>
     /// edit and name color
     /// </summary>
-    public partial class DisplaySkinColorAddEdit : UserControl
+    public partial class DisplaySkinColorAddEdit : UserControl, IStartable
     {
 
         private bool _ignoreControlEvents = false;
         private int _trackbarMaxValue = 999; //1000 possible values
         private Point _currentLocation = new Point(0,0);
+        private Point _startingLocation = new Point(0, 0);
         /// <summary>
         /// the color that we change
         /// </summary>
@@ -85,14 +86,20 @@ namespace MinhaCor
                 try
                 {
                     setDefaults();
-
                 }
                 catch (Exception er)
                 {
                     Wve.MyEr.Show(this, er, true);
                 }
             }
-
+        }
+        /// <summary>
+        /// has to be called explicitly
+        /// </summary>
+        public void Start()
+        {
+            SplashForSkin dlg = new SplashForSkin();
+            dlg.ShowDialog();
         }
 
         internal void Reset()
@@ -125,20 +132,24 @@ namespace MinhaCor
             panelMain.BackColor = Color.Transparent;
             if(color == 1)
             {
-                _currentLocation.X = panelMain.Width - 1;
+                _startingLocation.X = panelMain.Width - 1;
+                _currentLocation.X = _startingLocation.X;
             }
             else
             {
-                _currentLocation.X = (int)Math.Floor(panelMain.Width * color);
+                _startingLocation.X = (int)Math.Floor(panelMain.Width * color);
+                _currentLocation.X = _startingLocation.X;
             }
             
             if(desaturation==1)
             {
-                _currentLocation.Y = panelMain.Height - 1;
+                _startingLocation.Y = panelMain.Height - 1;
+                _currentLocation.Y = _startingLocation.Y;
             }
             else
             {
-                _currentLocation.Y = (int)Math.Floor(panelMain.Height * desaturation);
+                _startingLocation.Y = (int)Math.Floor(panelMain.Height * desaturation);
+                _currentLocation.Y = _startingLocation.Y;
             }
             //now draw initial setting
             _mouseDown = true;
@@ -261,8 +272,8 @@ namespace MinhaCor
             {
                 try
                 {
-                    //define color
 
+                    //define color
 
                     //first figure r,g,b  as floating numbers between zero and one
                     _rTemp = ((_r * (1 - _desaturation)) + _desaturation) * _lightness;
@@ -303,6 +314,13 @@ namespace MinhaCor
                     e.Graphics.FillRectangle(Brushes.White,
                         panelMain.Width / 2, panelMain.Height / 2, 1, 1);
 
+                    //mark starting point
+                    e.Graphics.DrawEllipse(Pens.DodgerBlue, new Rectangle(
+                        _startingLocation.X - 200,
+                        _startingLocation.Y - 200,
+                        400,
+                        400));
+
                     //show rgb
                     labelrgb.Text = Wve.WveTools.BytesToHex(new byte[] {
                     _currentColor.R,
@@ -310,6 +328,7 @@ namespace MinhaCor
                     _currentColor.B},
                     " ");
                     panelRgb.Invalidate();
+
                 }
                 catch (Exception er)
                 {
@@ -390,8 +409,6 @@ namespace MinhaCor
                 }
             }
         }
-
-        //got here
 
         private void panelMain_MouseUp(object sender, MouseEventArgs e)
         {
@@ -553,24 +570,27 @@ namespace MinhaCor
 
         private void panelControls_Paint(object sender, PaintEventArgs e)
         {
-            try
+            if (false) //let's not
             {
-                e.Graphics.FillRectangle(Brushes.DodgerBlue, 
-                    new Rectangle(10, labelAdjustHue.Location.Y, 12, 12));
-                //Point[] pointerPoints = new Point[]
-                e.Graphics.FillPolygon(Brushes.DodgerBlue,
-                    new Point[] 
+                try
                 {
+                    e.Graphics.FillRectangle(Brushes.DodgerBlue,
+                        new Rectangle(10, labelAdjustHue.Location.Y, 12, 12));
+                    //Point[] pointerPoints = new Point[]
+                    e.Graphics.FillPolygon(Brushes.DodgerBlue,
+                        new Point[]
+                    {
                     new Point(10, labelAdjustLightness.Location.Y),
                     new Point(10 + 12, labelAdjustLightness.Location.Y),
                     new Point(10 + 18, labelAdjustLightness.Location.Y + 6),
                     new Point(10 + 12, labelAdjustLightness.Location.Y + 12),
                     new Point(10, labelAdjustLightness.Location.Y + 12),
-                });
-            }
-            catch (Exception er)
-            {
-                Wve.MyEr.Show(this, er, true);
+                    });
+                }
+                catch (Exception er)
+                {
+                    Wve.MyEr.Show(this, er, true);
+                }
             }
         }
 
@@ -590,6 +610,11 @@ namespace MinhaCor
             {
                 e.Graphics.Clear(Color.Red);
             }
+        }
+
+        private void panelLightLight_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

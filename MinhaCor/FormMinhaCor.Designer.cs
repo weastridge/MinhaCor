@@ -34,8 +34,9 @@ namespace MinhaCor
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemShowHelp = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +44,7 @@ namespace MinhaCor
             this.panelDisplayArea = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,8 +60,9 @@ namespace MinhaCor
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
-            this.saveAsToolStripMenuItem,
             this.settingsToolStripMenuItem,
+            this.saveAsToolStripMenuItem,
+            this.toolStripMenuItemEdit,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
@@ -70,17 +73,23 @@ namespace MinhaCor
             resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
             resources.ApplyResources(this.saveAsToolStripMenuItem, "saveAsToolStripMenuItem");
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
-            // settingsToolStripMenuItem
+            // toolStripMenuItemEdit
             // 
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            this.toolStripMenuItemEdit.Name = "toolStripMenuItemEdit";
+            resources.ApplyResources(this.toolStripMenuItemEdit, "toolStripMenuItemEdit");
+            this.toolStripMenuItemEdit.Click += new System.EventHandler(this.toolStripMenuItemEdit_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -112,15 +121,25 @@ namespace MinhaCor
             // 
             resources.ApplyResources(this.panelDisplayArea, "panelDisplayArea");
             this.panelDisplayArea.Name = "panelDisplayArea";
+            this.panelDisplayArea.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDisplayArea_Paint);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // textBoxTitle
+            // 
+            resources.ApplyResources(this.textBoxTitle, "textBoxTitle");
+            this.textBoxTitle.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxTitle.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.textBoxTitle.Name = "textBoxTitle";
+            // 
             // FormMinhaCor
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBoxTitle);
             this.Controls.Add(this.panelDisplayArea);
             this.Controls.Add(this.menuStrip1);
             this.KeyPreview = true;
@@ -148,5 +167,7 @@ namespace MinhaCor
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemShowHelp;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEdit;
+        private System.Windows.Forms.TextBox textBoxTitle;
     }
 }

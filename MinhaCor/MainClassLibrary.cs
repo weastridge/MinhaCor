@@ -7,6 +7,14 @@ using System.Threading.Tasks;
 namespace MinhaCor
 {
     /// <summary>
+    /// just exposes a method called start that can be called
+    /// when a display is  shown each time
+    /// </summary>
+    public interface IStartable
+    {
+        void Start();
+    }
+    /// <summary>
     /// a color and name someone has created
     /// </summary>
     public class ColorCreation

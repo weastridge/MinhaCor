@@ -77,8 +77,20 @@ namespace MinhaCor
         internal void LoadDisplay(UserControl display)
         {
             panelDisplayArea.Controls.Clear();
+            if (display is DisplayGrid)
+            {
+                textBoxTitle.Visible = true;
+            }
+            else
+            {
+                textBoxTitle.Visible = false;
+            }
             panelDisplayArea.Controls.Add(display);
             display.Dock = DockStyle.Fill;
+            if(display is IStartable)
+            {
+                ((IStartable)display).Start();
+            }
         }
         /// <summary>
         /// load the display grid
@@ -210,6 +222,37 @@ namespace MinhaCor
                     if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                     {
                         MainClass.SaveColorCreations(saveFileDialog1.FileName);
+                    }
+                }
+                catch (Exception er)
+                {
+                    Wve.MyEr.Show(this, er, true);
+                }
+            }
+        }
+
+        private void panelDisplayArea_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItemEdit_Click(object sender, EventArgs e)
+        {
+            using (Wve.HourglassCursor waitCursor = new Wve.HourglassCursor())
+            {
+                try
+                {
+                    if (MessageBox.Show("This is to edit the data file " +
+                        "of entries.  Errors could cause this program to fail!  " +
+                        "Do you want to edit the file?",
+                        "Confirm edit data?",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Asterisk,
+                        MessageBoxDefaultButton.Button2) ==
+                        DialogResult.Yes)
+                    {
+                        System.Diagnostics.Process.Start(
+                            MainClass.ColorCreationsPathAndFilename);
                     }
                 }
                 catch (Exception er)

@@ -30,9 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplaySkinColorAddEdit));
             this.panelControls = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panelRgb = new System.Windows.Forms.Panel();
-            this.labelAdjustLightness = new System.Windows.Forms.Label();
-            this.labelAdjustHue = new System.Windows.Forms.Label();
             this.labelStartingColor = new System.Windows.Forms.Label();
             this.panelMedium = new System.Windows.Forms.Panel();
             this.panelDark = new System.Windows.Forms.Panel();
@@ -51,6 +50,8 @@
             this.textBoxPersonName = new System.Windows.Forms.TextBox();
             this.textBoxColorName = new System.Windows.Forms.TextBox();
             this.panelSwatch = new System.Windows.Forms.Panel();
+            this.labelAdjustLightness = new System.Windows.Forms.Label();
+            this.labelAdjustHue = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelBackground = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
@@ -59,15 +60,15 @@
             this.panelControls.SuspendLayout();
             this.panelGradient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLightness)).BeginInit();
+            this.panelSwatch.SuspendLayout();
             this.panelBackground.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControls
             // 
+            this.panelControls.Controls.Add(this.textBox1);
             this.panelControls.Controls.Add(this.panelRgb);
-            this.panelControls.Controls.Add(this.labelAdjustLightness);
-            this.panelControls.Controls.Add(this.labelAdjustHue);
             this.panelControls.Controls.Add(this.labelStartingColor);
             this.panelControls.Controls.Add(this.panelMedium);
             this.panelControls.Controls.Add(this.panelDark);
@@ -87,23 +88,20 @@
             this.panelControls.Name = "panelControls";
             this.panelControls.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControls_Paint);
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox1, "textBox1");
+            this.textBox1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            // 
             // panelRgb
             // 
             resources.ApplyResources(this.panelRgb, "panelRgb");
             this.panelRgb.Name = "panelRgb";
             this.panelRgb.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRgb_Paint);
-            // 
-            // labelAdjustLightness
-            // 
-            resources.ApplyResources(this.labelAdjustLightness, "labelAdjustLightness");
-            this.labelAdjustLightness.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.labelAdjustLightness.Name = "labelAdjustLightness";
-            // 
-            // labelAdjustHue
-            // 
-            resources.ApplyResources(this.labelAdjustHue, "labelAdjustHue");
-            this.labelAdjustHue.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.labelAdjustHue.Name = "labelAdjustHue";
             // 
             // labelStartingColor
             // 
@@ -134,6 +132,7 @@
             resources.ApplyResources(this.panelLightLight, "panelLightLight");
             this.panelLightLight.Name = "panelLightLight";
             this.panelLightLight.Click += new System.EventHandler(this.panelExample_Click);
+            this.panelLightLight.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLightLight_Paint);
             // 
             // labelrgb
             // 
@@ -211,9 +210,23 @@
             // 
             // panelSwatch
             // 
+            this.panelSwatch.Controls.Add(this.labelAdjustLightness);
+            this.panelSwatch.Controls.Add(this.labelAdjustHue);
             resources.ApplyResources(this.panelSwatch, "panelSwatch");
             this.panelSwatch.Name = "panelSwatch";
             this.panelSwatch.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSwatch_Paint);
+            // 
+            // labelAdjustLightness
+            // 
+            resources.ApplyResources(this.labelAdjustLightness, "labelAdjustLightness");
+            this.labelAdjustLightness.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.labelAdjustLightness.Name = "labelAdjustLightness";
+            // 
+            // labelAdjustHue
+            // 
+            resources.ApplyResources(this.labelAdjustHue, "labelAdjustHue");
+            this.labelAdjustHue.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.labelAdjustHue.Name = "labelAdjustHue";
             // 
             // splitter1
             // 
@@ -266,6 +279,8 @@
             this.panelGradient.ResumeLayout(false);
             this.panelGradient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLightness)).EndInit();
+            this.panelSwatch.ResumeLayout(false);
+            this.panelSwatch.PerformLayout();
             this.panelBackground.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -301,5 +316,6 @@
         private System.Windows.Forms.Label labelAdjustHue;
         private System.Windows.Forms.Label labelStartingColor;
         private System.Windows.Forms.Panel panelRgb;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

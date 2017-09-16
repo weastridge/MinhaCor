@@ -102,7 +102,6 @@ namespace MinhaCor
                 try
                 {
                     setDefaults();
-
                 }
                 catch (Exception er)
                 {

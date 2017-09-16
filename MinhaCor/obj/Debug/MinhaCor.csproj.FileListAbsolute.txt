@@ -78,3 +78,4 @@ C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.Di
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.DisplaySimpleSkinColorAddEdit.pt-BR.resources
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.DisplaySkinColorAddEdit.resources
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.DisplaySkinColorAddEdit.pt-BR.resources
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\MinhaCor\obj\Debug\MinhaCor.SplashForSkin.resources
