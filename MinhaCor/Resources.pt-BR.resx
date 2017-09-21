@@ -123,4 +123,19 @@
   <data name="StringHello" xml:space="preserve">
     <value>Oi</value>
   </data>
+  <data name="StringInstruct" xml:space="preserve">
+    <value>1. Escolha sua cor, 2. Ajuste o brilho, 3. Ajuste o tom, e dê um nome à sua cor!"</value>
+  </data>
+  <data name="StringInstruct1" xml:space="preserve">
+    <value>1. Escolha sua cor</value>
+  </data>
+  <data name="StringInstruct2" xml:space="preserve">
+    <value>2. Ajuste o brilho</value>
+  </data>
+  <data name="StringInstruct3" xml:space="preserve">
+    <value>3. Ajuste o tom</value>
+  </data>
+  <data name="StringInstruct4" xml:space="preserve">
+    <value>E dê um nome à sua cor!</value>
+  </data>
 </root>

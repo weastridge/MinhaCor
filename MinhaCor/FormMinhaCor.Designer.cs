@@ -55,6 +55,7 @@ namespace MinhaCor
             this.helpToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Paint += new System.Windows.Forms.PaintEventHandler(this.menuStrip1_Paint);
             // 
             // fileToolStripMenuItem
             // 
@@ -121,7 +122,6 @@ namespace MinhaCor
             // 
             resources.ApplyResources(this.panelDisplayArea, "panelDisplayArea");
             this.panelDisplayArea.Name = "panelDisplayArea";
-            this.panelDisplayArea.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDisplayArea_Paint);
             // 
             // openFileDialog1
             // 

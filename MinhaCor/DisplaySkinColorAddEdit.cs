@@ -24,6 +24,8 @@ namespace MinhaCor
         /// the color that we change
         /// </summary>
         private Color _currentColor = Color.Tan;
+        //should match _fontForLabel in FormMinhaCor
+        private Font _fontForLabel = new Font(FontFamily.GenericSansSerif, 12,FontStyle.Bold);
 
 
         //we define the color in terms of:
@@ -98,8 +100,21 @@ namespace MinhaCor
         /// </summary>
         public void Start()
         {
-            SplashForSkin dlg = new SplashForSkin();
-            dlg.ShowDialog();
+            //instructions:  lets not;   SplashForSkin dlg = new SplashForSkin();
+            //dlg.ShowDialog();
+            StringBuilder sbInstruct = new StringBuilder();
+            sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct1"));
+            sbInstruct.Append(Environment.NewLine);
+            sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct2"));
+            sbInstruct.Append(Environment.NewLine);
+            sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct3"));
+            sbInstruct.Append(Environment.NewLine);
+            sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct4"));
+            sbInstruct.Append(Environment.NewLine);
+            MessageBox.Show(sbInstruct.ToString(),
+                "Try it!",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.None);
         }
 
         internal void Reset()
@@ -166,12 +181,12 @@ namespace MinhaCor
 
         private void setDefaults()
         {
-            panelLightLight.BackColor = Color.FromArgb(0xF7, 0xE7, 0xC7);
-            panelLight.BackColor = Color.FromArgb(0xEA, 0xCE, 0xA4);
-            panelMedium.BackColor = Color.FromArgb(0x6C, 0x53, 0x3D);
-            panelDark.BackColor = Color.FromArgb(0x2E, 0x1B, 0x0C);
+            radioButtonLightLight.BackColor = Color.FromArgb(0xF7, 0xE7, 0xC7);
+            radioButtonLight.BackColor = Color.FromArgb(0xEA, 0xCE, 0xA4);
+            radioButtonDark.BackColor = Color.FromArgb(0x6C, 0x53, 0x3D);
+            radioButtonDarkDark.BackColor = Color.FromArgb(0x2E, 0x1B, 0x0C);
             //setDisplay(new Tuple<double, double, double>(0.30, 0.70, 0.90));
-            setDisplay(colorToLocation(panelLight.BackColor));
+            setDisplay(colorToLocation(radioButtonLight.BackColor));
             textBoxColorName.Focus();
         }
 
@@ -304,11 +319,16 @@ namespace MinhaCor
                              new Rectangle(new Point(40, 40), new Size(
                                 panelMain.Width - 80, panelMain.Height - 80)));
                     }
-                    e.Graphics.FillRectangle(Brushes.DodgerBlue,
-                        _currentLocation.X - 6,
-                        _currentLocation.Y - 6,
-                        12,
-                        12);
+                    e.Graphics.FillEllipse(Brushes.DodgerBlue,
+                        _currentLocation.X - 10,
+                        _currentLocation.Y - 10,
+                        20,
+                        20);
+                    e.Graphics.DrawString("3", _fontForLabel, Brushes.Yellow, 
+                        new Rectangle(_currentLocation.X - 10,
+                        _currentLocation.Y - 10,
+                        20,
+                        20));
 
                     //mark center
                     e.Graphics.FillRectangle(Brushes.White,
@@ -351,10 +371,11 @@ namespace MinhaCor
                 _mouseDown = true;
                 //labelUpDown.Text = "Down";
                 panelBackground.BackgroundImage = null;
-                this.Cursor = new Cursor(Cursor.Current.Handle);
-                Cursor.Position = panelMain.PointToScreen(_currentLocation);
+                //this.Cursor = new Cursor(Cursor.Current.Handle);
+                //Cursor.Position = panelMain.PointToScreen(_currentLocation);
                 //_totalIntensityAtMouseDown = _currentColor.R + _currentColor.G + _currentColor.B;
                 _ignoreControlEvents = false;
+                panelMain_MouseMove(sender, e);
             }
             catch (Exception er)
             {
@@ -369,7 +390,7 @@ namespace MinhaCor
                 try
                 {
                     //don't assign currentLocation if sender is "first call" or if mouse is out of bounds
-                    if ((sender is Panel) &&
+                    if ((sender == panelMain) &&
                         ((e.Y >= 0) && (e.Y <= panelMain.Height -1)) &&
                         ((e.X >= 0) && (e.X <= panelMain.Width - 1 )))
                     {
@@ -506,7 +527,16 @@ namespace MinhaCor
                     //validate
                     if(String.IsNullOrWhiteSpace(textBoxColorName.Text))
                     {
-                        MessageBox.Show("Please name your color, or else click cancel.");
+                        MessageBox.Show("Please name your color, or else click cancel.",
+                            "Color not named yet");
+                        //if (MessageBox.Show("Please name your color, or else click cancel.",
+                        //    "Color not named yet",
+                        //    MessageBoxButtons.OKCancel,
+                        //    MessageBoxIcon.None,
+                        //    MessageBoxDefaultButton.Button1) == DialogResult.Cancel)
+                        //{
+                        //    buttonCancel_Click(sender, e);
+                        //}
                         return;
                     }
                     //save
@@ -551,41 +581,39 @@ namespace MinhaCor
 
         private void panelExample_Click(object sender, EventArgs e)
         {
-            using (Wve.HourglassCursor waitCursor = new Wve.HourglassCursor())
-            {
-                try
-                {
-                    if(sender is Panel)
-                    {
-                        setDisplay(colorToLocation(((Panel)sender).BackColor));
-                        //setDisplay(new Tuple<double, double, double>(1, 1, 0));
-                    }
-                }
-                catch (Exception er)
-                {
-                    Wve.MyEr.Show(this, er, true);
-                }
-            }
+            
         }
 
         private void panelControls_Paint(object sender, PaintEventArgs e)
         {
-            if (false) //let's not
+            if (true) //let's not
             {
                 try
                 {
+                    //show step 1
                     e.Graphics.FillRectangle(Brushes.DodgerBlue,
-                        new Rectangle(10, labelAdjustHue.Location.Y, 12, 12));
-                    //Point[] pointerPoints = new Point[]
-                    e.Graphics.FillPolygon(Brushes.DodgerBlue,
-                        new Point[]
-                    {
-                    new Point(10, labelAdjustLightness.Location.Y),
-                    new Point(10 + 12, labelAdjustLightness.Location.Y),
-                    new Point(10 + 18, labelAdjustLightness.Location.Y + 6),
-                    new Point(10 + 12, labelAdjustLightness.Location.Y + 12),
-                    new Point(10, labelAdjustLightness.Location.Y + 12),
-                    });
+                        groupBoxPickStarting.Location.X + 50,
+                        groupBoxPickStarting.Location.Y - 30,
+                           20,
+                           20);
+                    e.Graphics.DrawString("1", _fontForLabel, Brushes.Yellow,
+                        new Rectangle(
+                        groupBoxPickStarting.Location.X + 50,
+                        groupBoxPickStarting.Location.Y - 30,
+                        20,
+                        20));
+                    //e.Graphics.FillRectangle(Brushes.DodgerBlue,
+                    //    new Rectangle(10, labelAdjustHue.Location.Y, 12, 12));
+                    ////Point[] pointerPoints = new Point[]
+                    //e.Graphics.FillPolygon(Brushes.DodgerBlue,
+                    //    new Point[]
+                    //{
+                    //new Point(10, labelAdjustLightness.Location.Y),
+                    //new Point(10 + 12, labelAdjustLightness.Location.Y),
+                    //new Point(10 + 18, labelAdjustLightness.Location.Y + 6),
+                    //new Point(10 + 12, labelAdjustLightness.Location.Y + 12),
+                    //new Point(10, labelAdjustLightness.Location.Y + 12),
+                    //});
                 }
                 catch (Exception er)
                 {
@@ -612,9 +640,22 @@ namespace MinhaCor
             }
         }
 
-        private void panelLightLight_Paint(object sender, PaintEventArgs e)
+        private void radio_Click(object sender, EventArgs e)
         {
-
+            using (Wve.HourglassCursor waitCursor = new Wve.HourglassCursor())
+            {
+                try
+                {
+                    if (sender is RadioButton)
+                    {
+                        setDisplay(colorToLocation(((RadioButton)sender).BackColor));
+                    }
+                }
+                catch (Exception er)
+                {
+                    Wve.MyEr.Show(this, er, true);
+                }
+            }
         }
     }
 }

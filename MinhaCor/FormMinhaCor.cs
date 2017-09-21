@@ -20,6 +20,8 @@ namespace MinhaCor
         private DisplaySimpleSkinColorAddEdit _displaySimpleSkinColorEditInstance;
         private DisplaySkinColorAddEdit _displaySkinColorAddEdit;
         internal static FormMinhaCor Instance = null;
+        internal int PanelGradientLocationX = 130; //left extent of panelGradient in DisplaySkinColorAddEdit
+        private Font _fontForLabel = new Font(FontFamily.GenericSansSerif, 12, FontStyle.Bold);
 
         /// <summary>
         /// main form
@@ -231,11 +233,6 @@ namespace MinhaCor
             }
         }
 
-        private void panelDisplayArea_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void toolStripMenuItemEdit_Click(object sender, EventArgs e)
         {
             using (Wve.HourglassCursor waitCursor = new Wve.HourglassCursor())
@@ -259,6 +256,37 @@ namespace MinhaCor
                 {
                     Wve.MyEr.Show(this, er, true);
                 }
+            }
+        }
+
+        private void menuStrip1_Paint(object sender, PaintEventArgs e)
+        {
+            try
+            {
+                //show step 2
+                e.Graphics.FillRectangle(Brushes.DodgerBlue,
+                    PanelGradientLocationX,
+                    0,
+                       20,
+                       20);
+                int orgX = PanelGradientLocationX;
+                int orgY = 0;
+                e.Graphics.FillPolygon(Brushes.DodgerBlue,
+                    new Point[] {new Point(orgX,orgY),
+                    new Point(orgX + 20 + orgY),
+                    new Point(orgX + 20, orgY + 20),
+                    new Point(orgX + 10, orgY + 25),
+                    new Point(orgX , orgY + 20)});
+                e.Graphics.DrawString("2", _fontForLabel, Brushes.Yellow,
+                    new Rectangle(
+                    PanelGradientLocationX,
+                    0,
+                    20,
+                    20));
+            }
+            catch (Exception er)
+            {
+                Wve.MyEr.Show(this, er, true);
             }
         }
     }
