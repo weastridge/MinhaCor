@@ -49,3 +49,4 @@ C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\Wve\obj\Debug\Wve.csproj.Gener
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\Wve\obj\Debug\Wve.dll
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\Wve\obj\Debug\Wve.pdb
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\Wve\obj\Debug\Wve.csprojResolveAssemblyReference.cache
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\Wve\obj\Debug\Wve.WveTrackbar.resources
