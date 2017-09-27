@@ -125,6 +125,12 @@
     <Compile Include="FormSettings.Designer.cs">
       <DependentUpon>FormSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTesting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTesting.Designer.cs">
+      <DependentUpon>FormTesting.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainClass.cs" />
     <Compile Include="MainClassLibrary.cs" />
     <Compile Include="Program.cs" />
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSettings.resx">
       <DependentUpon>FormSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTesting.resx">
+      <DependentUpon>FormTesting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

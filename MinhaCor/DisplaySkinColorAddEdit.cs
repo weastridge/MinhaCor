@@ -102,19 +102,19 @@ namespace MinhaCor
         {
             //instructions:  lets not;   SplashForSkin dlg = new SplashForSkin();
             //dlg.ShowDialog();
-            StringBuilder sbInstruct = new StringBuilder();
-            sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct1"));
-            sbInstruct.Append(Environment.NewLine);
-            sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct2"));
-            sbInstruct.Append(Environment.NewLine);
-            sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct3"));
-            sbInstruct.Append(Environment.NewLine);
-            sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct4"));
-            sbInstruct.Append(Environment.NewLine);
-            MessageBox.Show(sbInstruct.ToString(),
-                "Try it!",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.None);
+            //StringBuilder sbInstruct = new StringBuilder();
+            //sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct1"));
+            //sbInstruct.Append(Environment.NewLine);
+            //sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct2"));
+            //sbInstruct.Append(Environment.NewLine);
+            //sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct3"));
+            //sbInstruct.Append(Environment.NewLine);
+            //sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct4"));
+            //sbInstruct.Append(Environment.NewLine);
+            //MessageBox.Show(sbInstruct.ToString(),
+            //    "Try it!",
+            //    MessageBoxButtons.OK,
+            //    MessageBoxIcon.None);
         }
 
         internal void Reset()
@@ -475,6 +475,13 @@ namespace MinhaCor
             {
                 Wve.MyEr.Show(this, er, true);
             }
+        }
+
+        private void wveTrackbar1_PointerScrolled(object sender, EventArgs e)
+        {
+            _lightness = wveTrackbar1.Value;
+            panelMain.Invalidate();
+            panelSwatch.Invalidate();
         }
 
         //reset to original color etc

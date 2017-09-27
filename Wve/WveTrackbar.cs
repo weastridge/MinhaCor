@@ -206,8 +206,15 @@ namespace Wve
             // 
             // WveTrackbar
             // 
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Name = "WveTrackbar";
-            this.Size = new System.Drawing.Size(55, 489);
+            this.Size = new System.Drawing.Size(53, 487);
+            this.Load += new System.EventHandler(this.WveTrackbar_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.WveTrackbar_Paint);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WveTrackbar_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.WveTrackbar_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.WveTrackbar_MouseUp);
+            this.Resize += new System.EventHandler(this.WveTrackbar_Resize);
             this.ResumeLayout(false);
 
         }
