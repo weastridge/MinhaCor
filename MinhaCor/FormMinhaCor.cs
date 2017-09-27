@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -241,15 +242,25 @@ namespace MinhaCor
                 {
                     if (MessageBox.Show("This is to edit the data file " +
                         "of entries.  Errors could cause this program to fail!  " +
-                        "Do you want to edit the file?",
+                        "Do you want to edit the file " + 
+                        MainClass.ColorCreationsLocalFileName + 
+                        "?",
                         "Confirm edit data?",
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Asterisk,
                         MessageBoxDefaultButton.Button2) ==
                         DialogResult.Yes)
                     {
-                        System.Diagnostics.Process.Start(
-                            MainClass.ColorCreationsPathAndFilename);
+                        if (File.Exists(MainClass.ColorCreationsPathAndFilename))
+                        {
+                            System.Diagnostics.Process.Start(
+                                MainClass.ColorCreationsPathAndFilename);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Sorry, can't find file " +
+                                MainClass.ColorCreationsPathAndFilename);
+                        }
                     }
                 }
                 catch (Exception er)
@@ -259,35 +270,35 @@ namespace MinhaCor
             }
         }
 
-        private void menuStrip1_Paint(object sender, PaintEventArgs e)
-        {
-            try
-            {
-                //show step 2
-                e.Graphics.FillRectangle(Brushes.DodgerBlue,
-                    PanelGradientLocationX,
-                    0,
-                       20,
-                       20);
-                int orgX = PanelGradientLocationX;
-                int orgY = 0;
-                e.Graphics.FillPolygon(Brushes.DodgerBlue,
-                    new Point[] {new Point(orgX,orgY),
-                    new Point(orgX + 20 + orgY),
-                    new Point(orgX + 20, orgY + 20),
-                    new Point(orgX + 10, orgY + 25),
-                    new Point(orgX , orgY + 20)});
-                e.Graphics.DrawString("2", _fontForLabel, Brushes.Yellow,
-                    new Rectangle(
-                    PanelGradientLocationX,
-                    0,
-                    20,
-                    20));
-            }
-            catch (Exception er)
-            {
-                Wve.MyEr.Show(this, er, true);
-            }
-        }
+        //private void menuStrip1_Paint(object sender, PaintEventArgs e)
+        //{
+        //    try
+        //    {
+        //        show step 2
+        //        e.Graphics.FillRectangle(Brushes.DodgerBlue,
+        //            PanelGradientLocationX,
+        //            0,
+        //               20,
+        //               20);
+        //        int orgX = PanelGradientLocationX;
+        //        int orgY = 0;
+        //        e.Graphics.FillPolygon(Brushes.DodgerBlue,
+        //            new Point[] {new Point(orgX,orgY),
+        //            new Point(orgX + 20 + orgY),
+        //            new Point(orgX + 20, orgY + 20),
+        //            new Point(orgX + 10, orgY + 25),
+        //            new Point(orgX , orgY + 20)});
+        //        e.Graphics.DrawString("2", _fontForLabel, Brushes.Yellow,
+        //            new Rectangle(
+        //            PanelGradientLocationX,
+        //            0,
+        //            20,
+        //            20));
+        //    }
+        //    catch (Exception er)
+        //    {
+        //        Wve.MyEr.Show(this, er, true);
+        //    }
+        //}
     }
 }

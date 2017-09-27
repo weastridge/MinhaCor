@@ -25,7 +25,8 @@ namespace MinhaCor
         /// </summary>
         private Color _currentColor = Color.Tan;
         //should match _fontForLabel in FormMinhaCor
-        private Font _fontForLabel = new Font(FontFamily.GenericSansSerif, 12,FontStyle.Bold);
+        private Font _fontForLabel = new Font(FontFamily.GenericSansSerif, 20,FontStyle.Bold);
+        
 
 
         //we define the color in terms of:
@@ -75,7 +76,7 @@ namespace MinhaCor
         {
             InitializeComponent();
             panelMain.MouseWheel += PanelMain_MouseWheel;
-            
+            groupBoxPickStarting.BackColor = Color.DodgerBlue;
         }
         #endregion constructor
 
@@ -102,19 +103,20 @@ namespace MinhaCor
         {
             //instructions:  lets not;   SplashForSkin dlg = new SplashForSkin();
             //dlg.ShowDialog();
-            //StringBuilder sbInstruct = new StringBuilder();
-            //sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct1"));
-            //sbInstruct.Append(Environment.NewLine);
-            //sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct2"));
-            //sbInstruct.Append(Environment.NewLine);
-            //sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct3"));
-            //sbInstruct.Append(Environment.NewLine);
-            //sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct4"));
-            //sbInstruct.Append(Environment.NewLine);
-            //MessageBox.Show(sbInstruct.ToString(),
-            //    "Try it!",
-            //    MessageBoxButtons.OK,
-            //    MessageBoxIcon.None);
+
+            StringBuilder sbInstruct = new StringBuilder();
+            sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct1"));
+            sbInstruct.Append(Environment.NewLine);
+            sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct2"));
+            sbInstruct.Append(Environment.NewLine);
+            sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct3"));
+            sbInstruct.Append(Environment.NewLine);
+            sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct4"));
+            sbInstruct.Append(Environment.NewLine);
+            MessageBox.Show(sbInstruct.ToString(),
+                "1, 2, 3!",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.None);
         }
 
         internal void Reset()
@@ -133,16 +135,17 @@ namespace MinhaCor
             double lightness = t.Item1;
             double color = t.Item2;
             double desaturation = t.Item3;
-            trackBarLightness.Maximum = _trackbarMaxValue;
+            //;trackBarLightness.Maximum = _trackbarMaxValue;
             _lightness = lightness;
             if (lightness == 1)
             {
-                trackBarLightness.Value = _trackbarMaxValue;
+                //;trackBarLightness.Value = _trackbarMaxValue;
+                wveTrackbar1.Value = 1;
             }
             else
             {
-                trackBarLightness.Value = (int)Math.Floor(
-                    (_trackbarMaxValue + 1) * (_lightness));
+                //;trackBarLightness.Value = (int)Math.Floor((_trackbarMaxValue + 1) * (_lightness));
+                wveTrackbar1.Value = _lightness;
             }
             panelMain.BackColor = Color.Transparent;
             if(color == 1)
@@ -252,27 +255,44 @@ namespace MinhaCor
                 //adjust 1% per delta
                 if (e.Delta < 0)
                 {
-                    if (trackBarLightness.Value >= (int)Math.Floor((double) _trackbarMaxValue / 100))
+                    //if (trackBarLightness.Value >= (int)Math.Floor((double) _trackbarMaxValue / 100))
+                    //{
+                    //    trackBarLightness.Value -= (int)Math.Floor((double)_trackbarMaxValue / 100);
+                    //}
+                    //else
+                    //{
+                    //    trackBarLightness.Value = 0;
+                    //}
+                    if(wveTrackbar1.Value > 0.01)
                     {
-                        trackBarLightness.Value -= (int)Math.Floor((double)_trackbarMaxValue / 100);
+                        wveTrackbar1.Value -= 0.01;
                     }
                     else
                     {
-                        trackBarLightness.Value = 0;
+                        wveTrackbar1.Value = 0;
                     }
                 }
                 else
                 {
-                    if (trackBarLightness.Value < (int)Math.Floor((double)_trackbarMaxValue - _trackbarMaxValue / 100))
+                    //if (trackBarLightness.Value < (int)Math.Floor((double)_trackbarMaxValue - _trackbarMaxValue / 100))
+                    //{
+                    //    trackBarLightness.Value += (int)Math.Floor((double)_trackbarMaxValue / 100);
+                    //}
+                    //else
+                    //{
+                    //    trackBarLightness.Value = _trackbarMaxValue;
+                    //}
+                    if(wveTrackbar1.Value < 0.99)
                     {
-                        trackBarLightness.Value += (int)Math.Floor((double)_trackbarMaxValue / 100);
+                        wveTrackbar1.Value += 0.01;
                     }
                     else
                     {
-                        trackBarLightness.Value = _trackbarMaxValue;
+                        wveTrackbar1.Value = 1;
                     }
                 }
-                trackBarLightness_Scroll(sender, e);
+                //trackBarLightness_Scroll(sender, e);
+                wveTrackbar1_PointerScrolled(sender, e);
             }
             catch (Exception er)
             {
@@ -320,15 +340,15 @@ namespace MinhaCor
                                 panelMain.Width - 80, panelMain.Height - 80)));
                     }
                     e.Graphics.FillEllipse(Brushes.DodgerBlue,
-                        _currentLocation.X - 10,
-                        _currentLocation.Y - 10,
-                        20,
-                        20);
-                    e.Graphics.DrawString("3", _fontForLabel, Brushes.Yellow, 
-                        new Rectangle(_currentLocation.X - 10,
-                        _currentLocation.Y - 10,
-                        20,
-                        20));
+                        _currentLocation.X - 20,
+                        _currentLocation.Y - 20,
+                        40,
+                        40);
+                    e.Graphics.DrawString("2", _fontForLabel, Brushes.Yellow, 
+                        new Rectangle(_currentLocation.X - 12,
+                        _currentLocation.Y - 17,
+                        40,
+                        40));
 
                     //mark center
                     e.Graphics.FillRectangle(Brushes.White,
@@ -462,20 +482,20 @@ namespace MinhaCor
             }
         }
 
-        private void trackBarLightness_Scroll(object sender, EventArgs e)
-        {
-            try
-            {
-                //got here
-                _lightness = ((double)trackBarLightness.Value / (double)_trackbarMaxValue);
-                panelMain.Invalidate();
-                panelSwatch.Invalidate();
-            }
-            catch (Exception er)
-            {
-                Wve.MyEr.Show(this, er, true);
-            }
-        }
+        //private void trackBarLightness_Scroll(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        //got here
+        //        _lightness = ((double)trackBarLightness.Value / (double)_trackbarMaxValue);
+        //        panelMain.Invalidate();
+        //        panelSwatch.Invalidate();
+        //    }
+        //    catch (Exception er)
+        //    {
+        //        Wve.MyEr.Show(this, er, true);
+        //    }
+        //}
 
         private void wveTrackbar1_PointerScrolled(object sender, EventArgs e)
         {
@@ -591,43 +611,10 @@ namespace MinhaCor
             
         }
 
-        private void panelControls_Paint(object sender, PaintEventArgs e)
-        {
-            if (true) //let's not
-            {
-                try
-                {
-                    //show step 1
-                    e.Graphics.FillRectangle(Brushes.DodgerBlue,
-                        groupBoxPickStarting.Location.X + 50,
-                        groupBoxPickStarting.Location.Y - 30,
-                           20,
-                           20);
-                    e.Graphics.DrawString("1", _fontForLabel, Brushes.Yellow,
-                        new Rectangle(
-                        groupBoxPickStarting.Location.X + 50,
-                        groupBoxPickStarting.Location.Y - 30,
-                        20,
-                        20));
-                    //e.Graphics.FillRectangle(Brushes.DodgerBlue,
-                    //    new Rectangle(10, labelAdjustHue.Location.Y, 12, 12));
-                    ////Point[] pointerPoints = new Point[]
-                    //e.Graphics.FillPolygon(Brushes.DodgerBlue,
-                    //    new Point[]
-                    //{
-                    //new Point(10, labelAdjustLightness.Location.Y),
-                    //new Point(10 + 12, labelAdjustLightness.Location.Y),
-                    //new Point(10 + 18, labelAdjustLightness.Location.Y + 6),
-                    //new Point(10 + 12, labelAdjustLightness.Location.Y + 12),
-                    //new Point(10, labelAdjustLightness.Location.Y + 12),
-                    //});
-                }
-                catch (Exception er)
-                {
-                    Wve.MyEr.Show(this, er, true);
-                }
-            }
-        }
+        //private void panelControls_Paint(object sender, PaintEventArgs e)
+        //{
+
+        //}
 
         private void panelRgb_Paint(object sender, PaintEventArgs e)
         {
@@ -663,6 +650,19 @@ namespace MinhaCor
                     Wve.MyEr.Show(this, er, true);
                 }
             }
+        }
+
+        private void groupBoxPickStarting_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawString("1", _fontForLabel, Brushes.Yellow,
+                        new Rectangle(groupBoxPickStarting.Width / 2 - 15,
+                        17,
+                        40,
+                        40));
+                        //groupBoxPickStarting.Location.X + 50,
+                        //groupBoxPickStarting.Location.Y - 30,
+                        //20,
+                        //20));
         }
     }
 }
