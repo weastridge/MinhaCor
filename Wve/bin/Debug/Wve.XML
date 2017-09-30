@@ -2643,6 +2643,36 @@
             customizable trackbar
             </summary>
         </member>
+        <member name="T:Wve.WveTrackbar.PointerDirections">
+            <summary>
+            direction to draw pointer pointing to
+            </summary>
+        </member>
+        <member name="F:Wve.WveTrackbar.PointerDirections.Right">
+            <summary>
+            right
+            </summary>
+        </member>
+        <member name="F:Wve.WveTrackbar.PointerDirections.Left">
+            <summary>
+            left
+            </summary>
+        </member>
+        <member name="F:Wve.WveTrackbar.PointerDirections.Up">
+            <summary>
+            up
+            </summary>
+        </member>
+        <member name="F:Wve.WveTrackbar.PointerDirections.Down">
+            <summary>
+            down
+            </summary>
+        </member>
+        <member name="P:Wve.WveTrackbar.PointerDirection">
+            <summary>
+            direction pointer will point
+            </summary>
+        </member>
         <member name="P:Wve.WveTrackbar.Value">
             <summary>
             value between 0 and 1 inclusive

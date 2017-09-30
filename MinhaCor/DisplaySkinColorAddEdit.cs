@@ -17,7 +17,7 @@ namespace MinhaCor
     {
 
         private bool _ignoreControlEvents = false;
-        private int _trackbarMaxValue = 999; //1000 possible values
+        //private int _trackbarMaxValue = 999; //1000 possible values
         private Point _currentLocation = new Point(0,0);
         private Point _startingLocation = new Point(0, 0);
         /// <summary>
@@ -77,6 +77,7 @@ namespace MinhaCor
             InitializeComponent();
             panelMain.MouseWheel += PanelMain_MouseWheel;
             groupBoxPickStarting.BackColor = Color.DodgerBlue;
+            wveTrackbar1.PointerDirection = Wve.WveTrackbar.PointerDirections.Right;
         }
         #endregion constructor
 
@@ -114,7 +115,7 @@ namespace MinhaCor
             sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct4"));
             sbInstruct.Append(Environment.NewLine);
             MessageBox.Show(sbInstruct.ToString(),
-                "1, 2, 3!",
+                "1 - 2 - 3 ",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.None);
         }
@@ -189,7 +190,7 @@ namespace MinhaCor
             radioButtonDark.BackColor = Color.FromArgb(0x6C, 0x53, 0x3D);
             radioButtonDarkDark.BackColor = Color.FromArgb(0x2E, 0x1B, 0x0C);
             //setDisplay(new Tuple<double, double, double>(0.30, 0.70, 0.90));
-            setDisplay(colorToLocation(radioButtonLight.BackColor));
+            setDisplay(colorToLocation(Color.FromArgb(0xFF, 0xFF, 0xE0)));  //; wasradioButtonLight.BackColor));
             textBoxColorName.Focus();
         }
 
@@ -344,7 +345,7 @@ namespace MinhaCor
                         _currentLocation.Y - 20,
                         40,
                         40);
-                    e.Graphics.DrawString("2", _fontForLabel, Brushes.Yellow, 
+                    e.Graphics.DrawString("3", _fontForLabel, Brushes.Yellow, 
                         new Rectangle(_currentLocation.X - 12,
                         _currentLocation.Y - 17,
                         40,

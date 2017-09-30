@@ -50,9 +50,9 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
             this.panelTrackBar = new System.Windows.Forms.Panel();
+            this.wveTrackbar1 = new Wve.WveTrackbar();
             this.labelDark = new System.Windows.Forms.Label();
             this.labelLight = new System.Windows.Forms.Label();
-            this.wveTrackbar1 = new Wve.WveTrackbar();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelControls.SuspendLayout();
             this.groupBoxPickStarting.SuspendLayout();
@@ -185,6 +185,7 @@
             // 
             // panelBackground
             // 
+            this.panelBackground.Controls.Add(this.panelLeft);
             this.panelBackground.Controls.Add(this.panelMain);
             this.panelBackground.Controls.Add(this.panelRight);
             this.panelBackground.Controls.Add(this.panelTrackBar);
@@ -217,6 +218,16 @@
             this.panelTrackBar.Controls.Add(this.wveTrackbar1);
             this.panelTrackBar.Name = "panelTrackBar";
             // 
+            // wveTrackbar1
+            // 
+            this.wveTrackbar1.BackColor = System.Drawing.Color.Transparent;
+            this.wveTrackbar1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.wveTrackbar1, "wveTrackbar1");
+            this.wveTrackbar1.Name = "wveTrackbar1";
+            this.wveTrackbar1.PointerDirection = Wve.WveTrackbar.PointerDirections.Left;
+            this.wveTrackbar1.Value = 0.5D;
+            this.wveTrackbar1.PointerScrolled += new System.EventHandler(this.wveTrackbar1_PointerScrolled);
+            // 
             // labelDark
             // 
             resources.ApplyResources(this.labelDark, "labelDark");
@@ -231,15 +242,6 @@
             this.labelLight.ForeColor = System.Drawing.Color.DodgerBlue;
             this.labelLight.Name = "labelLight";
             // 
-            // wveTrackbar1
-            // 
-            this.wveTrackbar1.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.wveTrackbar1, "wveTrackbar1");
-            this.wveTrackbar1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.wveTrackbar1.Name = "wveTrackbar1";
-            this.wveTrackbar1.Value = 0.5D;
-            this.wveTrackbar1.PointerScrolled += new System.EventHandler(this.wveTrackbar1_PointerScrolled);
-            // 
             // panelLeft
             // 
             this.panelLeft.BackgroundImage = global::MinhaCor.Properties.Resources.GreenToGrayGradient;
@@ -251,7 +253,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelBackground);
-            this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.panelControls);
             this.Name = "DisplaySkinColorAddEdit";
@@ -282,7 +283,6 @@
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Label labelLight;
         private System.Windows.Forms.Label labelDark;
-        private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Label labelrgb;
         private System.Windows.Forms.Panel panelRgb;
         private System.Windows.Forms.GroupBox groupBoxPickStarting;
@@ -294,5 +294,6 @@
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel panelRight;
         private Wve.WveTrackbar wveTrackbar1;
+        private System.Windows.Forms.Panel panelLeft;
     }
 }

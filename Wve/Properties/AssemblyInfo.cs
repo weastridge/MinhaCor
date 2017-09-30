@@ -33,4 +33,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 [assembly: AssemblyVersion("1.1.1.1")]
 //  have to update AssemblyFileVersion in order for installer to overwrite old
-[assembly: AssemblyFileVersion("1.2.2017.0927")]
+[assembly: AssemblyFileVersion("1.2.2017.0930")]

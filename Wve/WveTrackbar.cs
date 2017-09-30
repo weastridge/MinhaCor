@@ -15,6 +15,45 @@ namespace Wve
     /// </summary>
     public partial class WveTrackbar : UserControl
     {
+        /// <summary>
+        /// direction to draw pointer pointing to
+        /// </summary>
+        public enum PointerDirections
+        {
+            /// <summary>
+            /// right
+            /// </summary>
+            Right,
+            /// <summary>
+            /// left
+            /// </summary>
+            Left,
+            /// <summary>
+            /// up
+            /// </summary>
+            Up,
+            /// <summary>
+            /// down
+            /// </summary>
+            Down
+        }
+
+        private PointerDirections _pointerDirection = PointerDirections.Left;
+        /// <summary>
+        /// direction pointer will point
+        /// </summary>
+        public PointerDirections PointerDirection
+        {
+            get
+            {
+                return _pointerDirection;
+            }
+
+            set
+            {
+                _pointerDirection = value;
+            }
+        }
         private double _value = 0.5;
         /// <summary>
         /// value between 0 and 1 inclusive
@@ -31,6 +70,9 @@ namespace Wve
                 _value = value;
             }
         }
+
+
+
         /// <summary>
         /// point for the center of the pointer
         /// </summary>
@@ -86,16 +128,37 @@ namespace Wve
 
         private void initializePointer()
         {
-            _origin = new Point(Width / 2,
-                Height - _bottomMargin);
-            //make pointer width 3/4 of total width
-            Point p1 = new Point(0 + (Width / 8),_origin.Y);
-            Point p2 = new Point(0 + (Width * 7 / 8),
-                (int)Math.Floor(_origin.Y-(Math.Sqrt(3) *(Width /4))));
-            Point p3 = new Point(0 + (Width * 7/8),
-                (int)Math.Floor(_origin.Y + (Math.Sqrt(3) * (Width / 4))));
-            _pointerShapeAtZero = new Point[] { p1, p2, p3 };
-            _pointerShapeForValue = null; //force recreation when next painted
+            if (PointerDirection == PointerDirections.Left)
+            {
+                _origin = new Point(Width / 2,
+                    Height - _bottomMargin);
+                //make pointer width 3/4 of total width
+                Point p1 = new Point(0 + (Width / 8), _origin.Y);
+                Point p2 = new Point(0 + (Width * 7 / 8),
+                    (int)Math.Floor(_origin.Y - (Math.Sqrt(3) * (Width / 4))));
+                Point p3 = new Point(0 + (Width * 7 / 8),
+                    (int)Math.Floor(_origin.Y + (Math.Sqrt(3) * (Width / 4))));
+                _pointerShapeAtZero = new Point[] { p1, p2, p3 };
+                _pointerShapeForValue = null; //force recreation when next painted
+            }
+            else if(PointerDirection == PointerDirections.Right)
+            {
+                _origin = new Point(Width / 2,
+                    Height - _bottomMargin);
+                //make pointer width 3/4 of total width
+                Point p1 = new Point(0 + (Width * 7 / 8), _origin.Y);
+                Point p2 = new Point(0 + (Width / 8),
+                    (int)Math.Floor(_origin.Y - (Math.Sqrt(3) * (Width / 4))));
+                Point p3 = new Point(0 + (Width / 8),
+                    (int)Math.Floor(_origin.Y + (Math.Sqrt(3) * (Width / 4))));
+                _pointerShapeAtZero = new Point[] { p1, p2, p3 };
+                _pointerShapeForValue = null; //force recreation when next painted
+            }
+            else
+            {
+                throw new NotImplementedException(
+                    "Sorry, up and down pointer directions not implemented.");
+            }
         }
 
         private void WveTrackbar_Paint(object sender, PaintEventArgs e)
@@ -116,8 +179,21 @@ namespace Wve
                             (int)(Math.Floor(Value * (Height - _topMargin - _bottomMargin)));
                     }
                     e.Graphics.FillPolygon(_brushForPointer, _pointerShapeForValue);
-                    e.Graphics.DrawString("3", new Font("Microsoft Sans", 20,FontStyle.Bold),_brushForLabel,
-                        new Point(Width/2 - 5, _pointerShapeForValue[0].Y - 16)); //fudge factor
+                    if (PointerDirection == PointerDirections.Left)
+                    {
+                        e.Graphics.DrawString("3", new Font("Microsoft Sans", 20, FontStyle.Bold), _brushForLabel,
+                            new Point(Width / 2 - 5, _pointerShapeForValue[0].Y - 16)); //fudge factor
+                    }
+                    else if(PointerDirection == PointerDirections.Right)
+                    {
+                        e.Graphics.DrawString("2", new Font("Microsoft Sans", 20, FontStyle.Bold), _brushForLabel,
+                            new Point(Width / 2 - 18, _pointerShapeForValue[0].Y - 16)); //fudge factor
+                    }
+                    else
+                    {
+                        throw new NotImplementedException(
+                            "Sorry, up and down pointer directions not implemented.");
+                    }
                 }
             }
             catch (Exception er)
