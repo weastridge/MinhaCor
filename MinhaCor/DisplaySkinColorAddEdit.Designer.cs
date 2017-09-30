@@ -47,13 +47,13 @@
             this.panelSwatch = new System.Windows.Forms.Panel();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelBackground = new System.Windows.Forms.Panel();
+            this.panelLeft = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
             this.panelTrackBar = new System.Windows.Forms.Panel();
-            this.wveTrackbar1 = new Wve.WveTrackbar();
             this.labelDark = new System.Windows.Forms.Label();
             this.labelLight = new System.Windows.Forms.Label();
-            this.panelLeft = new System.Windows.Forms.Panel();
+            this.wveTrackbar1 = new Wve.WveTrackbar();
             this.panelControls.SuspendLayout();
             this.groupBoxPickStarting.SuspendLayout();
             this.panelBackground.SuspendLayout();
@@ -193,6 +193,12 @@
             this.panelBackground.Name = "panelBackground";
             this.panelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBackground_Paint);
             // 
+            // panelLeft
+            // 
+            this.panelLeft.BackgroundImage = global::MinhaCor.Properties.Resources.GreenToGrayGradient;
+            resources.ApplyResources(this.panelLeft, "panelLeft");
+            this.panelLeft.Name = "panelLeft";
+            // 
             // panelMain
             // 
             resources.ApplyResources(this.panelMain, "panelMain");
@@ -218,16 +224,6 @@
             this.panelTrackBar.Controls.Add(this.wveTrackbar1);
             this.panelTrackBar.Name = "panelTrackBar";
             // 
-            // wveTrackbar1
-            // 
-            this.wveTrackbar1.BackColor = System.Drawing.Color.Transparent;
-            this.wveTrackbar1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.wveTrackbar1, "wveTrackbar1");
-            this.wveTrackbar1.Name = "wveTrackbar1";
-            this.wveTrackbar1.PointerDirection = Wve.WveTrackbar.PointerDirections.Left;
-            this.wveTrackbar1.Value = 0.5D;
-            this.wveTrackbar1.PointerScrolled += new System.EventHandler(this.wveTrackbar1_PointerScrolled);
-            // 
             // labelDark
             // 
             resources.ApplyResources(this.labelDark, "labelDark");
@@ -242,11 +238,15 @@
             this.labelLight.ForeColor = System.Drawing.Color.DodgerBlue;
             this.labelLight.Name = "labelLight";
             // 
-            // panelLeft
+            // wveTrackbar1
             // 
-            this.panelLeft.BackgroundImage = global::MinhaCor.Properties.Resources.GreenToGrayGradient;
-            resources.ApplyResources(this.panelLeft, "panelLeft");
-            this.panelLeft.Name = "panelLeft";
+            this.wveTrackbar1.BackColor = System.Drawing.Color.Transparent;
+            this.wveTrackbar1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.wveTrackbar1, "wveTrackbar1");
+            this.wveTrackbar1.Name = "wveTrackbar1";
+            this.wveTrackbar1.PointerDirection = Wve.WveTrackbar.PointerDirections.Left;
+            this.wveTrackbar1.Value = 0.5D;
+            this.wveTrackbar1.PointerScrolled += new System.EventHandler(this.wveTrackbar1_PointerScrolled);
             // 
             // DisplaySkinColorAddEdit
             // 
