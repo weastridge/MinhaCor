@@ -35,7 +35,11 @@ namespace Wve
             /// <summary>
             /// down
             /// </summary>
-            Down
+            Down,
+            /// <summary>
+            /// horizontal diamond for vertical trackbar
+            /// </summary>
+            DiamondHorizontal
         }
 
         private PointerDirections _pointerDirection = PointerDirections.Left;
@@ -154,6 +158,20 @@ namespace Wve
                 _pointerShapeAtZero = new Point[] { p1, p2, p3 };
                 _pointerShapeForValue = null; //force recreation when next painted
             }
+            else if(PointerDirection == PointerDirections.DiamondHorizontal)
+            {
+                _origin = new Point(Width / 2,
+                    Height - _bottomMargin);
+                //make pointer width 3/4 of total width
+                Point p1 = new Point((Width * 0 / 8), _origin.Y);
+                Point p2 = new Point((Width * 3 / 8), _origin.Y - (Width * 3 / 8));
+                Point p3 = new Point((Width * 5 / 8), _origin.Y - (Width * 3 / 8));
+                Point p4 = new Point((Width * 8 / 8), _origin.Y);
+                Point p5 = new Point((Width * 5 / 8), _origin.Y + (Width * 3 / 8));
+                Point p6 = new Point((Width * 3 / 8), _origin.Y + (Width * 3 / 8));
+                _pointerShapeAtZero = new Point[] { p1, p2, p3, p4, p5, p6 };
+                _pointerShapeForValue = null; //force recreation when next painted
+            }
             else
             {
                 throw new NotImplementedException(
@@ -188,6 +206,11 @@ namespace Wve
                     {
                         e.Graphics.DrawString("2", new Font("Microsoft Sans", 20, FontStyle.Bold), _brushForLabel,
                             new Point(Width / 2 - 18, _pointerShapeForValue[0].Y - 16)); //fudge factor
+                    }
+                    else if (PointerDirection == PointerDirections.DiamondHorizontal)
+                    {
+                        e.Graphics.DrawString("2", new Font("Microsoft Sans", 20, FontStyle.Bold), _brushForLabel,
+                            new Point(Width / 2 - 13, _pointerShapeForValue[0].Y - 16)); //fudge factor
                     }
                     else
                     {

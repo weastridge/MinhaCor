@@ -48,12 +48,12 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelBackground = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.panelMain = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
             this.panelTrackBar = new System.Windows.Forms.Panel();
             this.labelDark = new System.Windows.Forms.Label();
             this.labelLight = new System.Windows.Forms.Label();
             this.wveTrackbar1 = new Wve.WveTrackbar();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.panelControls.SuspendLayout();
             this.groupBoxPickStarting.SuspendLayout();
             this.panelBackground.SuspendLayout();
@@ -185,8 +185,8 @@
             // 
             // panelBackground
             // 
-            this.panelBackground.Controls.Add(this.panelLeft);
             this.panelBackground.Controls.Add(this.panelMain);
+            this.panelBackground.Controls.Add(this.panelLeft);
             this.panelBackground.Controls.Add(this.panelRight);
             this.panelBackground.Controls.Add(this.panelTrackBar);
             resources.ApplyResources(this.panelBackground, "panelBackground");
@@ -198,16 +198,6 @@
             this.panelLeft.BackgroundImage = global::MinhaCor.Properties.Resources.GreenToGrayGradient;
             resources.ApplyResources(this.panelLeft, "panelLeft");
             this.panelLeft.Name = "panelLeft";
-            // 
-            // panelMain
-            // 
-            resources.ApplyResources(this.panelMain, "panelMain");
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
-            this.panelMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseDown);
-            this.panelMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseMove);
-            this.panelMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseUp);
-            this.panelMain.Resize += new System.EventHandler(this.panelMain_Resize);
             // 
             // panelRight
             // 
@@ -241,12 +231,23 @@
             // wveTrackbar1
             // 
             this.wveTrackbar1.BackColor = System.Drawing.Color.Transparent;
-            this.wveTrackbar1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.wveTrackbar1.BackgroundImage = global::MinhaCor.Properties.Resources.blackWhiteGradient1;
             resources.ApplyResources(this.wveTrackbar1, "wveTrackbar1");
+            this.wveTrackbar1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.wveTrackbar1.Name = "wveTrackbar1";
             this.wveTrackbar1.PointerDirection = Wve.WveTrackbar.PointerDirections.Left;
             this.wveTrackbar1.Value = 0.5D;
             this.wveTrackbar1.PointerScrolled += new System.EventHandler(this.wveTrackbar1_PointerScrolled);
+            // 
+            // panelMain
+            // 
+            resources.ApplyResources(this.panelMain, "panelMain");
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
+            this.panelMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseDown);
+            this.panelMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseMove);
+            this.panelMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseUp);
+            this.panelMain.Resize += new System.EventHandler(this.panelMain_Resize_1);
             // 
             // DisplaySkinColorAddEdit
             // 
@@ -291,9 +292,9 @@
         private System.Windows.Forms.RadioButton radioButtonLight;
         private System.Windows.Forms.RadioButton radioButtonLightLight;
         private System.Windows.Forms.Panel panelTrackBar;
-        private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel panelRight;
         private Wve.WveTrackbar wveTrackbar1;
         private System.Windows.Forms.Panel panelLeft;
+        private System.Windows.Forms.Panel panelMain;
     }
 }

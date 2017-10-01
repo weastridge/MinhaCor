@@ -2668,6 +2668,11 @@
             down
             </summary>
         </member>
+        <member name="F:Wve.WveTrackbar.PointerDirections.DiamondHorizontal">
+            <summary>
+            horizontal diamond for vertical trackbar
+            </summary>
+        </member>
         <member name="P:Wve.WveTrackbar.PointerDirection">
             <summary>
             direction pointer will point

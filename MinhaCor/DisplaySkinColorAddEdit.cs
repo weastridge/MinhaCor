@@ -77,7 +77,7 @@ namespace MinhaCor
             InitializeComponent();
             panelMain.MouseWheel += PanelMain_MouseWheel;
             groupBoxPickStarting.BackColor = Color.DodgerBlue;
-            wveTrackbar1.PointerDirection = Wve.WveTrackbar.PointerDirections.Right;
+            wveTrackbar1.PointerDirection = Wve.WveTrackbar.PointerDirections.DiamondHorizontal;
         }
         #endregion constructor
 
