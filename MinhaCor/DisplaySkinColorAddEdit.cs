@@ -190,7 +190,7 @@ namespace MinhaCor
             radioButtonDark.BackColor = Color.FromArgb(0x6C, 0x53, 0x3D);
             radioButtonDarkDark.BackColor = Color.FromArgb(0x2E, 0x1B, 0x0C);
             //setDisplay(new Tuple<double, double, double>(0.30, 0.70, 0.90));
-            setDisplay(colorToLocation(Color.FromArgb(0xFF, 0xFF, 0xE0)));  //; wasradioButtonLight.BackColor));
+            setDisplay(colorToLocation(Color.FromArgb(0, 0, 0)));// was (0xFF, 0xFF, 0xE0)));  //; wasradioButtonLight.BackColor));
             textBoxColorName.Focus();
         }
 
