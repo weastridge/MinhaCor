@@ -106,8 +106,8 @@ namespace MinhaCor
             {
                 try
                 {
+                    timer1.Interval = 500; // 1/2 second
                     setDefaults();
-
                 }
                 catch (Exception er)
                 {

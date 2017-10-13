@@ -26,6 +26,9 @@ namespace MinhaCor
         private Color _currentColor = Color.Tan;
         //should match _fontForLabel in FormMinhaCor
         private Font _fontForLabel = new Font(FontFamily.GenericSansSerif, 20,FontStyle.Bold);
+        private int _numberFlashesOfBoxAtStartup = 2;
+        private int _timerCount = 1;
+        private bool _showStartupBox = false; //to draw yellow box around step 1 buttons
         
 
 
@@ -78,6 +81,7 @@ namespace MinhaCor
             panelMain.MouseWheel += PanelMain_MouseWheel;
             groupBoxPickStarting.BackColor = Color.DodgerBlue;
             wveTrackbar1.PointerDirection = Wve.WveTrackbar.PointerDirections.DiamondHorizontal;
+            timer1.Interval = 500; //1/2 second, used for flashing box at startup
         }
         #endregion constructor
 
@@ -105,6 +109,9 @@ namespace MinhaCor
             SplashForSkin2 dlg = new SplashForSkin2();
             //dlg.Deactivate
             dlg.ShowDialog();
+            _timerCount = 0; //restart timer 
+            timer1.Start(); //start flashing of box
+            
 
             //StringBuilder sbInstruct = new StringBuilder();
             //sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct1"));
@@ -668,6 +675,60 @@ namespace MinhaCor
                         //groupBoxPickStarting.Location.Y - 30,
                         //20,
                         //20));
+        }
+
+        /// <summary>
+        /// make flashing box for about 4 iterations
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            using (Wve.HourglassCursor waitCursor = new Wve.HourglassCursor())
+            {
+                try
+                {
+                    if(_timerCount < _numberFlashesOfBoxAtStartup * 2)
+                    {
+                        //for even counts draw box
+                        _showStartupBox = (_timerCount %2 == 0);
+                        if(_showStartupBox)
+                        {
+                            groupBoxPickStarting.BackColor = Color.DodgerBlue;
+                        }
+                        else
+                        {
+                            groupBoxPickStarting.BackColor = Color.Yellow;
+                        }
+                        _timerCount++;
+                        panelControls.Invalidate();
+                    }
+                    else
+                    {
+                        timer1.Stop();
+                        _timerCount = 1;
+                        _showStartupBox = false;
+                        groupBoxPickStarting.BackColor = Color.DodgerBlue;
+                    }
+                }
+                catch (Exception er)
+                {
+                    Wve.MyEr.Show(this, er, true);
+                }
+            }
+        }
+
+        private void panelControls_Paint(object sender, PaintEventArgs e)
+        {
+            if (_showStartupBox)
+            {
+                Pen pen = new Pen(Color.Yellow, 15);
+                e.Graphics.DrawRectangle(pen,
+                    0,
+                    50,
+                    groupBoxPickStarting.Width + 5,
+                    groupBoxPickStarting.Height + 5);
+            }
         }
     }
 }

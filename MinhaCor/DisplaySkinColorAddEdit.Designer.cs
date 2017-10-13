@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplaySkinColorAddEdit));
             this.panelControls = new System.Windows.Forms.Panel();
             this.groupBoxPickStarting = new System.Windows.Forms.GroupBox();
@@ -47,13 +48,14 @@
             this.panelSwatch = new System.Windows.Forms.Panel();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelBackground = new System.Windows.Forms.Panel();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
             this.panelTrackBar = new System.Windows.Forms.Panel();
             this.labelDark = new System.Windows.Forms.Label();
             this.labelLight = new System.Windows.Forms.Label();
             this.wveTrackbar1 = new Wve.WveTrackbar();
-            this.panelMain = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelControls.SuspendLayout();
             this.groupBoxPickStarting.SuspendLayout();
             this.panelBackground.SuspendLayout();
@@ -75,6 +77,7 @@
             this.panelControls.Controls.Add(this.panelSwatch);
             resources.ApplyResources(this.panelControls, "panelControls");
             this.panelControls.Name = "panelControls";
+            this.panelControls.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControls_Paint);
             // 
             // groupBoxPickStarting
             // 
@@ -193,6 +196,16 @@
             this.panelBackground.Name = "panelBackground";
             this.panelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBackground_Paint);
             // 
+            // panelMain
+            // 
+            resources.ApplyResources(this.panelMain, "panelMain");
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
+            this.panelMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseDown);
+            this.panelMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseMove);
+            this.panelMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseUp);
+            this.panelMain.Resize += new System.EventHandler(this.panelMain_Resize_1);
+            // 
             // panelLeft
             // 
             this.panelLeft.BackgroundImage = global::MinhaCor.Properties.Resources.GreenToGrayGradient;
@@ -239,15 +252,9 @@
             this.wveTrackbar1.Value = 0.5D;
             this.wveTrackbar1.PointerScrolled += new System.EventHandler(this.wveTrackbar1_PointerScrolled);
             // 
-            // panelMain
+            // timer1
             // 
-            resources.ApplyResources(this.panelMain, "panelMain");
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
-            this.panelMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseDown);
-            this.panelMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseMove);
-            this.panelMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseUp);
-            this.panelMain.Resize += new System.EventHandler(this.panelMain_Resize_1);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // DisplaySkinColorAddEdit
             // 
@@ -296,5 +303,6 @@
         private Wve.WveTrackbar wveTrackbar1;
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Timer timer1;
     }
 }
