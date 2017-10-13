@@ -151,6 +151,12 @@
     <Compile Include="SplashForSkin.Designer.cs">
       <DependentUpon>SplashForSkin.cs</DependentUpon>
     </Compile>
+    <Compile Include="SplashForSkin2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashForSkin2.Designer.cs">
+      <DependentUpon>SplashForSkin2.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DisplaySkinColorAddEdit.pt-BR.resx">
       <DependentUpon>DisplaySkinColorAddEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +229,9 @@
     <EmbeddedResource Include="SplashForSkin.resx">
       <DependentUpon>SplashForSkin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SplashForSkin2.resx">
+      <DependentUpon>SplashForSkin2.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Eastridges.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -243,6 +252,7 @@
   <ItemGroup>
     <Content Include="MinhaCor.ico" />
     <Content Include="notes.txt" />
+    <None Include="Resources\Screenshot.png" />
     <None Include="Resources\blackWhiteGradient1.png" />
     <None Include="Resources\Help4_en.png" />
     <None Include="Resources\Help4.png" />

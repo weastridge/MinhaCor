@@ -146,6 +146,8 @@ namespace MinhaCor
             this.Name = "FormMinhaCor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormMinhaCor_Load);
+            this.Click += new System.EventHandler(this.FormMinhaCor_Click);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormMinhaCor_MouseDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

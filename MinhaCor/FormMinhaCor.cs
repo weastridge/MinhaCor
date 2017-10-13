@@ -270,6 +270,16 @@ namespace MinhaCor
             }
         }
 
+        private void FormMinhaCor_MouseDown(object sender, MouseEventArgs e)
+        {
+            string s = "hi";
+        }
+
+        private void FormMinhaCor_Click(object sender, EventArgs e)
+        {
+            string s = "h8";
+        }
+
         //private void menuStrip1_Paint(object sender, PaintEventArgs e)
         //{
         //    try

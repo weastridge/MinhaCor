@@ -102,22 +102,23 @@ namespace MinhaCor
         /// </summary>
         public void Start()
         {
-            //instructions:  lets not;   SplashForSkin dlg = new SplashForSkin();
-            //dlg.ShowDialog();
+            SplashForSkin2 dlg = new SplashForSkin2();
+            //dlg.Deactivate
+            dlg.ShowDialog();
 
-            StringBuilder sbInstruct = new StringBuilder();
-            sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct1"));
-            sbInstruct.Append(Environment.NewLine);
-            sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct2"));
-            sbInstruct.Append(Environment.NewLine);
-            sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct3"));
-            sbInstruct.Append(Environment.NewLine);
-            sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct4"));
-            sbInstruct.Append(Environment.NewLine);
-            MessageBox.Show(sbInstruct.ToString(),
-                "1 - 2 - 3 ",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.None);
+            //StringBuilder sbInstruct = new StringBuilder();
+            //sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct1"));
+            //sbInstruct.Append(Environment.NewLine);
+            //sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct2"));
+            //sbInstruct.Append(Environment.NewLine);
+            //sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct3"));
+            //sbInstruct.Append(Environment.NewLine);
+            //sbInstruct.Append(MainClass.MinhaCorResourceManager.GetString("StringInstruct4"));
+            //sbInstruct.Append(Environment.NewLine);
+            //MessageBox.Show(sbInstruct.ToString(),
+            //    "1 - 2 - 3 ",
+            //    MessageBoxButtons.OK,
+            //    MessageBoxIcon.None);
         }
 
         internal void Reset()
@@ -574,13 +575,16 @@ namespace MinhaCor
                         _currentColor.G,
                         _currentColor.B
                     };
+                    string location = MainClass.ConfigSettings.GetValue("Location");
                     ColorCreation cc = new ColorCreation(
                         textBoxColorName.Text,
                         textBoxPersonName.Text,
                         colorBytes,
                         string.Empty, //details
                         DateTime.Now,
-                        DateTime.MinValue);
+                        DateTime.MinValue,
+                        location,
+                        string.Empty);
                     MainClass.ColorCreations.Insert(0, cc);
                     MainClass.SaveColorCreations();
                     FormMinhaCor.Instance.LoadDisplayGrid();

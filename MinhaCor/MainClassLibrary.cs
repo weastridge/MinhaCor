@@ -43,6 +43,14 @@ namespace MinhaCor
         /// when x-d out 
         /// </summary>
         public DateTime WhenXdOut = DateTime.MinValue;
+        /// <summary>
+        /// location of this instance of MinhaCor, specified in settings
+        /// </summary>
+        public string Location = "unspecified";
+        /// <summary>
+        /// optional tag
+        /// </summary>
+        public string Tag = string.Empty;
 
         #region constructors
         public ColorCreation(string colorName, 
@@ -50,7 +58,9 @@ namespace MinhaCor
             byte[] rgbValue, 
             string details, 
             DateTime whenCreated, 
-            DateTime whenLastEdited)
+            DateTime whenLastEdited,
+            string location,
+            string tag)
         {
             ColorName = colorName;
             PersonName = personName;
@@ -58,6 +68,14 @@ namespace MinhaCor
             Details = details;
             WhenCreated = whenCreated;
             WhenXdOut = whenLastEdited;
+            if (!string.IsNullOrEmpty(location))
+            {
+                Location = location;
+            }
+            if (tag != null)
+            {
+                Tag = tag;
+            }
         }
         #endregion constructors
 
@@ -74,7 +92,9 @@ namespace MinhaCor
                 Wve.WveTools.BytesToHex(RgbValue,string.Empty),
                 Details,
                 WhenCreated.ToString("o"), //iso 8601 format
-                WhenXdOut.ToString("o")
+                WhenXdOut.ToString("o"),
+                Location,
+                Tag
             },
             false); //false to append last comma
         }
@@ -91,13 +111,17 @@ namespace MinhaCor
             DateTime edited;
             DateTime.TryParse(parts[4], out saved);
             DateTime.TryParse(parts[5], out edited);
+            string location = parts.Length < 7 ? null : parts[6];
+            string tag = parts.Length < 8 ? null : parts[7];
             return new ColorCreation(
                 parts[0],
                 parts[1],
                 Wve.WveTools.HexStringToByteArray(parts[2]),
                 parts[3],
                 saved,
-                edited);
+                edited,
+                location,
+                tag);
         }
     }
 }
