@@ -1,0 +1,2 @@
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\SetupMinhaCor\Debug>
+signtool sign /a MyFile.exe
