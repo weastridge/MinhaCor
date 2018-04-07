@@ -199,8 +199,10 @@ namespace MinhaCor
                         sb.Append(Wve.WveTools.DateTimeToCompactString(DateTime.Now));
                         sb.Append(".csv");
                         MainClass.SaveColorCreations(sb.ToString());
-                        //and then save the new file
+                        //and then load the new file
                         MainClass.LoadColorCreations(openFileDialog1.FileName);
+                        // and save it to disk
+                        MainClass.SaveColorCreations(MainClass.ColorCreationsPathAndFilename);
                         //refresh grid
                         LoadDisplayGrid();
                     }
