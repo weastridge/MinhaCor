@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplaySkinColorAddEdit));
             this.panelControls = new System.Windows.Forms.Panel();
             this.groupBoxPickStarting = new System.Windows.Forms.GroupBox();
@@ -37,10 +38,6 @@
             this.radioButtonLightLight = new System.Windows.Forms.RadioButton();
             this.panelRgb = new System.Windows.Forms.Panel();
             this.labelrgb = new System.Windows.Forms.Label();
-            this.panelGradient = new System.Windows.Forms.Panel();
-            this.labelLight = new System.Windows.Forms.Label();
-            this.labelDark = new System.Windows.Forms.Label();
-            this.trackBarLightness = new System.Windows.Forms.TrackBar();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
@@ -52,23 +49,24 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelBackground = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.panelRight = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.panelRight = new System.Windows.Forms.Panel();
+            this.panelTrackBar = new System.Windows.Forms.Panel();
+            this.labelDark = new System.Windows.Forms.Label();
+            this.labelLight = new System.Windows.Forms.Label();
+            this.wveTrackbar1 = new Wve.WveTrackbar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelControls.SuspendLayout();
             this.groupBoxPickStarting.SuspendLayout();
-            this.panelGradient.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarLightness)).BeginInit();
             this.panelBackground.SuspendLayout();
-            this.panelMain.SuspendLayout();
+            this.panelTrackBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControls
             // 
-            resources.ApplyResources(this.panelControls, "panelControls");
             this.panelControls.Controls.Add(this.groupBoxPickStarting);
             this.panelControls.Controls.Add(this.panelRgb);
             this.panelControls.Controls.Add(this.labelrgb);
-            this.panelControls.Controls.Add(this.panelGradient);
             this.panelControls.Controls.Add(this.buttonCancel);
             this.panelControls.Controls.Add(this.buttonOK);
             this.panelControls.Controls.Add(this.buttonReset);
@@ -77,18 +75,20 @@
             this.panelControls.Controls.Add(this.textBoxPersonName);
             this.panelControls.Controls.Add(this.textBoxColorName);
             this.panelControls.Controls.Add(this.panelSwatch);
+            resources.ApplyResources(this.panelControls, "panelControls");
             this.panelControls.Name = "panelControls";
             this.panelControls.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControls_Paint);
             // 
             // groupBoxPickStarting
             // 
-            resources.ApplyResources(this.groupBoxPickStarting, "groupBoxPickStarting");
             this.groupBoxPickStarting.Controls.Add(this.radioButtonDarkDark);
             this.groupBoxPickStarting.Controls.Add(this.radioButtonDark);
             this.groupBoxPickStarting.Controls.Add(this.radioButtonLight);
             this.groupBoxPickStarting.Controls.Add(this.radioButtonLightLight);
+            resources.ApplyResources(this.groupBoxPickStarting, "groupBoxPickStarting");
             this.groupBoxPickStarting.Name = "groupBoxPickStarting";
             this.groupBoxPickStarting.TabStop = false;
+            this.groupBoxPickStarting.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBoxPickStarting_Paint);
             // 
             // radioButtonDarkDark
             // 
@@ -132,34 +132,6 @@
             // 
             resources.ApplyResources(this.labelrgb, "labelrgb");
             this.labelrgb.Name = "labelrgb";
-            // 
-            // panelGradient
-            // 
-            resources.ApplyResources(this.panelGradient, "panelGradient");
-            this.panelGradient.BackgroundImage = global::MinhaCor.Properties.Resources.blackWhiteGradient;
-            this.panelGradient.Controls.Add(this.labelLight);
-            this.panelGradient.Controls.Add(this.labelDark);
-            this.panelGradient.Controls.Add(this.trackBarLightness);
-            this.panelGradient.Name = "panelGradient";
-            // 
-            // labelLight
-            // 
-            resources.ApplyResources(this.labelLight, "labelLight");
-            this.labelLight.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.labelLight.Name = "labelLight";
-            // 
-            // labelDark
-            // 
-            resources.ApplyResources(this.labelDark, "labelDark");
-            this.labelDark.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelDark.Name = "labelDark";
-            // 
-            // trackBarLightness
-            // 
-            resources.ApplyResources(this.trackBarLightness, "trackBarLightness");
-            this.trackBarLightness.BackColor = System.Drawing.SystemColors.Control;
-            this.trackBarLightness.Name = "trackBarLightness";
-            this.trackBarLightness.Scroll += new System.EventHandler(this.trackBarLightness_Scroll);
             // 
             // buttonCancel
             // 
@@ -216,40 +188,79 @@
             // 
             // panelBackground
             // 
-            resources.ApplyResources(this.panelBackground, "panelBackground");
             this.panelBackground.Controls.Add(this.panelMain);
+            this.panelBackground.Controls.Add(this.panelLeft);
+            this.panelBackground.Controls.Add(this.panelRight);
+            this.panelBackground.Controls.Add(this.panelTrackBar);
+            resources.ApplyResources(this.panelBackground, "panelBackground");
             this.panelBackground.Name = "panelBackground";
             this.panelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBackground_Paint);
             // 
             // panelMain
             // 
             resources.ApplyResources(this.panelMain, "panelMain");
-            this.panelMain.Controls.Add(this.panelRight);
             this.panelMain.Name = "panelMain";
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             this.panelMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseDown);
             this.panelMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseMove);
             this.panelMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseUp);
-            this.panelMain.Resize += new System.EventHandler(this.panelMain_Resize);
-            // 
-            // panelRight
-            // 
-            resources.ApplyResources(this.panelRight, "panelRight");
-            this.panelRight.BackgroundImage = global::MinhaCor.Properties.Resources.RedToGrayGradient;
-            this.panelRight.Name = "panelRight";
+            this.panelMain.Resize += new System.EventHandler(this.panelMain_Resize_1);
             // 
             // panelLeft
             // 
-            resources.ApplyResources(this.panelLeft, "panelLeft");
             this.panelLeft.BackgroundImage = global::MinhaCor.Properties.Resources.GreenToGrayGradient;
+            resources.ApplyResources(this.panelLeft, "panelLeft");
             this.panelLeft.Name = "panelLeft";
+            // 
+            // panelRight
+            // 
+            this.panelRight.BackgroundImage = global::MinhaCor.Properties.Resources.RedToGrayGradient;
+            resources.ApplyResources(this.panelRight, "panelRight");
+            this.panelRight.Name = "panelRight";
+            // 
+            // panelTrackBar
+            // 
+            this.panelTrackBar.BackgroundImage = global::MinhaCor.Properties.Resources.blackWhiteGradient1;
+            resources.ApplyResources(this.panelTrackBar, "panelTrackBar");
+            this.panelTrackBar.Controls.Add(this.labelDark);
+            this.panelTrackBar.Controls.Add(this.labelLight);
+            this.panelTrackBar.Controls.Add(this.wveTrackbar1);
+            this.panelTrackBar.Name = "panelTrackBar";
+            // 
+            // labelDark
+            // 
+            resources.ApplyResources(this.labelDark, "labelDark");
+            this.labelDark.BackColor = System.Drawing.Color.Black;
+            this.labelDark.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.labelDark.Name = "labelDark";
+            // 
+            // labelLight
+            // 
+            resources.ApplyResources(this.labelLight, "labelLight");
+            this.labelLight.BackColor = System.Drawing.Color.White;
+            this.labelLight.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.labelLight.Name = "labelLight";
+            // 
+            // wveTrackbar1
+            // 
+            this.wveTrackbar1.BackColor = System.Drawing.Color.Transparent;
+            this.wveTrackbar1.BackgroundImage = global::MinhaCor.Properties.Resources.blackWhiteGradient1;
+            resources.ApplyResources(this.wveTrackbar1, "wveTrackbar1");
+            this.wveTrackbar1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.wveTrackbar1.Name = "wveTrackbar1";
+            this.wveTrackbar1.PointerDirection = Wve.WveTrackbar.PointerDirections.Left;
+            this.wveTrackbar1.Value = 0.5D;
+            this.wveTrackbar1.PointerScrolled += new System.EventHandler(this.wveTrackbar1_PointerScrolled);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // DisplaySkinColorAddEdit
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelBackground);
-            this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.panelControls);
             this.Name = "DisplaySkinColorAddEdit";
@@ -258,11 +269,9 @@
             this.panelControls.PerformLayout();
             this.groupBoxPickStarting.ResumeLayout(false);
             this.groupBoxPickStarting.PerformLayout();
-            this.panelGradient.ResumeLayout(false);
-            this.panelGradient.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarLightness)).EndInit();
             this.panelBackground.ResumeLayout(false);
-            this.panelMain.ResumeLayout(false);
+            this.panelTrackBar.ResumeLayout(false);
+            this.panelTrackBar.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -272,21 +281,16 @@
         private System.Windows.Forms.Panel panelControls;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Panel panelBackground;
-        private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxPersonName;
         private System.Windows.Forms.TextBox textBoxColorName;
         private System.Windows.Forms.Panel panelSwatch;
-        private System.Windows.Forms.TrackBar trackBarLightness;
         private System.Windows.Forms.Button buttonReset;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Label labelLight;
         private System.Windows.Forms.Label labelDark;
-        private System.Windows.Forms.Panel panelGradient;
-        private System.Windows.Forms.Panel panelRight;
-        private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Label labelrgb;
         private System.Windows.Forms.Panel panelRgb;
         private System.Windows.Forms.GroupBox groupBoxPickStarting;
@@ -294,5 +298,11 @@
         private System.Windows.Forms.RadioButton radioButtonDark;
         private System.Windows.Forms.RadioButton radioButtonLight;
         private System.Windows.Forms.RadioButton radioButtonLightLight;
+        private System.Windows.Forms.Panel panelTrackBar;
+        private System.Windows.Forms.Panel panelRight;
+        private Wve.WveTrackbar wveTrackbar1;
+        private System.Windows.Forms.Panel panelLeft;
+        private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Timer timer1;
     }
 }

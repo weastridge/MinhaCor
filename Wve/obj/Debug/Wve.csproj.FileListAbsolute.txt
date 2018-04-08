@@ -48,4 +48,5 @@ C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\Wve\obj\Debug\Wve.WveServUtil.
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\Wve\obj\Debug\Wve.csproj.GenerateResource.Cache
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\Wve\obj\Debug\Wve.dll
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\Wve\obj\Debug\Wve.pdb
+C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\Wve\obj\Debug\Wve.WveTrackbar.resources
 C:\Users\weast\OneDrive\Documents\GitHub\MinhaCor\Wve\obj\Debug\Wve.csprojResolveAssemblyReference.cache

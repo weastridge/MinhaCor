@@ -49,6 +49,7 @@ namespace MinhaCor
             textBoxRows.Text = MainClass.ConfigSettings.GetValue("Rows");
             textBoxColumns.Text = MainClass.ConfigSettings.GetValue("Columns");
             textBoxPassword.Text = MainClass.ConfigSettings.GetValue("Password");
+            textBoxLocation.Text = MainClass.ConfigSettings.GetValue("Location");
             comboBoxCulture.Items.Clear();
             comboBoxCulture.Items.Add("default");
             comboBoxCulture.Items.Add("en-US");
@@ -141,6 +142,7 @@ namespace MinhaCor
             MainClass.ConfigSettings.SetValue("Columns", _columns.ToString());
             MainClass.ConfigSettings.SetValue("Culture", comboBoxCulture.SelectedText);
             MainClass.ConfigSettings.SetValue("Password", textBoxPassword.Text);
+            MainClass.ConfigSettings.SetValue("Location", textBoxLocation.Text);
 
             if(radioButtonEasy.Checked)
             {

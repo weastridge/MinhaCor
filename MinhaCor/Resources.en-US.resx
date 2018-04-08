@@ -127,15 +127,15 @@
     <value>1. Pick your color, 2. Adjust lightness, 3. Adjust tone, Then name your color!</value>
   </data>
   <data name="StringInstruct1" xml:space="preserve">
-    <value>1. Pick your color</value>
+    <value>1. Pick starting color at upper left</value>
   </data>
   <data name="StringInstruct2" xml:space="preserve">
-    <value>2. Adjust lightness</value>
+    <value>2. Slide the &lt;2&gt; to adjust darkness</value>
   </data>
   <data name="StringInstruct3" xml:space="preserve">
-    <value>3. Adjust tone</value>
+    <value>3. Move the (3) to adjust tone</value>
   </data>
   <data name="StringInstruct4" xml:space="preserve">
-    <value>Then name your color!</value>
+    <value>Then name your color!  Click Go to begin.</value>
   </data>
 </root>

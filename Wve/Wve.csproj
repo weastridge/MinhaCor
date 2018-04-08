@@ -192,6 +192,9 @@
       <DependentUpon>EditTaskScheduleForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="WveTrackbar.resx">
+      <DependentUpon>WveTrackbar.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="LICENSE.txt" />

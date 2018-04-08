@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplayColorAddEdit));
             this.panelControls = new System.Windows.Forms.Panel();
+            this.panelRgb = new System.Windows.Forms.Panel();
+            this.labelrgb = new System.Windows.Forms.Label();
             this.panelGradient = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,8 +55,7 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelBackground = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.panelRgb = new System.Windows.Forms.Panel();
-            this.labelrgb = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelControls.SuspendLayout();
             this.panelGradient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLightness)).BeginInit();
@@ -82,6 +84,17 @@
             this.panelControls.Controls.Add(this.richTextBox1);
             resources.ApplyResources(this.panelControls, "panelControls");
             this.panelControls.Name = "panelControls";
+            // 
+            // panelRgb
+            // 
+            resources.ApplyResources(this.panelRgb, "panelRgb");
+            this.panelRgb.Name = "panelRgb";
+            this.panelRgb.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRgb_Paint);
+            // 
+            // labelrgb
+            // 
+            resources.ApplyResources(this.labelrgb, "labelrgb");
+            this.labelrgb.Name = "labelrgb";
             // 
             // panelGradient
             // 
@@ -227,17 +240,6 @@
             this.panelMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseUp);
             this.panelMain.Resize += new System.EventHandler(this.panelMain_Resize_1);
             // 
-            // panelRgb
-            // 
-            resources.ApplyResources(this.panelRgb, "panelRgb");
-            this.panelRgb.Name = "panelRgb";
-            this.panelRgb.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRgb_Paint);
-            // 
-            // labelrgb
-            // 
-            resources.ApplyResources(this.labelrgb, "labelrgb");
-            this.labelrgb.Name = "labelrgb";
-            // 
             // DisplayColorAddEdit
             // 
             resources.ApplyResources(this, "$this");
@@ -284,5 +286,6 @@
         private System.Windows.Forms.Panel panelGradient;
         private System.Windows.Forms.Panel panelRgb;
         private System.Windows.Forms.Label labelrgb;
+        private System.Windows.Forms.Timer timer1;
     }
 }

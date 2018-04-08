@@ -2640,14 +2640,78 @@
         </member>
         <member name="T:Wve.WveTrackbar">
             <summary>
-            custom trackbar, not useful at this point
+            customizable trackbar
             </summary>
         </member>
-        <member name="M:Wve.WveTrackbar.OnPaint(System.Windows.Forms.PaintEventArgs)">
+        <member name="T:Wve.WveTrackbar.PointerDirections">
             <summary>
-            paint
+            direction to draw pointer pointing to
             </summary>
-            <param name="e"></param>
+        </member>
+        <member name="F:Wve.WveTrackbar.PointerDirections.Right">
+            <summary>
+            right
+            </summary>
+        </member>
+        <member name="F:Wve.WveTrackbar.PointerDirections.Left">
+            <summary>
+            left
+            </summary>
+        </member>
+        <member name="F:Wve.WveTrackbar.PointerDirections.Up">
+            <summary>
+            up
+            </summary>
+        </member>
+        <member name="F:Wve.WveTrackbar.PointerDirections.Down">
+            <summary>
+            down
+            </summary>
+        </member>
+        <member name="F:Wve.WveTrackbar.PointerDirections.DiamondHorizontal">
+            <summary>
+            horizontal diamond for vertical trackbar
+            </summary>
+        </member>
+        <member name="P:Wve.WveTrackbar.PointerDirection">
+            <summary>
+            direction pointer will point
+            </summary>
+        </member>
+        <member name="P:Wve.WveTrackbar.Value">
+            <summary>
+            value between 0 and 1 inclusive
+            </summary>
+        </member>
+        <member name="F:Wve.WveTrackbar._topMargin">
+            <summary>
+            point for the center of the pointer
+            </summary>
+        </member>
+        <member name="F:Wve.WveTrackbar._pointerShapeAtZero">
+            <summary>
+            the polygon for pointer when value is zero
+            </summary>
+        </member>
+        <member name="F:Wve.WveTrackbar._pointerShapeForValue">
+            <summary>
+            the polygon for pointer at present value
+            </summary>
+        </member>
+        <member name="F:Wve.WveTrackbar._isScrolling">
+            <summary>
+            keep track of when pointer is being moved
+            </summary>
+        </member>
+        <member name="E:Wve.WveTrackbar.PointerScrolled">
+            <summary>
+            fires when pointer is scrolled
+            </summary>
+        </member>
+        <member name="M:Wve.WveTrackbar.#ctor">
+            <summary>
+            customizable trackbar
+            </summary>
         </member>
         <member name="T:Wve.HourglassCursor">
             <summary>

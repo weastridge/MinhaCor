@@ -106,8 +106,8 @@ namespace MinhaCor
             {
                 try
                 {
+                    timer1.Interval = 500; // 1/2 second
                     setDefaults();
-
                 }
                 catch (Exception er)
                 {
@@ -501,13 +501,16 @@ namespace MinhaCor
                         _currentColor.G,
                         _currentColor.B
                     };
+                    string location = MainClass.ConfigSettings.GetValue("Location");
                     ColorCreation cc = new ColorCreation(
                         textBoxColorName.Text,
                         textBoxPersonName.Text,
                         colorBytes,
                         string.Empty, //details
                         DateTime.Now,
-                        DateTime.MinValue);
+                        DateTime.MinValue,
+                        location,
+                        string.Empty);
                     MainClass.ColorCreations.Insert(0, cc);
                     MainClass.SaveColorCreations();
                     FormMinhaCor.Instance.LoadDisplayGrid();

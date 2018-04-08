@@ -125,6 +125,12 @@
     <Compile Include="FormSettings.Designer.cs">
       <DependentUpon>FormSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTesting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTesting.Designer.cs">
+      <DependentUpon>FormTesting.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainClass.cs" />
     <Compile Include="MainClassLibrary.cs" />
     <Compile Include="Program.cs" />
@@ -144,6 +150,12 @@
     </Compile>
     <Compile Include="SplashForSkin.Designer.cs">
       <DependentUpon>SplashForSkin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashForSkin2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashForSkin2.Designer.cs">
+      <DependentUpon>SplashForSkin2.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DisplaySkinColorAddEdit.pt-BR.resx">
       <DependentUpon>DisplaySkinColorAddEdit.cs</DependentUpon>
@@ -193,6 +205,9 @@
     <EmbeddedResource Include="FormSettings.resx">
       <DependentUpon>FormSettings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTesting.resx">
+      <DependentUpon>FormTesting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -214,6 +229,9 @@
     <EmbeddedResource Include="SplashForSkin.resx">
       <DependentUpon>SplashForSkin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SplashForSkin2.resx">
+      <DependentUpon>SplashForSkin2.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Eastridges.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -234,6 +252,8 @@
   <ItemGroup>
     <Content Include="MinhaCor.ico" />
     <Content Include="notes.txt" />
+    <None Include="Resources\Screenshot.png" />
+    <None Include="Resources\blackWhiteGradient1.png" />
     <None Include="Resources\Help4_en.png" />
     <None Include="Resources\Help4.png" />
     <None Include="Resources\Help3_en.png" />
